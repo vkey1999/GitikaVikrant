@@ -221,27 +221,24 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
 .ev-ceremony-name{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(44px,11vw,82px);line-height:.88;letter-spacing:.03em;margin-bottom:5px;transition:text-shadow .4s ease}
 .ev-card:hover .ev-ceremony-name{text-shadow:0 0 40px rgba(201,168,76,.3)}
 .rsvp-btn{display:inline-flex;align-items:center;gap:16px;margin-top:50px;padding:20px 54px;background:rgba(106,15,26,.3);border:1px solid rgba(201,168,76,.32);font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:rgba(251,240,213,.88);text-decoration:none;transition:all .4s;cursor:pointer;position:relative;overflow:hidden}
-/* Pulsing ring around RSVP button */
 .rsvp-btn-wrap{position:relative;display:inline-block}
 .rsvp-btn-wrap::before,.rsvp-btn-wrap::after{content:'';position:absolute;inset:-8px;border:1px solid rgba(201,168,76,.15);animation:rsvp-ring 3s ease-in-out infinite}
 .rsvp-btn-wrap::after{inset:-16px;border-color:rgba(201,168,76,.07);animation-delay:.8s}
 @keyframes rsvp-ring{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
-/* Gold shimmer on section titles */
 .sec-title{font-family:'Italiana',serif;font-size:clamp(34px,8vw,60px);color:#1C0A04;line-height:1.08;position:relative}
-/* Lotus loader enhancement — draw arcs */
 .veil-lotus{display:flex;gap:0;margin-bottom:4px}
 .veil-lotus span{width:8px;height:8px;background:rgba(201,168,76,.8);border-radius:50%;animation:lotus-pop .6s ease both}
 .veil-lotus span:nth-child(1){animation-delay:.1s}.veil-lotus span:nth-child(2){animation-delay:.2s;transform-origin:center}.veil-lotus span:nth-child(3){animation-delay:.3s}.veil-lotus span:nth-child(4){animation-delay:.4s}.veil-lotus span:nth-child(5){animation-delay:.5s}
 @keyframes lotus-pop{from{transform:scale(0);opacity:0}60%{transform:scale(1.3)}to{transform:scale(1);opacity:1}}
-/* Animated gold progress bar in veil */
 .veil-bar{width:180px;height:2px;background:rgba(201,168,76,.15);margin-top:20px;overflow:hidden;border-radius:1px}
 .veil-bar-fill{height:100%;background:linear-gradient(90deg,#E8820A,#F5D060,#E8820A);background-size:200% 100%;animation:bar-load 1.6s ease-out forwards,bar-shimmer 1s linear .3s infinite}
 @keyframes bar-load{from{width:0}to{width:100%}}
 @keyframes bar-shimmer{to{background-position:200% center}}
-/* Hover glow on ev-attire badge */
 .ev-attire{display:inline-block;border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.07);padding:9px 24px;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(201,168,76,.82);backdrop-filter:blur(4px);transition:all .35s}
 .ev-attire:hover,.ev-card:hover .ev-attire{background:rgba(201,168,76,.16);border-color:rgba(201,168,76,.55);color:rgba(201,168,76,1)}
-
+/* Countdown tick flash */
+@keyframes cd-tick{0%{color:rgba(251,240,213,.92)}50%{color:rgba(240,208,96,1)}100%{color:rgba(251,240,213,.92)}}
+.cd-n.tick{animation:cd-tick .15s ease}
 .reveal.on{opacity:1;transform:none}
 .rd1{transition-delay:.12s}.rd2{transition-delay:.24s}.rd3{transition-delay:.36s}.rd4{transition-delay:.48s}
 @media(max-width:480px){.ev-info{padding:0 22px}.co-div{display:none}.h-badge{padding:18px 26px}.family-card{padding:32px 20px}}
@@ -586,7 +583,10 @@ function drawEv(d){
 }
 function drawAll(){evData.forEach(d=>drawEv(d))}
 drawAll();window.addEventListener('resize',drawAll);
-function animTick(id){const el=document.getElementById(id);if(!el)return;el.classList.add('tick');setTimeout(()=>el.classList.remove('tick'),150)}
+
+// ═══════════════════════════════════════
+// COUNTDOWN TIMER — FIXED
+// ═══════════════════════════════════════
 function tick(){
   const target=new Date('2026-04-19T10:00:00+05:30');
   let diff=Math.max(0,target-Date.now());
@@ -595,12 +595,24 @@ function tick(){
   const m=Math.floor(diff/60000);diff%=60000;
   const s=Math.floor(diff/1000);
   const f=n=>String(n).padStart(2,'0');
-  const upd=(id,val)=>{const el=document.getElementById(id);if(el&&el.textContent!==val){el.textContent=val;animTick(id)}};
-  ['cdD','rcdD'].forEach(id=>upd(id,f(d)));
-  ['cdH','rcdH'].forEach(id=>upd(id,f(h)));
-  ['cdM','rcdM'].forEach(id=>upd(id,f(m)));
-  const cs=document.getElementById('cdS');if(cs){if(cs.textContent!==f(s)){cs.textContent=f(s);animTick('cdS')}}
+  const upd=(id,val)=>{
+    const el=document.getElementById(id);
+    if(el&&el.textContent!==val){
+      el.textContent=val;
+      el.classList.remove('tick');
+      void el.offsetWidth; // reflow to restart animation
+      el.classList.add('tick');
+    }
+  };
+  upd('cdD',f(d)); upd('rcdD',f(d));
+  upd('cdH',f(h)); upd('rcdH',f(h));
+  upd('cdM',f(m)); upd('rcdM',f(m));
+  upd('cdS',f(s));
 }
+// ▶ Call immediately so numbers appear at once, then update every second
+tick();
+setInterval(tick,1000);
+
 // ═══════════════════════════════════════
 // ROTATING MANDALA
 // ═══════════════════════════════════════
@@ -608,11 +620,7 @@ function tick(){
   const c=document.getElementById('heroMandala');
   if(!c)return;
   let angle=0;
-  function spin(){
-    angle+=.0012;
-    c.style.transform=`rotate(${angle}rad)`;
-    requestAnimationFrame(spin);
-  }
+  function spin(){angle+=.0012;c.style.transform=`rotate(${angle}rad)`;requestAnimationFrame(spin)}
   spin();
 })();
 
@@ -624,89 +632,29 @@ function tick(){
   if(!fc)return;
   const ctx=fc.getContext('2d');
   let W,H;
-  function resize(){
-    const p=fc.parentElement;
-    W=fc.width=p.offsetWidth;H=fc.height=p.offsetHeight;
-  }
+  function resize(){const p=fc.parentElement;W=fc.width=p.offsetWidth;H=fc.height=p.offsetHeight}
   resize();window.addEventListener('resize',resize);
-
   class Flame{
     constructor(){this.reset()}
-    reset(){
-      this.x=W/2+(Math.random()-.5)*80;
-      this.y=H*.75+Math.random()*40;
-      this.vx=(Math.random()-.5)*.8;
-      this.vy=-(Math.random()*2.5+1.2);
-      this.life=0;
-      this.maxLife=Math.floor(Math.random()*60+40);
-      this.size=Math.random()*5+2;
-      this.hot=Math.random();
-    }
-    update(){
-      this.life++;this.x+=this.vx;this.y+=this.vy;
-      this.vy*=.985;this.vx*=.99;this.size*=.97;
-      if(this.life>this.maxLife||this.size<.3)this.reset();
-    }
-    draw(){
-      const t=this.life/this.maxLife;
-      const r=255,g=Math.floor(this.hot>.6?180-t*180:80-t*80),b=0;
-      const a=(1-t)*(this.hot>.6?.85:.55);
-      ctx.save();
-      const grad=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*2);
-      grad.addColorStop(0,`rgba(${r},${g+60},0,${a})`);
-      grad.addColorStop(.5,`rgba(${r},${g},0,${a*.6})`);
-      grad.addColorStop(1,`rgba(180,40,0,0)`);
-      ctx.fillStyle=grad;
-      ctx.beginPath();ctx.arc(this.x,this.y,this.size*2,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
+    reset(){this.x=W/2+(Math.random()-.5)*80;this.y=H*.75+Math.random()*40;this.vx=(Math.random()-.5)*.8;this.vy=-(Math.random()*2.5+1.2);this.life=0;this.maxLife=Math.floor(Math.random()*60+40);this.size=Math.random()*5+2;this.hot=Math.random()}
+    update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy*=.985;this.vx*=.99;this.size*=.97;if(this.life>this.maxLife||this.size<.3)this.reset()}
+    draw(){const t=this.life/this.maxLife,r=255,g=Math.floor(this.hot>.6?180-t*180:80-t*80),a=(1-t)*(this.hot>.6?.85:.55);ctx.save();const grad=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*2);grad.addColorStop(0,`rgba(${r},${g+60},0,${a})`);grad.addColorStop(.5,`rgba(${r},${g},0,${a*.6})`);grad.addColorStop(1,`rgba(180,40,0,0)`);ctx.fillStyle=grad;ctx.beginPath();ctx.arc(this.x,this.y,this.size*2,0,Math.PI*2);ctx.fill();ctx.restore()}
   }
   class Ember{
     constructor(){this.reset()}
-    reset(){
-      this.x=W/2+(Math.random()-.5)*100;
-      this.y=H*.72;
-      this.vx=(Math.random()-.5)*1.5;
-      this.vy=-(Math.random()*3+1);
-      this.life=0;this.maxLife=Math.floor(Math.random()*120+80);
-      this.size=Math.random()*.8+.2;
-    }
-    update(){
-      this.life++;this.x+=this.vx;this.y+=this.vy;
-      this.vy+=.02;this.vx+=(Math.random()-.5)*.05;
-      if(this.life>this.maxLife)this.reset();
-    }
-    draw(){
-      const t=this.life/this.maxLife;
-      const a=(1-t)*.9;
-      ctx.save();ctx.globalAlpha=a;
-      ctx.fillStyle=t<.3?'#FFF9C4':t<.6?'#FFB830':'#FF6000';
-      ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
+    reset(){this.x=W/2+(Math.random()-.5)*100;this.y=H*.72;this.vx=(Math.random()-.5)*1.5;this.vy=-(Math.random()*3+1);this.life=0;this.maxLife=Math.floor(Math.random()*120+80);this.size=Math.random()*.8+.2}
+    update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy+=.02;this.vx+=(Math.random()-.5)*.05;if(this.life>this.maxLife)this.reset()}
+    draw(){const t=this.life/this.maxLife,a=(1-t)*.9;ctx.save();ctx.globalAlpha=a;ctx.fillStyle=t<.3?'#FFF9C4':t<.6?'#FFB830':'#FF6000';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();ctx.restore()}
   }
-
   const flames=Array.from({length:55},()=>new Flame());
   const embers=Array.from({length:30},()=>new Ember());
-  // stagger
-  flames.forEach((f,i)=>{f.life=Math.floor(Math.random()*f.maxLife)});
-  embers.forEach((e,i)=>{e.life=Math.floor(Math.random()*e.maxLife)});
-
+  flames.forEach(f=>{f.life=Math.floor(Math.random()*f.maxLife)});
+  embers.forEach(e=>{e.life=Math.floor(Math.random()*e.maxLife)});
   let vidhiVisible=false;
-  const vidhiObs=new IntersectionObserver(entries=>{
-    vidhiVisible=entries[0].isIntersecting;
-  },{threshold:.05});
+  const vidhiObs=new IntersectionObserver(entries=>{vidhiVisible=entries[0].isIntersecting},{threshold:.05});
   const vidhiCard=document.getElementById('vidhiCard');
   if(vidhiCard)vidhiObs.observe(vidhiCard);
-
-  function fireLoop(){
-    ctx.clearRect(0,0,W,H);
-    if(vidhiVisible){
-      flames.forEach(f=>{f.update();f.draw()});
-      embers.forEach(e=>{e.update();e.draw()});
-    }
-    requestAnimationFrame(fireLoop);
-  }
+  function fireLoop(){ctx.clearRect(0,0,W,H);if(vidhiVisible){flames.forEach(f=>{f.update();f.draw()});embers.forEach(e=>{e.update();e.draw()})}requestAnimationFrame(fireLoop)}
   fireLoop();
 })();
 
@@ -720,53 +668,15 @@ function tick(){
   let W,H;
   function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
   resize();window.addEventListener('resize',resize);
-
-  const PETALS=[
-    {r:255,g:160,b:20},{r:255,g:120,b:10},{r:240,g:180,b:0},
-    {r:200,g:80,b:20},{r:255,g:200,b:40}
-  ];
-
+  const PETALS=[{r:255,g:160,b:20},{r:255,g:120,b:10},{r:240,g:180,b:0},{r:200,g:80,b:20},{r:255,g:200,b:40}];
   class Petal{
     constructor(init=false){this.reset(init)}
-    reset(init=false){
-      this.x=Math.random()*W;
-      this.y=init?Math.random()*H:-20;
-      this.rot=Math.random()*Math.PI*2;
-      this.rotV=(Math.random()-.5)*.04;
-      this.vx=(Math.random()-.5)*.6;
-      this.vy=Math.random()*.8+.3;
-      this.w=Math.random()*8+4;
-      this.h=Math.random()*5+2.5;
-      this.op=0;this.maxOp=Math.random()*.35+.1;
-      this.life=0;this.maxLife=Math.random()*400+300;
-      const col=PETALS[Math.floor(Math.random()*PETALS.length)];
-      this.col=`${col.r},${col.g},${col.b}`;
-    }
-    update(){
-      this.life++;this.x+=this.vx;this.y+=this.vy;this.rot+=this.rotV;
-      this.vx+=Math.sin(this.life*.02)*.02;
-      const t=this.life/this.maxLife;
-      this.op=t<.1?t/.1*this.maxOp:t>.8?(1-t)/.2*this.maxOp:this.maxOp;
-      if(this.y>H+20||this.life>this.maxLife)this.reset();
-    }
-    draw(){
-      ctx.save();
-      ctx.globalAlpha=this.op;
-      ctx.translate(this.x,this.y);ctx.rotate(this.rot);
-      ctx.fillStyle=`rgba(${this.col},1)`;
-      ctx.beginPath();
-      ctx.ellipse(0,0,this.w,this.h,0,0,Math.PI*2);
-      ctx.fill();
-      ctx.restore();
-    }
+    reset(init=false){this.x=Math.random()*W;this.y=init?Math.random()*H:-20;this.rot=Math.random()*Math.PI*2;this.rotV=(Math.random()-.5)*.04;this.vx=(Math.random()-.5)*.6;this.vy=Math.random()*.8+.3;this.w=Math.random()*8+4;this.h=Math.random()*5+2.5;this.op=0;this.maxOp=Math.random()*.35+.1;this.life=0;this.maxLife=Math.random()*400+300;const col=PETALS[Math.floor(Math.random()*PETALS.length)];this.col=`${col.r},${col.g},${col.b}`}
+    update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.rot+=this.rotV;this.vx+=Math.sin(this.life*.02)*.02;const t=this.life/this.maxLife;this.op=t<.1?t/.1*this.maxOp:t>.8?(1-t)/.2*this.maxOp:this.maxOp;if(this.y>H+20||this.life>this.maxLife)this.reset()}
+    draw(){ctx.save();ctx.globalAlpha=this.op;ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=`rgba(${this.col},1)`;ctx.beginPath();ctx.ellipse(0,0,this.w,this.h,0,0,Math.PI*2);ctx.fill();ctx.restore()}
   }
-
   const petals=Array.from({length:45},()=>new Petal(true));
-  function petalLoop(){
-    ctx.clearRect(0,0,W,H);
-    petals.forEach(p=>{p.update();p.draw()});
-    requestAnimationFrame(petalLoop);
-  }
+  function petalLoop(){ctx.clearRect(0,0,W,H);petals.forEach(p=>{p.update();p.draw()});requestAnimationFrame(petalLoop)}
   petalLoop();
 })();
 
@@ -776,16 +686,8 @@ function tick(){
 (function(){
   const card=document.querySelector('.family-card');
   if(!card)return;
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    const x=e.clientX-r.left,y=e.clientY-r.top;
-    const cx=r.width/2,cy=r.height/2;
-    const rx=(y-cy)/cy*8,ry=(cx-x)/cx*8;
-    card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
-  });
-  card.addEventListener('mouseleave',()=>{
-    card.style.transform='perspective(900px) rotateX(0) rotateY(0) scale(1)';
-  });
+  card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const cx=r.width/2,cy=r.height/2;const rx=(y-cy)/cy*8,ry=(cx-x)/cx*8;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`});
+  card.addEventListener('mouseleave',()=>{card.style.transform='perspective(900px) rotateX(0) rotateY(0) scale(1)'});
 })();
 
 // ═══════════════════════════════════════
@@ -795,12 +697,7 @@ function tick(){
   const inner=document.querySelector('.hero-inner');
   const aura=document.querySelector('.hero-aura');
   if(!inner||!aura)return;
-  window.addEventListener('scroll',()=>{
-    const y=window.scrollY;
-    inner.style.transform=`translateY(${y*.28}px)`;
-    inner.style.opacity=1-y/window.innerHeight*1.2;
-    aura.style.transform=`translateY(${y*.12}px)`;
-  },{passive:true});
+  window.addEventListener('scroll',()=>{const y=window.scrollY;inner.style.transform=`translateY(${y*.28}px)`;inner.style.opacity=1-y/window.innerHeight*1.2;aura.style.transform=`translateY(${y*.12}px)`},{passive:true});
 })();
 
 // ═══════════════════════════════════════
@@ -808,13 +705,8 @@ function tick(){
 // ═══════════════════════════════════════
 document.querySelectorAll('.h-name').forEach(el=>{
   el.style.transition='filter .3s ease,transform .3s ease';
-  el.addEventListener('mouseenter',()=>{
-    el.style.filter='drop-shadow(0 0 32px rgba(232,130,10,.8))';
-    el.style.transform='scale(1.04)';
-  });
-  el.addEventListener('mouseleave',()=>{
-    el.style.filter='';el.style.transform='';
-  });
+  el.addEventListener('mouseenter',()=>{el.style.filter='drop-shadow(0 0 32px rgba(232,130,10,.8))';el.style.transform='scale(1.04)'});
+  el.addEventListener('mouseleave',()=>{el.style.filter='';el.style.transform=''});
 });
 
 // ═══════════════════════════════════════
@@ -828,8 +720,7 @@ document.querySelectorAll('.h-name').forEach(el=>{
     const x=e.clientX-r.left,y=e.clientY-r.top;
     const ripple=document.createElement('span');
     ripple.style.cssText=`position:absolute;border-radius:50%;background:rgba(201,168,76,.35);transform:scale(0);animation:ripple-anim .7s ease-out;left:${x}px;top:${y}px;width:10px;height:10px;margin-left:-5px;margin-top:-5px;pointer-events:none`;
-    this.appendChild(ripple);
-    setTimeout(()=>ripple.remove(),700);
+    this.appendChild(ripple);setTimeout(()=>ripple.remove(),700);
   });
 })();
 
