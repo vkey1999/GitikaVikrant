@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Vikrant &amp; Gitika — Forever Begins Here</title>
+<title>Vikrant &amp; Gitika — You Are Invited</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700;900&family=Italiana&family=Alex+Brush&family=Cinzel:wght@400;500;600;700;900&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -15,6 +15,7 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
   --ivory:#FBF0D5;--cream:#F5E6C8;--maroon:#3A0A12;--deep-maroon:#200508;
   --crimson:#6B0F1A;--ink:#0C0501;
 }
+/* VEIL */
 #veil{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#2A0808 0%,#0C0501 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 1.2s ease,visibility 1.2s ease}
 #veil.gone{opacity:0;visibility:hidden;pointer-events:none}
 .veil-om{font-family:'Noto Serif Devanagari',serif;font-size:72px;font-weight:900;background:linear-gradient(160deg,#F0D060,#C9A84C,#E8820A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:om-pulse 1.5s ease-in-out infinite}
@@ -28,7 +29,9 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
 .veil-bar-fill{height:100%;background:linear-gradient(90deg,#E8820A,#F5D060,#E8820A);background-size:200% 100%;animation:bar-load 1.6s ease-out forwards,bar-shimmer 1s linear .3s infinite}
 @keyframes bar-load{from{width:0}to{width:100%}}
 @keyframes bar-shimmer{to{background-position:200% center}}
+/* BOKEH */
 #bokehCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;mix-blend-mode:screen}
+/* HERO */
 .hero{min-height:100svh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px 80px;overflow:hidden;z-index:2}
 .hero-silk{position:absolute;inset:0;background:radial-gradient(ellipse 110% 55% at 50% -5%,rgba(106,15,26,.85),transparent 65%),radial-gradient(ellipse 80% 70% at 15% 85%,rgba(58,10,18,.7),transparent 55%),radial-gradient(ellipse 70% 60% at 85% 80%,rgba(40,8,14,.6),transparent 55%),linear-gradient(175deg,#1C0406 0%,#0E0201 40%,#150305 70%,#0C0501 100%)}
 .hero-aura{position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(232,130,10,.08),transparent 60%),radial-gradient(ellipse 30% 30% at 50% 30%,rgba(240,208,96,.06),transparent 50%);animation:hero-breathe 8s ease-in-out infinite alternate}
@@ -65,52 +68,30 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
 .cd-n{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(30px,7vw,56px);color:rgba(251,240,213,.92);line-height:1;letter-spacing:.04em}
 .cd-l{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.38);font-family:'Cinzel',serif;margin-top:6px}
 .cd-dot{font-family:'Italiana',serif;font-size:clamp(24px,5vw,40px);color:rgba(201,168,76,.28);padding-bottom:14px}
-.scroll-hint{position:absolute;bottom:26px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px;animation:rise 1s ease 1.2s both;z-index:4}
-.sh-txt{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,168,76,.35)}
-.sh-bar{width:1px;height:40px;background:linear-gradient(180deg,rgba(201,168,76,.6),transparent);animation:sh-bob 2s ease-in-out infinite}
-@keyframes sh-bob{0%,100%{transform:scaleY(1);opacity:.4}50%{transform:scaleY(1.3);opacity:1}}
 /* INVITE SECTION */
-.invite-sec{position:relative;z-index:2;background:linear-gradient(165deg,#FBF5E6,#F5E8C8,#FBEFD8,#F0DDB8);padding:100px 28px;text-align:center;overflow:hidden}
-.invite-sec::before{content:'ॐ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif Devanagari',serif;font-size:clamp(280px,45vw,500px);font-weight:900;color:rgba(201,168,76,.055);pointer-events:none;line-height:1;user-select:none}
-.invite-sec::after{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508)}
-.sec-eyebrow{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.5em;color:var(--saffron);text-transform:uppercase;margin-bottom:18px}
-.sec-title{font-family:'Italiana',serif;font-size:clamp(34px,8vw,60px);color:#1C0A04;line-height:1.08;position:relative}
-.ornament{display:flex;align-items:center;gap:16px;justify-content:center;margin:20px auto}
-.orn-line{height:1px;width:clamp(44px,9vw,100px)}
-.orn-l{background:linear-gradient(90deg,transparent,var(--gold))}
-.orn-r{background:linear-gradient(90deg,var(--gold),transparent)}
-.orn-dot{font-size:16px;color:var(--gold)}
-.invite-body{max-width:490px;margin:0 auto;font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(18px,3.5vw,23px);line-height:2;color:#3A1A0A}
-.family-card{max-width:520px;margin:54px auto 0;background:linear-gradient(165deg,#FFFCF2,#FBF0D5);border:1px solid rgba(201,168,76,.38);padding:48px 40px;position:relative;box-shadow:0 0 0 6px rgba(201,168,76,.07),0 24px 64px rgba(44,16,4,.14);transform-style:preserve-3d;transition:transform .1s ease,box-shadow .3s ease;cursor:default}
-.family-card:hover{box-shadow:0 0 0 6px rgba(201,168,76,.14),0 40px 90px rgba(44,16,4,.26)}
-.family-card::before{content:'';position:absolute;top:8px;left:8px;right:8px;bottom:8px;border:1px solid rgba(201,168,76,.15);pointer-events:none}
-.fc-bless{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.38em;text-transform:uppercase;color:var(--saffron);margin-bottom:22px}
-.fc-family{font-family:'Libre Baskerville',serif;font-size:clamp(14px,2.8vw,17px);line-height:2.2;color:#3A1A0A}
-.fc-family strong{font-family:'Cinzel',serif;font-size:.88em;font-weight:600;letter-spacing:.06em;color:#1C0A04;font-style:normal}
-.fc-sep{display:flex;align-items:center;gap:14px;justify-content:center;margin:18px 0}
-.fc-sep-line{height:1px;flex:1;max-width:55px;background:rgba(201,168,76,.35)}
-.fc-sep-icon{color:var(--saffron);font-size:14px}
-.fc-name-big{font-family:'Alex Brush',cursive;font-size:clamp(32px,7vw,46px);color:#1C0A04;margin:4px 0;letter-spacing:.03em}
-
-/* ── EVENT CARD DAYS HEADER ─────────────────────── */
-.day-header{
-  position:relative;z-index:2;
-  background:linear-gradient(135deg,#0A0100,#150304,#0C0501);
-  text-align:center;padding:64px 28px 48px;
-  border-top:7px solid transparent;
-  border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1;
-}
-.day-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(232,130,10,.06),transparent 65%)}
-.dh-inner{position:relative;z-index:1}
-.dh-num{font-family:'Italiana',serif;font-size:clamp(80px,18vw,140px);color:rgba(201,168,76,.06);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);line-height:1;user-select:none;pointer-events:none}
-.dh-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(232,130,10,.6);margin-bottom:10px}
-.dh-title{font-family:'Italiana',serif;font-size:clamp(28px,7vw,48px);background:linear-gradient(135deg,#FBE99A,#C9A84C,#FBE99A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.06em}
-.dh-date{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,2.8vw,19px);color:rgba(201,168,76,.4);margin-top:8px}
-.dh-divider{display:flex;align-items:center;gap:14px;justify-content:center;margin-top:18px}
-.dh-div-line{height:1px;width:60px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent)}
-.dh-div-dot{width:4px;height:4px;border-radius:50%;background:rgba(201,168,76,.5)}
-
-/* ── EVENT CARDS ─────────────────────────────────── */
+.invite-sec{background:linear-gradient(165deg,#FBF5E6,#F5E8C8,#FBEFD8);padding:96px 28px;text-align:center;position:relative;overflow:hidden;border-top:7px solid transparent;border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1;z-index:2}
+.invite-sec::before{content:'ॐ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif Devanagari',serif;font-size:380px;font-weight:900;color:rgba(201,168,76,.04);pointer-events:none;line-height:1}
+.sec-eyebrow{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.55em;text-transform:uppercase;color:var(--saffron);opacity:.75;margin-bottom:14px}
+.sec-title{font-family:'Italiana',serif;font-size:clamp(38px,9vw,70px);line-height:1.06;letter-spacing:.04em;color:#3A0A12;margin-bottom:18px}
+.ornament{display:flex;align-items:center;gap:16px;max-width:320px;margin:0 auto 36px}
+.orn-line{flex:1;height:1px}
+.orn-l{background:linear-gradient(90deg,transparent,rgba(201,168,76,.6))}
+.orn-r{background:linear-gradient(90deg,rgba(201,168,76,.6),transparent)}
+.orn-dot{font-size:16px;color:rgba(201,168,76,.6)}
+.invite-body{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(17px,3.2vw,21px);color:#6A3A18;line-height:2;max-width:520px;margin:0 auto 44px;opacity:.85}
+.family-card{max-width:480px;margin:0 auto;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);padding:44px 36px;border:1px solid rgba(201,168,76,.35);text-align:center;position:relative}
+.family-card::before,.family-card::after{content:'';position:absolute;width:22px;height:22px}
+.family-card::before{top:-1px;left:-1px;border-top:2px solid rgba(232,130,10,.6);border-left:2px solid rgba(232,130,10,.6)}
+.family-card::after{bottom:-1px;right:-1px;border-bottom:2px solid rgba(232,130,10,.6);border-right:2px solid rgba(232,130,10,.6)}
+.fc-tr{position:absolute;top:-1px;right:-1px;width:22px;height:22px;border-top:2px solid rgba(232,130,10,.6);border-right:2px solid rgba(232,130,10,.6)}
+.fc-bl{position:absolute;bottom:-1px;left:-1px;width:22px;height:22px;border-bottom:2px solid rgba(232,130,10,.6);border-left:2px solid rgba(232,130,10,.6)}
+.fc-bless{font-family:'IM Fell English',serif;font-style:italic;font-size:13px;color:rgba(106,58,24,.55);margin-bottom:18px;letter-spacing:.04em}
+.fc-family{font-family:'Libre Baskerville',serif;font-size:clamp(14px,2.8vw,17px);color:#3A1A0A;line-height:1.7}
+.fc-name-big{font-family:'Alex Brush',cursive;font-size:clamp(52px,12vw,80px);background:linear-gradient(135deg,#C9A84C,#E8820A,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin:8px 0}
+.fc-sep{display:flex;align-items:center;gap:12px;margin:16px 0}
+.fc-sep-line{flex:1;height:1px;background:rgba(201,168,76,.3)}
+.fc-sep-icon{font-size:14px;color:rgba(201,168,76,.5)}
+/* EVENT CARDS */
 .ev-card{min-height:100svh;position:relative;display:flex;flex-direction:column;overflow:hidden;z-index:2}
 .ev-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .ev-anim-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
@@ -123,23 +104,9 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
 .ev-lotus-ring::before{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(201,168,76,.09)}
 .ev-lotus-ring::after{content:'';position:absolute;inset:-20px;border-radius:50%;border:1px dashed rgba(201,168,76,.05)}
 .ev-lotus-ring svg{width:clamp(40px,9vw,65px);height:clamp(40px,9vw,65px)}
-@media(max-width:480px){
-  .ev-icon-center{top:72px}
-  .ev-lotus-ring{width:80px;height:80px}
-  .ev-lotus-ring::before{inset:-8px}
-  .ev-lotus-ring::after{inset:-16px}
-  .ev-lotus-ring svg{width:38px;height:38px}
-  .ev-info{padding:0 18px}
-  .ev-ceremony-name{font-size:clamp(36px,12vw,58px)}
-  .ev-content{padding:0 0 36px}
-  .co-div{display:none}
-  .h-badge{padding:18px 26px}
-  .family-card{padding:32px 20px}
-}
-.ev-content{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 52px;min-height:0}
+.ev-content{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 52px}
 .ev-info{padding:0 clamp(22px,6vw,64px)}
-.ev-ceremony-name{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(44px,11vw,82px);line-height:.88;letter-spacing:.03em;margin-bottom:5px;transition:text-shadow .4s ease}
-.ev-card:hover .ev-ceremony-name{text-shadow:0 0 40px rgba(201,168,76,.3)}
+.ev-ceremony-name{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(44px,11vw,82px);line-height:.88;letter-spacing:.03em;margin-bottom:5px}
 .ev-ceremony-sub{font-family:'Alex Brush',cursive;font-size:clamp(20px,4.5vw,28px);letter-spacing:.05em;margin-bottom:20px;opacity:.72}
 .ev-rule{width:42px;height:2px;margin-bottom:22px;border-radius:2px}
 .ev-desc{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,3vw,18px);line-height:1.9;max-width:560px;margin-bottom:26px;opacity:.58}
@@ -149,17 +116,6 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
 .ev-meta-ico svg{width:24px;height:24px}
 .ev-meta-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;line-height:1.9}
 .ev-meta-txt span{display:block;font-family:'IM Fell English',serif;font-style:italic;font-size:15px;letter-spacing:.02em;text-transform:none;font-weight:400;margin-top:1px;opacity:.55}
-.ev-attire{display:inline-block;border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.07);padding:9px 24px;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(201,168,76,.82);backdrop-filter:blur(4px);transition:all .35s}
-.ev-attire:hover,.ev-card:hover .ev-attire{background:rgba(201,168,76,.16);border-color:rgba(201,168,76,.55);color:rgba(201,168,76,1)}
-/* CHECKOUT */
-.checkout-sec{background:linear-gradient(165deg,#FBF5E6,#F5E8C8,#FBEFD8);padding:96px 28px;text-align:center;position:relative;overflow:hidden;border-top:7px solid transparent;border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1;z-index:2}
-.checkout-sec::before{content:'ॐ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif Devanagari',serif;font-size:380px;font-weight:900;color:rgba(201,168,76,.04);pointer-events:none;line-height:1}
-.co-row{display:flex;justify-content:center;align-items:center;gap:clamp(24px,6vw,80px);margin:44px 0;flex-wrap:wrap}
-.co-box{text-align:center}
-.co-time{font-family:'Italiana',serif;font-size:clamp(28px,6vw,44px);color:#6B0F1A;letter-spacing:.07em}
-.co-lbl{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:#8A5030;margin-top:6px}
-.co-div{width:1px;height:64px;background:rgba(201,168,76,.3)}
-.co-note{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(18px,3.2vw,22px);color:#6A4020;max-width:460px;margin:0 auto;line-height:1.95}
 /* VENUE */
 .venue-sec{background:#0C0501;padding:100px 28px;text-align:center;position:relative;overflow:hidden;z-index:2}
 .venue-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(106,15,26,.5),transparent 60%),radial-gradient(ellipse 60% 50% at 50% 100%,rgba(58,10,18,.5),transparent 60%)}
@@ -167,8 +123,7 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
 .venue-name{font-family:'Italiana',serif;font-size:clamp(26px,6.5vw,42px);background:linear-gradient(135deg,#F5D060,#C9A84C,#F5D060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.07em;margin-bottom:6px}
 .venue-sub{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(201,168,76,.45);margin-bottom:44px}
 .venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.1);margin-bottom:2px}
-.vg-cell{background:#120609;padding:28px 16px;text-align:center;transition:background .35s}
-.vg-cell:hover{background:#1A0810}
+.vg-cell{background:#120609;padding:28px 16px;text-align:center}
 .vg-icon{width:30px;height:30px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
 .vg-icon svg{width:22px;height:22px;stroke:var(--saffron);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .vg-val{font-family:'Cinzel',serif;font-size:11px;color:rgba(251,240,213,.8);letter-spacing:.08em}
@@ -178,39 +133,9 @@ body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;over
 .venue-map svg{width:14px;height:14px;stroke:var(--saffron);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .venue-note{margin-top:20px;padding:22px 26px;border-left:2px solid var(--saffron);background:rgba(232,130,10,.04);text-align:left}
 .venue-note p{font-family:'IM Fell English',serif;font-style:italic;font-size:16px;color:rgba(201,168,76,.5);line-height:1.85}
-/* KNOW */
-.know-sec{background:linear-gradient(165deg,#FBF5E6,#F5E8C8);padding:100px 28px;text-align:center;position:relative;overflow:hidden;z-index:2;border-top:7px solid transparent;border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1}
-.know-sec::before{content:'ॐ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif Devanagari',serif;font-size:380px;font-weight:900;color:rgba(201,168,76,.04);pointer-events:none;line-height:1}
-.know-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;max-width:780px;margin:52px auto 0;background:rgba(201,168,76,.2);position:relative;z-index:1}
-.kc{background:#FFFEF8;padding:34px 28px;text-align:left;position:relative;transition:all .4s;border-top:3px solid transparent}
-.kc:hover{background:#FFF9EE;border-top-color:var(--saffron)}
-.kc-icon{width:38px;height:38px;margin-bottom:16px}
-.kc-icon svg{width:38px;height:38px;stroke:var(--saffron);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
-.kc-title{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--saffron);margin-bottom:10px}
-.kc-body{font-family:'Libre Baskerville',serif;font-size:clamp(14px,2.5vw,17px);color:#3A1A0A;line-height:1.82}
-/* RSVP */
-.rsvp-sec{background:linear-gradient(165deg,#0E0202,#1C0408,#0C0501);padding:110px 28px;text-align:center;position:relative;overflow:hidden;z-index:2}
-.rsvp-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 50%,rgba(106,15,26,.4),rgba(58,10,18,.15) 40%,transparent 70%);animation:rsvp-pulse 7s ease-in-out infinite alternate}
-@keyframes rsvp-pulse{0%{transform:scale(1)}100%{transform:scale(1.1)}}
-.rsvp-inner{position:relative;z-index:1}
-.rsvp-sec .sec-eyebrow{color:rgba(201,168,76,.45)}
-.rsvp-sec .sec-title{color:rgba(251,240,213,.92);font-size:clamp(38px,9vw,72px)}
-.rsvp-body{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(18px,3.2vw,22px);color:rgba(251,240,213,.38);max-width:440px;margin:0 auto;line-height:1.95}
-.rsvp-btn-wrap{position:relative;display:inline-block}
-.rsvp-btn-wrap::before,.rsvp-btn-wrap::after{content:'';position:absolute;inset:-8px;border:1px solid rgba(201,168,76,.15);animation:rsvp-ring 3s ease-in-out infinite}
-.rsvp-btn-wrap::after{inset:-16px;border-color:rgba(201,168,76,.07);animation-delay:.8s}
-@keyframes rsvp-ring{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.04);opacity:1}}
-.rsvp-btn{display:inline-flex;align-items:center;gap:16px;margin-top:50px;padding:20px 54px;background:rgba(106,15,26,.3);border:1px solid rgba(201,168,76,.32);font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.38em;text-transform:uppercase;color:rgba(251,240,213,.88);text-decoration:none;transition:all .4s;cursor:pointer;position:relative;overflow:hidden}
-.rsvp-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(201,168,76,.12) 50%,transparent 70%);transform:translateX(-100%);transition:transform .7s}
-.rsvp-btn:hover::before{transform:translateX(100%)}
-.rsvp-btn:hover{background:rgba(106,15,26,.55);border-color:rgba(201,168,76,.6);transform:translateY(-2px);box-shadow:0 14px 44px rgba(232,130,10,.18)}
-.rsvp-btn svg{width:20px;height:20px;fill:rgba(251,240,213,.8);flex-shrink:0}
-.rsvp-cd{margin-top:64px;display:flex;gap:clamp(14px,4vw,44px);justify-content:center;align-items:flex-end}
-.rsvp-cd .cd-n{color:rgba(251,240,213,.72);font-size:clamp(22px,5vw,40px)}
-.rsvp-cd .cd-l{color:rgba(251,240,213,.18)}
-.rsvp-cd .cd-dot{color:rgba(201,168,76,.18)}
+/* FOOTER */
 footer{background:linear-gradient(165deg,#0C0501,#150302,#0A0401);border-top:7px solid transparent;border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1;padding:90px 28px 80px;text-align:center;position:relative;overflow:hidden;z-index:2}
-footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,.06),transparent 65%),radial-gradient(ellipse 60% 40% at 50% 50%,rgba(232,130,10,.05),transparent 55%);animation:ft-glow 6s ease-in-out infinite alternate}
+footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,.06),transparent 65%);animation:ft-glow 6s ease-in-out infinite alternate}
 @keyframes ft-glow{0%{opacity:.6}100%{opacity:1.2}}
 #footerCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.14;pointer-events:none}
 .ft-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
@@ -221,17 +146,41 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
 .ft-date{font-family:'Italiana',serif;font-size:clamp(18px,3.5vw,24px);color:rgba(201,168,76,.55);letter-spacing:.12em;margin-bottom:10px}
 .ft-venue{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(14px,2.5vw,17px);color:rgba(251,240,213,.25);margin-bottom:28px}
 .ft-wish{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,2.8vw,19px);color:rgba(251,240,213,.28);line-height:2;max-width:380px}
+/* HASHTAG STRIP */
+.hashtag-strip{background:rgba(201,168,76,.06);border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);padding:18px 28px;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.38em;color:rgba(201,168,76,.5);text-transform:uppercase}
+.hashtag-strip strong{color:rgba(232,130,10,.75);font-weight:400}
+/* SCROLL HINT */
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:rise 1s ease 1.2s both;z-index:5}
+.sh-txt{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,168,76,.35)}
+.sh-bar{width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,168,76,.5),transparent);animation:sh-drop 2s ease-in-out infinite}
+@keyframes sh-drop{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+/* UTILS */
 @keyframes ripple-anim{to{transform:scale(30);opacity:0}}
 @keyframes cd-tick{0%{color:rgba(251,240,213,.92)}50%{color:rgba(240,208,96,1)}100%{color:rgba(251,240,213,.92)}}
 .cd-n.tick{animation:cd-tick .15s ease}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
 .reveal.on{opacity:1;transform:none}
 .rd1{transition-delay:.12s}.rd2{transition-delay:.24s}.rd3{transition-delay:.36s}.rd4{transition-delay:.48s}
-
+@media(max-width:480px){
+  .ev-icon-center{top:72px}
+  .ev-lotus-ring{width:80px;height:80px}
+  .ev-lotus-ring svg{width:38px;height:38px}
+  .ev-info{padding:0 18px}
+  .ev-ceremony-name{font-size:clamp(36px,12vw,58px)}
+  .h-badge{padding:18px 26px}
+}
 </style>
 </head>
 <body>
-<div id="veil"><div class="veil-om">ॐ</div><p class="veil-sub">Shri Ganeshaya Namah</p><div class="veil-lotus"><span></span><span></span><span></span><span></span><span></span></div><div class="veil-bar"><div class="veil-bar-fill"></div></div></div>
+
+<!-- VEIL -->
+<div id="veil">
+  <div class="veil-om">ॐ</div>
+  <p class="veil-sub">Shri Ganeshaya Namah</p>
+  <div class="veil-lotus"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="veil-bar"><div class="veil-bar-fill"></div></div>
+</div>
+
 <canvas id="bokehCanvas"></canvas>
 
 <!-- ═══ HERO ═══ -->
@@ -240,28 +189,26 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
   <canvas id="heroMandala"></canvas>
   <div class="cband cband-t"></div><div class="cband cband-b"></div>
   <div class="hero-frame">
-    <svg viewBox="0 0 100 180" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 100 180" preserveAspectRatio="none" fill="none">
       <rect x=".5" y=".5" width="99" height="179" stroke="rgba(201,168,76,.18)" stroke-width=".35"/>
       <rect x="2.5" y="2.5" width="95" height="175" stroke="rgba(201,168,76,.07)" stroke-width=".22"/>
       <path d="M0 0L22 0L22 2.5L2.5 2.5L2.5 22L0 22Z" fill="rgba(201,168,76,.22)"/><path d="M100 0L78 0L78 2.5L97.5 2.5L97.5 22L100 22Z" fill="rgba(201,168,76,.22)"/>
       <path d="M0 180L22 180L22 177.5L2.5 177.5L2.5 158L0 158Z" fill="rgba(201,168,76,.22)"/><path d="M100 180L78 180L78 177.5L97.5 177.5L97.5 158L100 158Z" fill="rgba(201,168,76,.22)"/>
       <line x1="0" y1="22" x2="22" y2="0" stroke="rgba(232,130,10,.45)" stroke-width=".45"/><line x1="100" y1="22" x2="78" y2="0" stroke="rgba(232,130,10,.45)" stroke-width=".45"/>
       <line x1="0" y1="158" x2="22" y2="180" stroke="rgba(232,130,10,.45)" stroke-width=".45"/><line x1="100" y1="158" x2="78" y2="180" stroke="rgba(232,130,10,.45)" stroke-width=".45"/>
-      <path d="M0 90 L4 84 L4 96 Z" fill="rgba(201,168,76,.28)"/><path d="M100 90 L96 84 L96 96 Z" fill="rgba(201,168,76,.28)"/>
-      <circle cx="50" cy="2" r="1.5" fill="rgba(232,130,10,.5)"/><circle cx="50" cy="178" r="1.5" fill="rgba(232,130,10,.5)"/>
     </svg>
   </div>
   <div class="hero-inner">
     <div class="h-om">ॐ</div>
     <p class="h-bless">Shri Ganeshaya Namah</p>
     <div class="h-rule"><div class="h-rule-line"></div><span style="color:var(--gold);font-size:18px">✦</span><div class="h-rule-line"></div></div>
-    <p class="h-weds">weds</p>
     <div class="h-names"><span class="h-name">Vikrant</span><span class="h-amp">&amp;</span><span class="h-name">Gitika</span></div>
+    <p class="h-weds">together forever</p>
     <p class="h-tagline">Two souls, one sacred fire — forever begins here</p>
     <div class="h-badge">
       <div class="badge-tr"></div><div class="badge-bl"></div>
       <span class="badge-venue">Golden Chariot Hotel · Vasai, Maharashtra</span>
-      <span class="badge-date">April 19 – 21, 2026</span>
+      <span class="badge-date">20<sup style="font-size:.55em">th</sup> April 2026</span>
     </div>
     <div class="h-countdown">
       <div class="cd-unit"><div class="cd-n" id="cdD">--</div><div class="cd-l">Days</div></div>
@@ -276,13 +223,14 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
   <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-bar"></div></div>
 </section>
 
-<!-- ═══ INVITE ═══ -->
+<!-- ═══ FAMILY INVITE ═══ -->
 <section class="invite-sec">
   <p class="sec-eyebrow reveal">With the blessings of the divine</p>
   <h2 class="sec-title reveal rd1">You are cordially invited</h2>
   <div class="ornament reveal rd2"><div class="orn-line orn-l"></div><span class="orn-dot">✦</span><div class="orn-line orn-r"></div></div>
-  <p class="invite-body reveal rd2">We are humbled and overjoyed by your love. It would be our greatest honour to have you witness and bless this sacred union.</p>
+  <p class="invite-body reveal rd2">We are humbled and overjoyed by your love. It would be our greatest honour to have you witness and bless this sacred union of our families.</p>
   <div class="family-card reveal rd3">
+    <div class="fc-tr"></div><div class="fc-bl"></div>
     <p class="fc-bless">With the blessings of the Almighty</p>
     <p class="fc-family"><strong>Shri Vijayprakash Chaubey</strong><br>&amp; <strong>Smt. Manti Chaubey</strong></p>
     <p class="fc-family" style="margin-top:6px;color:#8A5030;font-size:.92em;font-style:italic">proudly invite you to the wedding of their son</p>
@@ -291,235 +239,64 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
     <p class="fc-family"><strong>Shri Rameshkumar Ray</strong><br>&amp; <strong>Smt. Nitu Ray</strong></p>
     <p class="fc-family" style="margin-top:6px;color:#8A5030;font-size:.92em;font-style:italic">joyfully announce the wedding of their daughter</p>
     <p class="fc-name-big">Gitika</p>
-    <div style="margin-top:28px;padding-top:18px;border-top:1px solid rgba(201,168,76,.2);text-align:center"><span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:.44em;text-transform:uppercase;color:rgba(201,168,76,.42)">April 19 – 21 · 2026</span></div>
+    <div style="margin-top:28px;padding-top:18px;border-top:1px solid rgba(201,168,76,.2);text-align:center">
+      <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:rgba(201,168,76,.75)">20th April · 2026 · Golden Chariot, Vasai</span>
+    </div>
   </div>
 </section>
 
-<!-- ═══ DAY ONE HEADER ═══ -->
-<div class="day-header reveal">
-  <div class="dh-num">I</div>
-  <div class="dh-inner">
-    <p class="dh-label">Day One</p>
-    <h3 class="dh-title">The Celebrations Begin</h3>
-    <p class="dh-date">Sunday, 19th April 2026</p>
-    <div class="dh-divider"><div class="dh-div-line"></div><div class="dh-div-dot"></div><div class="dh-div-line"></div></div>
-  </div>
-</div>
-
-<!-- 1. JANEU -->
-<div class="ev-card" data-anim="janeu">
-  <canvas class="ev-canvas" id="c1bg"></canvas>
-  <canvas class="ev-anim-canvas" id="c1anim"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(10,2,4,.97) 0%,rgba(30,5,10,.7) 40%,rgba(30,5,10,.15) 70%,transparent 100%)"></div>
-  <div class="ev-daybar"><span class="ev-daytag">Day One · 19th April</span></div>
-  <div class="ev-numeral">01</div>
-  <div class="ev-icon-center"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 82 82" fill="none"><circle cx="41" cy="41" r="24" stroke="rgba(201,168,76,.55)" stroke-width="1.1"/><circle cx="41" cy="41" r="14" stroke="rgba(201,168,76,.3)" stroke-width=".75"/><path d="M41 17Q45 28 41 32Q37 28 41 17Z" fill="rgba(201,168,76,.5)"/><path d="M41 65Q37 54 41 50Q45 54 41 65Z" fill="rgba(201,168,76,.5)"/><path d="M17 41Q28 37 32 41Q28 45 17 41Z" fill="rgba(201,168,76,.5)"/><path d="M65 41Q54 45 50 41Q54 37 65 41Z" fill="rgba(201,168,76,.5)"/><circle cx="41" cy="41" r="4.5" fill="rgba(201,168,76,.6)"/></svg>
-  </div></div>
-  <div class="ev-content"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Janeu</div>
-    <div class="ev-ceremony-sub" style="color:rgba(201,168,76,.7)">Sacred Thread Ceremony</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#E8820A,#F5D060)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">A sacred thread ceremony marking the groom's spiritual preparation for marriage. Surrounded by family, we seek the blessings of the divine for the journey ahead.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">10:00 AM onwards</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Groom's Hall, Golden Chariot</span></div></div>
-    </div>
-    <span class="ev-attire">Traditional Attire</span>
-  </div></div>
-</div>
-
-<!-- 2. MEHENDI -->
-<div class="ev-card" data-anim="mehendi">
-  <canvas class="ev-canvas" id="c2bg"></canvas>
-  <canvas class="ev-anim-canvas" id="c2anim"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(2,8,2,.97) 0%,rgba(4,16,4,.7) 40%,rgba(4,16,4,.15) 70%,transparent 100%)"></div>
-  <div class="ev-daybar"><span class="ev-daytag">Day One · 19th April</span></div>
-  <div class="ev-numeral">02</div>
-  <div class="ev-icon-center"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 70 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- INDEX finger -->
-      <path d="M14,46 L14,20 C14,17 15.5,15.5 18,15.5 C20.5,15.5 22,17 22,20 L22,46 Z"
-        stroke="rgba(80,220,80,.9)" stroke-width="1.1" fill="rgba(80,220,80,.1)" stroke-linejoin="round"/>
-      <!-- MIDDLE finger (tallest) -->
-      <path d="M22,46 L22,15 C22,12 23.5,10.5 26,10.5 C28.5,10.5 30,12 30,15 L30,46 Z"
-        stroke="rgba(80,220,80,.9)" stroke-width="1.1" fill="rgba(80,220,80,.1)" stroke-linejoin="round"/>
-      <!-- RING finger -->
-      <path d="M30,46 L30,17 C30,14 31.5,12.5 34,12.5 C36.5,12.5 38,14 38,17 L38,46 Z"
-        stroke="rgba(80,220,80,.9)" stroke-width="1.1" fill="rgba(80,220,80,.1)" stroke-linejoin="round"/>
-      <!-- PINKY -->
-      <path d="M38,46 L38,22 C38,19 39.5,17.5 42,17.5 C44.5,17.5 46,19 46,22 L46,46 Z"
-        stroke="rgba(80,220,80,.9)" stroke-width="1.1" fill="rgba(80,220,80,.1)" stroke-linejoin="round"/>
-      <!-- PALM — wider, rounded bottom, symmetric -->
-      <path d="M13,44 C13,44 13,58 13,62 C13,68 17,72 22,72 L38,72 C43,72 47,68 47,62 L47,44 Z"
-        stroke="rgba(80,220,80,.9)" stroke-width="1.1" fill="rgba(80,220,80,.1)" stroke-linejoin="round"/>
-      <!-- THUMB — grows organically from lower-left side of palm -->
-      <path d="M13,56 C13,56 9,55 7,52 C5,49 5.5,45 8,43 C10,41.5 13,42 13,44"
-        stroke="rgba(80,220,80,.9)" stroke-width="1.1" fill="rgba(80,220,80,.1)" stroke-linejoin="round" stroke-linecap="round"/>
-      <!-- Henna mandala — elegant dots pattern -->
-      <circle cx="30" cy="61" r="6" stroke="rgba(80,220,80,.5)" stroke-width=".9" fill="none"/>
-      <circle cx="30" cy="61" r="2" fill="rgba(80,220,80,.6)"/>
-      <circle cx="30" cy="55.2" r=".9" fill="rgba(80,220,80,.45)"/>
-      <circle cx="30" cy="66.8" r=".9" fill="rgba(80,220,80,.45)"/>
-      <circle cx="24.2" cy="61" r=".9" fill="rgba(80,220,80,.45)"/>
-      <circle cx="35.8" cy="61" r=".9" fill="rgba(80,220,80,.45)"/>
-      <circle cx="25.8" cy="56.8" r=".7" fill="rgba(80,220,80,.3)"/>
-      <circle cx="34.2" cy="56.8" r=".7" fill="rgba(80,220,80,.3)"/>
-      <circle cx="25.8" cy="65.2" r=".7" fill="rgba(80,220,80,.3)"/>
-      <circle cx="34.2" cy="65.2" r=".7" fill="rgba(80,220,80,.3)"/>
-      <circle cx="30" cy="61" r="9" stroke="rgba(80,220,80,.18)" stroke-width=".7" fill="none" stroke-dasharray="1.5 2"/>
-    </svg>
-  </div></div>
-  <div class="ev-content"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Mehendi</div>
-    <div class="ev-ceremony-sub" style="color:rgba(140,210,100,.65)">The Art of Henna</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#4A8A25,#90D050)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">An afternoon of intricate henna artistry — each pattern a story, each design a blessing woven into skin. Come for laughter, music and beautiful shared memories.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">2:00 PM onwards</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Mehendi Area, Golden Chariot</span></div></div>
-    </div>
-  </div></div>
-</div>
-
-<!-- 3. HALDI -->
-<div class="ev-card" data-anim="haldi">
-  <canvas class="ev-canvas" id="c3bg"></canvas>
-  <canvas class="ev-anim-canvas" id="c3anim"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(8,5,0,.97) 0%,rgba(22,14,0,.7) 40%,rgba(22,14,0,.15) 70%,transparent 100%)"></div>
-  <div class="ev-daybar"><span class="ev-daytag">Day One · 19th April</span></div>
-  <div class="ev-numeral">03</div>
-  <div class="ev-icon-center"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 82 82" fill="none"><circle cx="41" cy="41" r="10" stroke="rgba(240,192,64,.75)" stroke-width="1.2"/><path d="M41 14Q45 26 41 30Q37 26 41 14Z" fill="rgba(240,192,64,.6)"/><path d="M41 68Q37 56 41 52Q45 56 41 68Z" fill="rgba(240,192,64,.6)"/><path d="M14 41Q26 37 30 41Q26 45 14 41Z" fill="rgba(240,192,64,.6)"/><path d="M68 41Q56 45 52 41Q56 37 68 41Z" fill="rgba(240,192,64,.6)"/><circle cx="41" cy="41" r="5" fill="rgba(240,192,64,.65)"/></svg>
-  </div></div>
-  <div class="ev-content"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Haldi</div>
-    <div class="ev-ceremony-sub" style="color:rgba(240,192,64,.72)">Blessings of Turmeric</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#F0A500,#F5D060)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">The beloved turmeric ritual — blessings of brightness, prosperity and new beginnings. Bride and groom are anointed in separate halls, surrounded by family love and golden joy.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">5:00 PM onwards</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Groom's &amp; Bride's Hall</span></div></div>
-    </div>
-    <span class="ev-attire">Wear Yellow or White</span>
-  </div></div>
-</div>
-
-<!-- 4. SANGEET -->
-<div class="ev-card" data-anim="sangeet">
-  <canvas class="ev-canvas" id="c4bg"></canvas>
-  <canvas class="ev-anim-canvas" id="c4anim"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(4,2,12,.97) 0%,rgba(10,5,28,.7) 40%,rgba(10,5,28,.15) 70%,transparent 100%)"></div>
-  <div class="ev-daybar"><span class="ev-daytag">Day One · 19th April</span></div>
-  <div class="ev-numeral">04</div>
-  <div class="ev-icon-center"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 82 82" fill="none"><path d="M28 55L28 30L60 22L60 48" stroke="rgba(190,140,255,.68)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="57" r="6.5" stroke="rgba(190,140,255,.62)" stroke-width="1.1"/><circle cx="56" cy="50" r="6.5" stroke="rgba(190,140,255,.62)" stroke-width="1.1"/></svg>
-  </div></div>
-  <div class="ev-content"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Sangeet</div>
-    <div class="ev-ceremony-sub" style="color:rgba(190,140,255,.65)">An Evening of Music &amp; Dance</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#7B30B8,#C070F0)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">Families come together in song and dance under a canopy of celebration. Performances, pure joy and memories that will be cherished forever — the night the magic truly begins.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">8:00 PM onwards</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Main Banquet Hall</span></div></div>
-    </div>
-    <span class="ev-attire">Festive &amp; Colourful</span>
-  </div></div>
-</div>
-
-<!-- ═══ DAY TWO HEADER ═══ -->
-<div class="day-header reveal">
-  <div class="dh-num">II</div>
-  <div class="dh-inner">
-    <p class="dh-label">Day Two</p>
-    <h3 class="dh-title">The Wedding Day</h3>
-    <p class="dh-date">Monday, 20th April 2026</p>
-    <div class="dh-divider"><div class="dh-div-line"></div><div class="dh-div-dot"></div><div class="dh-div-line"></div></div>
-  </div>
-</div>
-
-<!-- 5. BAARAT -->
-<div class="ev-card" data-anim="baarat">
-  <canvas class="ev-canvas" id="c5bg"></canvas>
-  <canvas class="ev-anim-canvas" id="c5anim"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(8,4,0,.97) 0%,rgba(18,9,0,.7) 40%,rgba(18,9,0,.15) 70%,transparent 100%)"></div>
-  <div class="ev-daybar"><span class="ev-daytag">The Wedding Day · 20th April</span></div>
-  <div class="ev-numeral">05</div>
-  <div class="ev-icon-center"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 82 82" fill="none"><ellipse cx="41" cy="30" rx="22" ry="10" stroke="rgba(240,180,40,.62)" stroke-width="1.2"/><ellipse cx="41" cy="52" rx="22" ry="10" stroke="rgba(240,180,40,.62)" stroke-width="1.2"/><line x1="19" y1="30" x2="19" y2="52" stroke="rgba(240,180,40,.38)" stroke-width="1"/><line x1="63" y1="30" x2="63" y2="52" stroke="rgba(240,180,40,.38)" stroke-width="1"/><path d="M27 21L24 14" stroke="rgba(240,180,40,.4)" stroke-width="1.2" stroke-linecap="round"/><path d="M55 21L58 14" stroke="rgba(240,180,40,.4)" stroke-width="1.2" stroke-linecap="round"/></svg>
-  </div></div>
-  <div class="ev-content"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Baarat</div>
-    <div class="ev-ceremony-sub" style="color:rgba(240,192,64,.72)">The Grand Procession</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#E8820A,#F5A832)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">Dhol beats fill the air as the groom's procession arrives in grandeur. Family dances in jubilation as Vikrant makes his majestic entrance, followed by the Dwar Pooja at the threshold.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">5:00 – 6:00 PM</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Venue Entrance</span></div></div>
-    </div>
-    <span class="ev-attire">Sherwanis &amp; Lehengas</span>
-  </div></div>
-</div>
-
-<!-- 6. RECEPTION -->
+<!-- ═══ RECEPTION ═══ -->
 <div class="ev-card" data-anim="reception">
   <canvas class="ev-canvas" id="c6bg"></canvas>
   <canvas class="ev-anim-canvas" id="c6anim"></canvas>
   <div class="ev-overlay" style="background:linear-gradient(to top,rgba(8,2,5,.97) 0%,rgba(20,4,10,.7) 40%,rgba(20,4,10,.15) 70%,transparent 100%)"></div>
   <div class="ev-daybar"><span class="ev-daytag">The Wedding Day · 20th April</span></div>
-  <div class="ev-numeral">06</div>
-  <div class="ev-icon-center"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 82 82" fill="none"><circle cx="41" cy="33" r="17" stroke="rgba(255,160,180,.58)" stroke-width="1.1"/><circle cx="41" cy="33" r="10" stroke="rgba(255,160,180,.3)" stroke-width=".75"/><polygon points="41,22 46,30 41,38 36,30" stroke="rgba(255,160,180,.68)" stroke-width="1" fill="rgba(255,160,180,.1)"/><path d="M23 57Q31 50 41 54Q51 58 59 51" stroke="rgba(255,160,180,.48)" stroke-width="1.3" stroke-linecap="round" fill="none"/></svg>
-  </div></div>
+  <div class="ev-numeral">01</div>
+
   <div class="ev-content"><div class="ev-info">
     <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Reception</div>
     <div class="ev-ceremony-sub" style="color:rgba(255,175,195,.62)">Jaymala — Exchange of Garlands</div>
     <div class="ev-rule" style="background:linear-gradient(90deg,#8B1635,#C8304A)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">Vikrant and Gitika enter the stage together. The Jaymala follows — a garland exchange that marks the beginning of forever. Greet the couple, capture memories and bless them with your love.</p>
+    <p class="ev-desc" style="color:rgba(251,240,213,.58)">The couple exchanges garlands as they begin their forever. Greet them, bless them, and share in the joy.</p>
     <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">7:00 PM</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Main Stage, Banquet Hall</span></div></div>
+      <div class="ev-meta-item">
+        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg>
+        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">7:00 PM onwards</span></div>
+      </div>
+      <div class="ev-meta-item">
+        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg>
+        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Main Stage, Banquet Hall</span></div>
+      </div>
     </div>
   </div></div>
 </div>
 
-<!-- 7. VIDHI -->
+<!-- ═══ VIDHI / WEDDING ═══ -->
 <canvas id="petalCanvas" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.55"></canvas>
 <div class="ev-card" id="vidhiCard">
   <canvas class="ev-canvas" id="c7bg"></canvas>
   <canvas id="fireCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:.8"></canvas>
   <div class="ev-overlay" style="background:linear-gradient(to top,rgba(8,4,0,.97) 0%,rgba(18,10,0,.78) 40%,rgba(18,10,0,.2) 70%,transparent 100%);z-index:3"></div>
-  <div class="ev-daybar" style="z-index:5"><span class="ev-daytag">The Wedding Day · 20th April</span></div>
-  <div class="ev-numeral" style="z-index:4">07</div>
-  <div class="ev-icon-center" style="z-index:5"><div class="ev-lotus-ring">
-    <svg viewBox="0 0 82 82" fill="none"><path d="M41 62L41 34" stroke="rgba(201,168,76,.2)" stroke-width=".8"/><path d="M41 34Q43 23 41 15Q39 23 41 34Z" fill="rgba(201,168,76,.62)" stroke="rgba(201,168,76,.7)" stroke-width=".8"/><path d="M41 34Q49 27 47 19Q43 27 41 34Z" fill="rgba(232,130,10,.5)" stroke="rgba(232,130,10,.55)" stroke-width=".7"/><path d="M41 34Q33 27 35 19Q39 27 41 34Z" fill="rgba(232,130,10,.5)" stroke="rgba(232,130,10,.55)" stroke-width=".7"/><ellipse cx="41" cy="63" rx="14" ry="3.5" stroke="rgba(201,168,76,.28)" stroke-width=".8"/></svg>
-  </div></div>
+  <div class="ev-daybar" style="z-index:5"><span class="ev-daytag">The Wedding · 20th – 21st April</span></div>
+  <div class="ev-numeral" style="z-index:4">02</div>
+
   <div class="ev-content" style="z-index:5"><div class="ev-info">
     <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Vidhi</div>
     <div class="ev-ceremony-sub" style="color:rgba(240,192,64,.72)">The Sacred Wedding Ceremony</div>
     <div class="ev-rule" style="background:linear-gradient(90deg,#E8820A,#F5D060,#E8820A)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">The sacred Pheras around the holy fire. The Mangalsutra tied with love. The Sindoor that marks forever. In the presence of family, the sacred flame, and the divine — Vikrant and Gitika become one.</p>
+    <p class="ev-desc" style="color:rgba(251,240,213,.58)">The sacred Pheras around the holy fire. In the presence of family and the divine — two souls become one.</p>
     <div class="ev-meta-row">
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">11:00 PM onwards</span></div></div>
-      <div class="ev-meta-item"><svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg><div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Mandap, Main Hall</span></div></div>
+      <div class="ev-meta-item">
+        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg>
+        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">11:00 PM onwards</span></div>
+      </div>
+      <div class="ev-meta-item">
+        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg>
+        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Mandap, Main Hall</span></div>
+      </div>
     </div>
-    <span class="ev-attire">Formal Ethnic</span>
   </div></div>
 </div>
-
-<!-- ═══ DAY THREE ═══ -->
-<section class="checkout-sec">
-  <p class="sec-eyebrow reveal">Day Three · Tuesday · 21st April 2026</p>
-  <h2 class="sec-title reveal rd1">Farewell Morning</h2>
-  <div class="ornament reveal rd2"><div class="orn-line orn-l"></div><span class="orn-dot">✦</span><div class="orn-line orn-r"></div></div>
-  <div class="co-row reveal rd2">
-    <div class="co-box"><div class="co-time">8:00 AM</div><div class="co-lbl">Complimentary Breakfast</div></div>
-    <div class="co-div"></div>
-    <div class="co-box"><div class="co-time">12:00 PM</div><div class="co-lbl">Checkout by Noon</div></div>
-  </div>
-  <p class="co-note reveal rd3">We hope you leave with a heart full of memories, stories to tell and a soul touched by love and grace.</p>
-</section>
 
 <!-- ═══ VENUE ═══ -->
 <section class="venue-sec">
@@ -531,50 +308,18 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
     <div class="venue-sub reveal rd3">Vasai, Maharashtra</div>
     <div class="venue-grid reveal rd3">
       <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><path d="M10 2C7 2 5 4.5 5 7C5 10.5 10 18 10 18S15 10.5 15 7C15 4.5 13 2 10 2Z"/><circle cx="10" cy="7" r="2.5"/></svg></div><div class="vg-val">Vasai, Maharashtra</div><div class="vg-key">Location</div></div>
-      <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="14" rx="1"/><line x1="2" y1="8" x2="18" y2="8"/><line x1="6" y1="2" x2="6" y2="6"/><line x1="14" y1="2" x2="14" y2="6"/></svg></div><div class="vg-val">Apr 19 – 21, 2026</div><div class="vg-key">Dates</div></div>
-      <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><path d="M3 10Q5 4 10 4Q15 4 17 10Q15 16 10 16Q5 16 3 10Z"/><circle cx="10" cy="10" r="3"/></svg></div><div class="vg-val">Pure Vegetarian</div><div class="vg-key">All Meals</div></div>
-      <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><path d="M3 17L3 8L10 3L17 8L17 17Z"/><rect x="7" y="11" width="6" height="6"/></svg></div><div class="vg-val">3 Nights · 7 Events</div><div class="vg-key">Celebration</div></div>
+      <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="14" rx="1"/><line x1="2" y1="8" x2="18" y2="8"/><line x1="6" y1="2" x2="6" y2="6"/><line x1="14" y1="2" x2="14" y2="6"/></svg></div><div class="vg-val">20th April, 2026</div><div class="vg-key">Date</div></div>
     </div>
-    <a href="https://www.google.com/maps/place/golden+chariot+vasai+hotel/data=!4m2!3m1!1s0x3be7a8b8011e6e31:0x9f65ce5e050b64d?sa=X&ved=1t:242&ictx=111" target="_blank" class="venue-map reveal rd4"><svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="13" y2="7"/><line x1="1" y1="13" x2="13" y2="1"/><polyline points="7,1 13,1 13,7"/></svg>Open in Maps</a>
-    <div class="venue-note reveal rd4"><p>All meals across the three-day celebration are pure vegetarian. Our hospitality team is available around the clock for any assistance.</p></div>
+    <a href="https://www.google.com/maps/place/golden+chariot+vasai+hotel/data=!4m2!3m1!1s0x3be7a8b8011e6e31:0x9f65ce5e050b64d?sa=X&ved=1t:242&ictx=111" target="_blank" class="venue-map reveal rd4">
+      <svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="13" y2="7"/><line x1="1" y1="13" x2="13" y2="1"/><polyline points="7,1 13,1 13,7"/></svg>
+      Open in Maps
+    </a>
+    <div class="venue-note reveal rd4"><p>Our team will be on hand throughout the celebrations to assist you with anything you need.</p></div>
   </div>
 </section>
 
-<!-- ═══ KNOW ═══ -->
-<section class="know-sec">
-  <p class="sec-eyebrow reveal">Before You Arrive</p>
-  <h2 class="sec-title reveal rd1">Things to know</h2>
-  <div class="ornament reveal rd2"><div class="orn-line orn-l"></div><span class="orn-dot">✦</span><div class="orn-line orn-r"></div></div>
-  <div class="know-grid">
-    <div class="kc reveal"><span class="kc-icon"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="13"/><path d="M12 18C12 18 14 22 18 22C22 22 24 18 24 18"/><line x1="13" y1="14" x2="13" y2="14" stroke-width="2" stroke-linecap="round"/><line x1="23" y1="14" x2="23" y2="14" stroke-width="2" stroke-linecap="round"/></svg></span><div class="kc-title">Hashtag</div><p class="kc-body">Use <strong style="color:var(--saffron)">#VikrantWeddsGitika</strong> when posting on social media.</p></div>
-    <div class="kc reveal rd1"><span class="kc-icon"><svg viewBox="0 0 36 36"><rect x="6" y="14" width="24" height="16" rx="2"/><path d="M12 14L12 10C12 7 15 5 18 5C21 5 24 7 24 10L24 14"/><circle cx="18" cy="22" r="2.5"/></svg></span><div class="kc-title">Parking</div><p class="kc-body">Complimentary valet parking available for all guests at the main entrance.</p></div>
-    <div class="kc reveal rd2"><span class="kc-icon"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="11"/><line x1="18" y1="7" x2="18" y2="11"/><line x1="18" y1="25" x2="18" y2="29"/><line x1="7" y1="18" x2="11" y2="18"/><line x1="25" y1="18" x2="29" y2="18"/><circle cx="18" cy="18" r="4"/></svg></span><div class="kc-title">Weather</div><p class="kc-body">Warm &amp; humid in Vasai in April, 32–35°C. Light breathable ethnic wear is recommended.</p></div>
-    <div class="kc reveal rd3"><span class="kc-icon"><svg viewBox="0 0 36 36"><path d="M8 28L8 16L18 8L28 16L28 28Z"/><rect x="14" y="20" width="8" height="8"/></svg></span><div class="kc-title">Accommodation</div><p class="kc-body">Rooms available at Golden Chariot Hotel. Contact the hospitality team for reservations.</p></div>
-  </div>
-</section>
-
-<!-- ═══ RSVP ═══ -->
-<section class="rsvp-sec">
-  <div class="rsvp-inner">
-    <p class="sec-eyebrow reveal">We look forward to seeing you</p>
-    <h2 class="sec-title reveal rd1">RSVP</h2>
-    <div class="ornament reveal rd2"><div class="orn-line" style="background:linear-gradient(90deg,transparent,rgba(201,168,76,.3))"></div><span class="orn-dot" style="color:rgba(201,168,76,.35)">✦</span><div class="orn-line" style="background:linear-gradient(90deg,rgba(201,168,76,.3),transparent)"></div></div>
-    <p class="rsvp-body reveal rd2">We cannot wait to celebrate with you. Please confirm your presence so we can make every arrangement with love.</p>
-    <div class="rsvp-btn-wrap reveal rd3">
-      <a href="https://wa.me/917208766876?text=Hi!%20I%20would%20love%20to%20attend%20Vikrant%20%26%20Gitika's%20wedding%20%F0%9F%8C%B8" class="rsvp-btn" target="_blank">
-        <svg viewBox="0 0 18 18"><path d="M9 1C4.6 1 1 4.6 1 9C1 10.5 1.4 11.9 2.1 13.1L1 17L5 15.9C6.2 16.6 7.5 17 9 17C13.4 17 17 13.4 17 9C17 4.6 13.4 1 9 1ZM13 11.3C12.8 11.8 12 12.3 11.5 12.4C11 12.4 10.6 12.6 8.8 11.9C6.7 11 5.4 8.8 5.3 8.7C5.2 8.6 4.5 7.7 4.5 6.7C4.5 5.8 5 5.3 5.2 5.1C5.4 4.9 5.6 4.8 5.8 4.8L6.4 4.8C6.6 4.8 6.8 4.8 7 5.3C7.2 5.8 7.7 6.8 7.7 6.9C7.8 7 7.8 7.1 7.7 7.2C7.6 7.3 7.6 7.4 7.5 7.5C7.4 7.6 7.3 7.7 7.2 7.8C7.1 7.9 7 8 7.1 8.2C7.2 8.4 7.7 9.2 8.5 9.9C9.5 10.7 10.3 11 10.5 11.1C10.7 11.2 10.9 11.2 11 11C11.1 10.8 11.6 10.2 11.8 10C12 9.8 12.1 9.8 12.3 9.9C12.5 10 13.5 10.5 13.7 10.6C13.9 10.7 14.1 10.8 14.1 10.9C14.2 11 14.2 11.1 13 11.3Z"/></svg>
-        RSVP on WhatsApp
-      </a>
-    </div>
-    <div class="rsvp-cd reveal" style="transition-delay:.5s">
-      <div class="cd-unit"><div class="cd-n" id="rcdD">--</div><div class="cd-l">Days</div></div>
-      <div class="cd-dot">·</div>
-      <div class="cd-unit"><div class="cd-n" id="rcdH">--</div><div class="cd-l">Hours</div></div>
-      <div class="cd-dot">·</div>
-      <div class="cd-unit"><div class="cd-n" id="rcdM">--</div><div class="cd-l">Mins</div></div>
-    </div>
-  </div>
-</section>
+<!-- HASHTAG -->
+<div class="hashtag-strip reveal">Share your memories with <strong>#VikrantWeddsGitika</strong></div>
 
 <footer>
   <canvas id="footerCanvas"></canvas>
@@ -583,17 +328,17 @@ footer::before{content:'';position:absolute;inset:0;background:radial-gradient(e
     <p class="ft-sub">Shri Ganeshaya Namah</p>
     <div class="ft-script">Vikrant &amp; Gitika</div>
     <div class="ft-divider"></div>
-    <p class="ft-date">April 19 – 21, 2026</p>
+    <p class="ft-date">20th April, 2026</p>
     <p class="ft-venue">Golden Chariot Hotel · Vasai, Maharashtra</p>
     <p class="ft-wish">With love, gratitude and immense joy,<br>we await the honour of your presence.</p>
   </div>
 </footer>
 
 <script>
-// ═══ VEIL ════════════════════════════════════════
+// VEIL
 window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('veil').classList.add('gone'),1800)});
 
-// ═══ BOKEH ═══════════════════════════════════════
+// BOKEH
 (function(){
   const c=document.getElementById('bokehCanvas'),ctx=c.getContext('2d');
   let W,H;const r=()=>{W=c.width=window.innerWidth;H=c.height=window.innerHeight};r();window.addEventListener('resize',r);
@@ -602,7 +347,7 @@ window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('veil
   function fr(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.life++;p.x+=p.vx;p.y+=p.vy;const pct=p.life/p.maxLife;p.op=pct<.15?pct/.15*p.maxOp:pct>.75?(1-pct)/.25*p.maxOp:p.maxOp;if(p.life>p.maxLife||p.y<-20){Object.assign(p,{x:Math.random()*W,y:H+10,life:0,op:0})}ctx.save();ctx.globalAlpha=p.op;ctx.fillStyle=`rgb(${p.col})`;ctx.beginPath();ctx.arc(p.x,p.y,p.rad,0,Math.PI*2);ctx.fill();ctx.restore()});requestAnimationFrame(fr)}fr();
 })();
 
-// ═══ MANDALA DRAW ════════════════════════════════
+// MANDALA
 function drawM(id){
   const c=document.getElementById(id);if(!c)return;
   const p=c.parentElement;c.width=window.innerWidth;c.height=p.offsetHeight||window.innerHeight;
@@ -620,508 +365,76 @@ function drawM(id){
 drawM('heroMandala');drawM('footerCanvas');
 window.addEventListener('resize',()=>{drawM('heroMandala');drawM('footerCanvas')});
 
-// ═══ STATIC EVENT BACKGROUNDS ════════════════════
+// EVENT BACKGROUNDS
 const evBgData=[
-  {id:'c1bg',bgs:['#140204','#220408','#0C0102'],pal:'cr',style:'rings'},
-  {id:'c2bg',bgs:['#020A02','#041404','#010601'],pal:'gr',style:'leaves'},
-  {id:'c3bg',bgs:['#120900','#1E1200','#0A0600'],pal:'am',style:'burst'},
-  {id:'c4bg',bgs:['#040210','#080424','#020108'],pal:'vl',style:'stars'},
-  {id:'c5bg',bgs:['#100600','#1C0C00','#080400'],pal:'am',style:'archfire'},
   {id:'c6bg',bgs:['#0E0208','#1A0410','#080104'],pal:'ro',style:'arch'},
   {id:'c7bg',bgs:['#0C0700','#160D00','#080500'],pal:'fl',style:'flame'},
 ];
-const PAL={cr:['rgba(190,35,55,','rgba(150,20,35,'],gr:['rgba(55,175,55,','rgba(38,130,38,'],am:['rgba(220,150,28,','rgba(170,108,10,'],vl:['rgba(145,65,235,','rgba(105,45,190,'],ro:['rgba(210,55,95,','rgba(160,25,65,'],fl:['rgba(228,98,10,','rgba(175,58,5,']};
+const PAL={ro:['rgba(210,55,95,','rgba(160,25,65,'],fl:['rgba(228,98,10,','rgba(175,58,5,']};
 function drawEvBg(d){
   const c=document.getElementById(d.id);if(!c)return;
   const el=c.parentElement;c.width=el.offsetWidth||window.innerWidth;c.height=el.offsetHeight||window.innerHeight;
   const ctx=c.getContext('2d'),W=c.width,H=c.height,cx=W/2,cy=H/2;
   const gr=ctx.createLinearGradient(0,0,W*.7,H);gr.addColorStop(0,d.bgs[0]);gr.addColorStop(.5,d.bgs[1]);gr.addColorStop(1,d.bgs[2]);
   ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
-  const[c1,c2]=PAL[d.pal]||PAL.am,g='rgba(201,168,76,';
-  if(d.style==='rings'){for(let r=48;r<900;r+=54){ctx.strokeStyle=c1+'.055)';ctx.lineWidth=.8;ctx.beginPath();ctx.arc(cx,H*.4,r,0,Math.PI*2);ctx.stroke()}for(let r=40;r<480;r+=62){ctx.strokeStyle=g+'.04)';ctx.lineWidth=.65;ctx.beginPath();ctx.arc(cx,H*.4,r,0,Math.PI*2);ctx.stroke()}}
-  if(d.style==='leaves'){for(let i=0;i<32;i++){const x=Math.random()*W,y=Math.random()*H,l=80+Math.random()*150,a=Math.random()*Math.PI*2;ctx.save();ctx.translate(x,y);ctx.rotate(a);ctx.strokeStyle=c1+'.07)';ctx.lineWidth=.9;ctx.beginPath();ctx.moveTo(0,0);ctx.bezierCurveTo(l*.3,-l*.22,l*.7,-l*.22,l,0);ctx.bezierCurveTo(l*.7,l*.22,l*.3,l*.22,0,0);ctx.stroke();ctx.restore()}}
-  if(d.style==='burst'){for(let r=38;r<600;r+=44){ctx.strokeStyle=c1+'.055)';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(cx,H*.38,r,0,Math.PI*2);ctx.stroke()}for(let i=0;i<18;i++){const a=i/18*Math.PI*2;ctx.strokeStyle=g+'.04)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(cx,H*.38);ctx.lineTo(cx+Math.cos(a)*700,H*.38+Math.sin(a)*700);ctx.stroke()}}
-  if(d.style==='stars'){for(let i=0;i<2200;i++){ctx.fillStyle=c1+(Math.random()*.1)+')';ctx.fillRect(Math.random()*W,Math.random()*H,Math.random()<.08?2:1,Math.random()<.08?2:1)}for(let r=55;r<750;r+=58){ctx.strokeStyle=c1+'.04)';ctx.lineWidth=.55;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke()}}
-  if(d.style==='archfire'){for(let r=75;r<950;r+=68){ctx.strokeStyle=c1+'.055)';ctx.lineWidth=.8;ctx.beginPath();ctx.arc(cx,H,r,Math.PI,0,true);ctx.stroke()}for(let i=0;i<3500;i++){const s=Math.random();ctx.fillStyle=s>.65?c1+(s*.09)+')':c2+(s*.07)+')';ctx.fillRect(Math.random()*W,Math.random()*H,1,1)}}
+  const[c1,c2]=PAL[d.pal]||PAL.fl,g='rgba(201,168,76,';
   if(d.style==='arch'){for(let r=75;r<950;r+=65){ctx.strokeStyle=c1+'.05)';ctx.lineWidth=.8;ctx.beginPath();ctx.arc(cx,H*.92,r,0,Math.PI,true);ctx.stroke()}}
   if(d.style==='flame'){for(let r=48;r<680;r+=56){ctx.strokeStyle=g+'.038)';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(cx,H*.68,r,0,Math.PI*2);ctx.stroke()}for(let i=0;i<4500;i++){const s=Math.random();ctx.fillStyle=s>.62?c1+(s*.085)+')':c2+(s*.065)+')';ctx.fillRect(Math.random()*W,Math.random()*H,1,1)}}
 }
 evBgData.forEach(d=>drawEvBg(d));
 window.addEventListener('resize',()=>evBgData.forEach(d=>drawEvBg(d)));
 
-// ═══════════════════════════════════════════════
-// PER-CEREMONY LIVE ANIMATIONS
-// Each runs only when its card is visible (IntersectionObserver)
-// ═══════════════════════════════════════════════
-
-// ── 1. JANEU — Golden threads weaving slowly across the canvas ──
-(function(){
-  const c=document.getElementById('c1anim');if(!c)return;
-  const ctx=c.getContext('2d');let W,H,vis=false,t=0;
-  function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-
-  // Thread: a sinuous line drawn slowly, gold & saffron, sacred-looking
-  const NUM=8;
-  const threads=Array.from({length:NUM},(_,i)=>({
-    phase:i/NUM*Math.PI*2, amp:30+Math.random()*60,
-    speed:0.003+Math.random()*0.002,
-    y:0.2+i/NUM*0.65, col:i%2===0?'rgba(201,168,76,':'rgba(232,130,10,',
-    lw:0.6+Math.random()*0.8, alpha:0.18+Math.random()*0.18,
-    freq:1.5+Math.random()*2
-  }));
-
-  // Floating sacred dots (knot points)
-  const knots=Array.from({length:18},()=>({
-    x:Math.random(),y:Math.random(),
-    r:1.2+Math.random()*2.2,
-    phase:Math.random()*Math.PI*2,
-    speed:0.008+Math.random()*0.01,
-    alpha:0.15+Math.random()*0.25
-  }));
-
-  function loop(){
-    if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H); t+=0.012;
-
-    // Weaving threads
-    threads.forEach(th=>{
-      ctx.save();
-      ctx.strokeStyle=th.col+(th.alpha+Math.sin(t+th.phase)*0.08)+')';
-      ctx.lineWidth=th.lw;
-      ctx.beginPath();
-      for(let x=0;x<=W;x+=3){
-        const wave=Math.sin(x/W*Math.PI*th.freq*2+t*th.speed*300+th.phase)*th.amp;
-        const y=th.y*H+wave;
-        x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-      }
-      ctx.stroke();
-      ctx.restore();
-    });
-
-    // Knot points that drift slowly
-    knots.forEach(k=>{
-      k.phase+=k.speed;
-      const gx=k.x*W+Math.sin(k.phase)*12;
-      const gy=k.y*H+Math.cos(k.phase*0.7)*8;
-      const g=ctx.createRadialGradient(gx,gy,0,gx,gy,k.r*4);
-      g.addColorStop(0,'rgba(240,208,96,'+(k.alpha+0.1)+')');
-      g.addColorStop(1,'rgba(240,208,96,0)');
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(gx,gy,k.r*4,0,Math.PI*2);ctx.fill();
-    });
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ── 2. MEHENDI — Intricate mandala rings blooming from center ──
-(function(){
-  const c=document.getElementById('c2anim');if(!c)return;
-  const ctx=c.getContext('2d');let W,H,vis=false,t=0;
-  function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-
-  // Blooming rings — concentric arcs that slowly expand & fade
-  const rings=Array.from({length:12},(_,i)=>({
-    r:40+i*38, phase:i*0.22, speed:0.006+i*0.001,
-    petals:8+i*2, col:i%3===0?'rgba(100,200,80,':'rgba(160,220,60,',
-    alpha:0.14-i*0.008, lw:0.7
-  }));
-
-  // Ink drops: small dots that slowly materialize
-  const drops=Array.from({length:30},()=>({
-    cx:0.3+Math.random()*0.4, cy:0.3+Math.random()*0.4,
-    r:2+Math.random()*4, phase:Math.random()*Math.PI*2, speed:0.005+Math.random()*0.008,
-    alpha:0.06+Math.random()*0.14
-  }));
-
-  function drawPetalRing(cx,cy,R,n,rot,col,alpha,lw){
-    ctx.strokeStyle=col+alpha+')';ctx.lineWidth=lw;
-    for(let i=0;i<n;i++){
-      const a=i/n*Math.PI*2+rot;
-      const x1=cx+Math.cos(a)*R*0.3,y1=cy+Math.sin(a)*R*0.3;
-      const x2=cx+Math.cos(a)*R,y2=cy+Math.sin(a)*R;
-      const c1x=cx+Math.cos(a-0.5)*R*0.85,c1y=cy+Math.sin(a-0.5)*R*0.85;
-      const c2x=cx+Math.cos(a+0.5)*R*0.85,c2y=cy+Math.sin(a+0.5)*R*0.85;
-      ctx.beginPath();ctx.moveTo(x1,y1);ctx.bezierCurveTo(c1x,c1y,c2x,c2y,x2,y2);ctx.stroke();
-    }
-  }
-
-  function loop(){
-    if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H); t+=0.008;
-    const cx=W*0.5,cy=H*0.42;
-
-    rings.forEach((rg,i)=>{
-      const pulse=Math.sin(t*rg.speed*100+rg.phase)*0.04;
-      drawPetalRing(cx,cy,rg.r*(1+pulse),rg.petals,t*rg.speed+rg.phase,rg.col,rg.alpha,rg.lw);
-      // inner circle
-      ctx.strokeStyle=rg.col+(rg.alpha*0.5)+')';ctx.lineWidth=0.5;
-      ctx.beginPath();ctx.arc(cx,cy,rg.r*(1+pulse),0,Math.PI*2);ctx.stroke();
-    });
-
-    drops.forEach(d=>{
-      d.phase+=d.speed;
-      const gx=d.cx*W+Math.sin(d.phase)*6,gy=d.cy*H+Math.cos(d.phase*1.3)*5;
-      const pulse=0.5+0.5*Math.sin(d.phase*2);
-      ctx.fillStyle='rgba(120,200,70,'+(d.alpha*pulse)+')';
-      ctx.beginPath();ctx.arc(gx,gy,d.r*(0.8+pulse*0.4),0,Math.PI*2);ctx.fill();
-    });
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ── 3. HALDI — Turmeric dust: golden particles drifting upward ──
-(function(){
-  const c=document.getElementById('c3anim');if(!c)return;
-  const ctx=c.getContext('2d');let W,H,vis=false;
-  function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-
-  class Mote{
-    constructor(){this.reset(true)}
-    reset(init=false){
-      this.x=Math.random()*W;
-      this.y=init?Math.random()*H:H+10;
-      this.vx=(Math.random()-.5)*0.5;
-      this.vy=-(Math.random()*0.9+0.3);
-      this.r=Math.random()*4+1;
-      this.life=0; this.maxLife=Math.floor(Math.random()*320+180);
-      this.hue=36+Math.random()*22; // gold-yellow
-      this.alpha=0; this.maxAlpha=0.22+Math.random()*0.22;
-      this.wobble=Math.random()*Math.PI*2;
-      this.wobbleSpeed=0.02+Math.random()*0.03;
-    }
-    update(){
-      this.life++;this.wobble+=this.wobbleSpeed;
-      this.x+=this.vx+Math.sin(this.wobble)*0.4;
-      this.y+=this.vy;
-      const t=this.life/this.maxLife;
-      this.alpha=t<0.12?t/0.12*this.maxAlpha:t>0.75?(1-t)/0.25*this.maxAlpha:this.maxAlpha;
-      if(this.life>this.maxLife||this.y<-20)this.reset();
-    }
-    draw(){
-      const g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r*2.5);
-      g.addColorStop(0,`hsla(${this.hue},90%,75%,${this.alpha})`);
-      g.addColorStop(0.5,`hsla(${this.hue},80%,60%,${this.alpha*0.5})`);
-      g.addColorStop(1,`hsla(${this.hue},70%,50%,0)`);
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(this.x,this.y,this.r*2.5,0,Math.PI*2);ctx.fill();
-    }
-  }
-
-  // Large slow cloud puffs
-  class Puff{
-    constructor(){this.reset(true)}
-    reset(init=false){
-      this.x=Math.random()*W; this.y=init?Math.random()*H:H+60;
-      this.vy=-(Math.random()*0.3+0.08);
-      this.vx=(Math.random()-.5)*0.2;
-      this.r=60+Math.random()*90;
-      this.life=0; this.maxLife=Math.floor(Math.random()*600+400);
-      this.alpha=0; this.maxAlpha=0.04+Math.random()*0.06;
-    }
-    update(){
-      this.life++;this.x+=this.vx;this.y+=this.vy;
-      const t=this.life/this.maxLife;
-      this.alpha=t<0.15?t/0.15*this.maxAlpha:t>0.7?(1-t)/0.3*this.maxAlpha:this.maxAlpha;
-      if(this.life>this.maxLife||this.y<-120)this.reset();
-    }
-    draw(){
-      const g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.r);
-      g.addColorStop(0,`rgba(245,195,20,${this.alpha})`);
-      g.addColorStop(1,'rgba(245,195,20,0)');
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();
-    }
-  }
-
-  const motes=Array.from({length:90},()=>new Mote());
-  const puffs=Array.from({length:8},()=>new Puff());
-
-  function loop(){
-    if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H);
-    puffs.forEach(p=>{p.update();p.draw()});
-    motes.forEach(m=>{m.update();m.draw()});
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ── 4. SANGEET — Concentric sound-wave rings pulsing from center ──
-(function(){
-  const c=document.getElementById('c4anim');if(!c)return;
-  const ctx=c.getContext('2d');let W,H,vis=false,t=0;
-  function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-
-  // Wave ring pool
-  const WAVES=16;
-  const waves=Array.from({length:WAVES},(_,i)=>({
-    birth: -i * (1/WAVES) * 5, // stagger births
-    r:0, alpha:0
-  }));
-  let waveT=0;
-
-  // Floating music notes as simple dots
-  const notes=Array.from({length:22},()=>({
-    x:Math.random(),y:0.2+Math.random()*0.7,
-    phase:Math.random()*Math.PI*2,
-    speed:0.006+Math.random()*0.008,
-    r:1.5+Math.random()*2.5,
-    alpha:0.1+Math.random()*0.18
-  }));
-
-  function loop(){
-    if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H); t+=0.016; waveT+=0.016;
-
-    const cx=W*0.5, cy=H*0.45;
-    const maxR=Math.max(W,H)*0.65;
-
-    // Emit a new ring every ~1.8s
-    if(waveT>1.8){
-      waveT=0;
-      const slot=waves.findIndex(w=>w.r>maxR||w.r===0&&w.birth<0);
-      if(slot>=0){waves[slot]={birth:0,r:1,alpha:0.6}}
-    }
-
-    waves.forEach(w=>{
-      if(w.r<=0)return;
-      w.r+=1.4; w.alpha*=0.985;
-      if(w.r>maxR){w.r=0;w.alpha=0;return}
-      const a=w.alpha;
-      ctx.strokeStyle=`rgba(170,100,255,${a*0.6})`;ctx.lineWidth=1.2;
-      ctx.beginPath();ctx.arc(cx,cy,w.r,0,Math.PI*2);ctx.stroke();
-      ctx.strokeStyle=`rgba(220,170,255,${a*0.25})`;ctx.lineWidth=3;
-      ctx.beginPath();ctx.arc(cx,cy,w.r,0,Math.PI*2);ctx.stroke();
-    });
-
-    // Center glow
-    const pulse=0.6+0.4*Math.sin(t*3.5);
-    const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,60*pulse);
-    cg.addColorStop(0,`rgba(190,120,255,${0.18*pulse})`);
-    cg.addColorStop(1,'rgba(190,120,255,0)');
-    ctx.fillStyle=cg;ctx.beginPath();ctx.arc(cx,cy,60*pulse,0,Math.PI*2);ctx.fill();
-
-    // Floating dots (visualize music notes)
-    notes.forEach(n=>{
-      n.phase+=n.speed;
-      const gx=n.x*W+Math.sin(n.phase)*20,gy=n.y*H+Math.cos(n.phase*0.8)*12;
-      ctx.fillStyle=`rgba(200,150,255,${n.alpha*(0.5+0.5*Math.sin(n.phase*2))})`;
-      ctx.beginPath();ctx.arc(gx,gy,n.r,0,Math.PI*2);ctx.fill();
-    });
-
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ── 5. BAARAT — Sparkling firework bursts rising upward ──
-(function(){
-  const c=document.getElementById('c5anim');if(!c)return;
-  const ctx=c.getContext('2d');let W,H,vis=false,t=0;
-  function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-
-  class Spark{
-    constructor(x,y,burst){
-      this.x=x;this.y=y;
-      const a=Math.random()*Math.PI*2;
-      const spd=burst?2.5+Math.random()*3.5:0.5+Math.random()*1.5;
-      this.vx=Math.cos(a)*spd;this.vy=Math.sin(a)*spd-(burst?1:0);
-      this.life=0;this.maxLife=Math.floor(Math.random()*80+40);
-      this.r=burst?1.5+Math.random()*2:0.8+Math.random()*1.2;
-      const hues=[42,30,55,18]; this.hue=hues[Math.floor(Math.random()*4)];
-      this.trail=[];this.burst=burst;
-    }
-    update(){
-      this.trail.push({x:this.x,y:this.y});
-      if(this.trail.length>8)this.trail.shift();
-      this.life++;this.x+=this.vx;this.y+=this.vy;
-      if(this.burst)this.vy+=0.06;
-      const t=this.life/this.maxLife;return t<1;
-    }
-    draw(){
-      const t=this.life/this.maxLife;
-      const a=(1-t)*(this.burst?0.9:0.55);
-      if(this.burst&&this.trail.length>1){
-        ctx.strokeStyle=`hsla(${this.hue},95%,75%,${a*0.5})`;
-        ctx.lineWidth=this.r*0.6;ctx.beginPath();
-        this.trail.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y));
-        ctx.stroke();
-      }
-      ctx.fillStyle=`hsla(${this.hue},95%,80%,${a})`;
-      ctx.beginPath();ctx.arc(this.x,this.y,this.r*(1-t*0.6),0,Math.PI*2);ctx.fill();
-    }
-  }
-
-  class Rocket{
-    constructor(){this.reset()}
-    reset(){
-      this.x=W*0.2+Math.random()*W*0.6;
-      this.y=H+10;
-      this.vy=-(5+Math.random()*4);
-      this.targetY=H*(0.15+Math.random()*0.35);
-      this.exploded=false;this.sparks=[];this.delay=Math.random()*4;
-    }
-    update(){
-      if(this.delay>0){this.delay-=0.016;return true}
-      if(!this.exploded){
-        this.y+=this.vy;
-        if(this.y<=this.targetY){
-          this.exploded=true;
-          for(let i=0;i<55;i++)this.sparks.push(new Spark(this.x,this.y,true));
-        }
-      } else {
-        this.sparks=this.sparks.filter(s=>s.update());
-        if(this.sparks.length===0){this.reset();return true}
-      }
-      return true;
-    }
-    draw(){
-      if(this.delay>0)return;
-      if(!this.exploded){
-        ctx.fillStyle='rgba(255,220,80,0.9)';
-        ctx.beginPath();ctx.arc(this.x,this.y,2.5,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='rgba(255,160,20,0.4)';ctx.lineWidth=1.5;
-        ctx.beginPath();ctx.moveTo(this.x,this.y);ctx.lineTo(this.x,this.y+18);ctx.stroke();
-      } else {
-        this.sparks.forEach(s=>s.draw());
-      }
-    }
-  }
-
-  // Ambient floating gold motes for atmosphere
-  const motes=Array.from({length:35},()=>({
-    x:Math.random()*1,y:0.3+Math.random()*0.7,
-    vx:(Math.random()-.5)*0.3,vy:-(0.2+Math.random()*0.4),
-    r:0.8+Math.random()*1.5,alpha:0.08+Math.random()*0.18,
-    life:Math.random()*300,maxLife:300+Math.random()*200
-  }));
-
-  const rockets=Array.from({length:5},()=>new Rocket());
-
-  function loop(){
-    if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H); t+=0.016;
-    rockets.forEach(r=>{r.update();r.draw()});
-    motes.forEach(m=>{
-      m.life++;m.x+=m.vx;m.y+=m.vy;
-      const pct=m.life/m.maxLife;
-      const a=pct<0.15?pct/0.15*m.alpha:pct>0.75?(1-pct)/0.25*m.alpha:m.alpha;
-      ctx.fillStyle=`rgba(255,220,80,${a})`;
-      ctx.beginPath();ctx.arc(m.x*W,m.y*H,m.r,0,Math.PI*2);ctx.fill();
-      if(m.life>m.maxLife){Object.assign(m,{x:Math.random(),y:1,life:0})}
-    });
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
-
-// ── 6. RECEPTION — Marigold garland arcs with floating petals ──
+// RECEPTION ANIMATION
 (function(){
   const c=document.getElementById('c6anim');if(!c)return;
   const ctx=c.getContext('2d');let W,H,vis=false,t=0;
   function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
   resize();window.addEventListener('resize',resize);
   new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-
-  // Garland: catenary curves that sway gently
   function drawGarland(y0,amp,phase,col,alpha){
     ctx.strokeStyle=col.replace(')',`,${alpha})`).replace('rgb','rgba');
     ctx.lineWidth=1.4;ctx.beginPath();
-    for(let x=0;x<=W;x+=2){
-      const t2=x/W*Math.PI*3;
-      const sway=Math.sin(t*0.4+phase)*8;
-      const y=y0+Math.sin(t2)*amp+sway;
-      x===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-    }
+    for(let x=0;x<=W;x+=2){const t2=x/W*Math.PI*3;const sway=Math.sin(t*0.4+phase)*8;const y=y0+Math.sin(t2)*amp+sway;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}
     ctx.stroke();
-    // Flower dots along garland
-    for(let x=0;x<W;x+=W/14){
-      const t2=x/W*Math.PI*3;
-      const sway=Math.sin(t*0.4+phase)*8;
-      const y=y0+Math.sin(t2)*amp+sway;
-      const pulse=0.7+0.3*Math.sin(t*2+x);
-      const r=5*pulse;
-      const g=ctx.createRadialGradient(x,y,0,x,y,r*2);
-      g.addColorStop(0,'rgba(255,140,100,0.5)');g.addColorStop(1,'rgba(255,80,80,0)');
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*2,0,Math.PI*2);ctx.fill();
-    }
+    for(let x=0;x<W;x+=W/14){const t2=x/W*Math.PI*3;const sway=Math.sin(t*0.4+phase)*8;const y=y0+Math.sin(t2)*amp+sway;const pulse=0.7+0.3*Math.sin(t*2+x);const r=5*pulse;const g=ctx.createRadialGradient(x,y,0,x,y,r*2);g.addColorStop(0,'rgba(255,140,100,0.5)');g.addColorStop(1,'rgba(255,80,80,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*2,0,Math.PI*2);ctx.fill()}
   }
-
-  // Rose petals drifting down
   class Petal{
     constructor(init=false){this.reset(init)}
-    reset(init=false){
-      this.x=Math.random()*W;this.y=init?Math.random()*H:-15;
-      this.vx=(Math.random()-.5)*0.7;this.vy=0.6+Math.random()*0.9;
-      this.rot=Math.random()*Math.PI*2;this.rotV=(Math.random()-.5)*0.03;
-      this.w=6+Math.random()*9;this.h=4+Math.random()*6;
-      this.life=0;this.maxLife=Math.floor(Math.random()*500+300);
-      this.hue=340+Math.floor(Math.random()*30); // rose to crimson
-      this.alpha=0;this.maxAlpha=0.25+Math.random()*0.2;
-    }
-    update(){
-      this.life++;this.rot+=this.rotV;
-      this.x+=this.vx+Math.sin(this.life*0.022)*0.5;
-      this.y+=this.vy;
-      const t=this.life/this.maxLife;
-      this.alpha=t<0.1?t/0.1*this.maxAlpha:t>0.8?(1-t)/0.2*this.maxAlpha:this.maxAlpha;
-      if(this.y>H+20||this.life>this.maxLife)this.reset();
-    }
-    draw(){
-      ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.rot);
-      ctx.fillStyle=`hsla(${this.hue},90%,65%,${this.alpha})`;
-      ctx.beginPath();ctx.ellipse(0,0,this.w,this.h,0,0,Math.PI*2);ctx.fill();
-      ctx.restore();
-    }
+    reset(init=false){this.x=Math.random()*W;this.y=init?Math.random()*H:-15;this.vx=(Math.random()-.5)*.7;this.vy=0.6+Math.random()*0.9;this.rot=Math.random()*Math.PI*2;this.rotV=(Math.random()-.5)*0.03;this.w=6+Math.random()*9;this.h=4+Math.random()*6;this.life=0;this.maxLife=Math.floor(Math.random()*500+300);this.hue=340+Math.floor(Math.random()*30);this.alpha=0;this.maxAlpha=0.25+Math.random()*0.2}
+    update(){this.life++;this.rot+=this.rotV;this.x+=this.vx+Math.sin(this.life*0.022)*0.5;this.y+=this.vy;const t=this.life/this.maxLife;this.alpha=t<0.1?t/0.1*this.maxAlpha:t>0.8?(1-t)/0.2*this.maxAlpha:this.maxAlpha;if(this.y>H+20||this.life>this.maxLife)this.reset()}
+    draw(){ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=`hsla(${this.hue},90%,65%,${this.alpha})`;ctx.beginPath();ctx.ellipse(0,0,this.w,this.h,0,0,Math.PI*2);ctx.fill();ctx.restore()}
   }
-
   const petals=Array.from({length:38},()=>new Petal(true));
-  const garlands=[
-    {y:H*0.25,amp:30,phase:0,col:'rgb(200,80,80)'},
-    {y:H*0.38,amp:22,phase:1.1,col:'rgb(230,120,40)'},
-    {y:H*0.52,amp:28,phase:2.2,col:'rgb(200,80,80)'},
-  ];
-
+  const garlands=[{y0:H*.25,amp:30,phase:0,col:'rgb(200,80,80)'},{y0:H*.38,amp:22,phase:1.1,col:'rgb(230,120,40)'},{y0:H*.52,amp:28,phase:2.2,col:'rgb(200,80,80)'}];
   function loop(){
     if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H); t+=0.012;
-    garlands.forEach(g=>drawGarland(g.y,g.amp,g.phase,g.col,0.16+Math.sin(t*0.8+g.phase)*0.04));
+    ctx.clearRect(0,0,W,H);t+=0.012;
+    garlands.forEach(g=>drawGarland(g.y0,g.amp,g.phase,g.col,0.16+Math.sin(t*0.8+g.phase)*0.04));
     petals.forEach(p=>{p.update();p.draw()});
     requestAnimationFrame(loop);
   }
   loop();
 })();
 
-// ═══ FIRE — VIDHI ════════════════════════════════
+// FIRE — VIDHI
 (function(){
   const fc=document.getElementById('fireCanvas');if(!fc)return;
   const ctx=fc.getContext('2d');let W,H;
   function resize(){const p=fc.parentElement;W=fc.width=p.offsetWidth;H=fc.height=p.offsetHeight}
   resize();window.addEventListener('resize',resize);
-  class Flame{constructor(){this.reset()}reset(){this.x=W/2+(Math.random()-.5)*80;this.y=H*.75+Math.random()*40;this.vx=(Math.random()-.5)*.8;this.vy=-(Math.random()*2.5+1.2);this.life=0;this.maxLife=Math.floor(Math.random()*60+40);this.size=Math.random()*5+2;this.hot=Math.random()}update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy*=.985;this.vx*=.99;this.size*=.97;if(this.life>this.maxLife||this.size<.3)this.reset()}draw(){const t=this.life/this.maxLife,r=255,g=Math.floor(this.hot>.6?180-t*180:80-t*80),a=(1-t)*(this.hot>.6?.85:.55);ctx.save();const grad=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*2);grad.addColorStop(0,`rgba(${r},${g+60},0,${a})`);grad.addColorStop(.5,`rgba(${r},${g},0,${a*.6})`);grad.addColorStop(1,`rgba(180,40,0,0)`);ctx.fillStyle=grad;ctx.beginPath();ctx.arc(this.x,this.y,this.size*2,0,Math.PI*2);ctx.fill();ctx.restore()}}
+  class Flame{constructor(){this.reset()}reset(){this.x=W/2+(Math.random()-.5)*80;this.y=H*.75+Math.random()*40;this.vx=(Math.random()-.5)*.8;this.vy=-(Math.random()*2.5+1.2);this.life=0;this.maxLife=Math.floor(Math.random()*60+40);this.size=Math.random()*5+2;this.hot=Math.random()}update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy*=.985;this.vx*=.99;this.size*=.97;if(this.life>this.maxLife||this.size<.3)this.reset()}draw(){const t=this.life/this.maxLife,r=255,g=Math.floor(this.hot>.6?180-t*180:80-t*80),a=(1-t)*(this.hot>.6?.85:.55);ctx.save();const grad=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*2);grad.addColorStop(0,`rgba(${r},${g+60},0,${a})`);grad.addColorStop(.5,`rgba(${r},${g},0,${a*.6})`);grad.addColorStop(1,'rgba(180,40,0,0)');ctx.fillStyle=grad;ctx.beginPath();ctx.arc(this.x,this.y,this.size*2,0,Math.PI*2);ctx.fill();ctx.restore()}}
   class Ember{constructor(){this.reset()}reset(){this.x=W/2+(Math.random()-.5)*100;this.y=H*.72;this.vx=(Math.random()-.5)*1.5;this.vy=-(Math.random()*3+1);this.life=0;this.maxLife=Math.floor(Math.random()*120+80);this.size=Math.random()*.8+.2}update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy+=.02;this.vx+=(Math.random()-.5)*.05;if(this.life>this.maxLife)this.reset()}draw(){const t=this.life/this.maxLife,a=(1-t)*.9;ctx.save();ctx.globalAlpha=a;ctx.fillStyle=t<.3?'#FFF9C4':t<.6?'#FFB830':'#FF6000';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();ctx.restore()}}
   const flames=Array.from({length:55},()=>new Flame());
   const embers=Array.from({length:30},()=>new Ember());
   flames.forEach(f=>{f.life=Math.floor(Math.random()*f.maxLife)});
   embers.forEach(e=>{e.life=Math.floor(Math.random()*e.maxLife)});
   let vidhiVisible=false;
-  const vidhiObs=new IntersectionObserver(entries=>{vidhiVisible=entries[0].isIntersecting},{threshold:.05});
-  const vidhiCard=document.getElementById('vidhiCard');
-  if(vidhiCard)vidhiObs.observe(vidhiCard);
+  new IntersectionObserver(e=>{vidhiVisible=e[0].isIntersecting},{threshold:.05}).observe(document.getElementById('vidhiCard'));
   function fireLoop(){ctx.clearRect(0,0,W,H);if(vidhiVisible){flames.forEach(f=>{f.update();f.draw()});embers.forEach(e=>{e.update();e.draw()})}requestAnimationFrame(fireLoop)}
   fireLoop();
 })();
 
-// ═══ PETAL RAIN ══════════════════════════════════
+// PETAL RAIN (global)
 (function(){
   const c=document.getElementById('petalCanvas');if(!c)return;
   const ctx=c.getContext('2d');let W,H;
@@ -1134,9 +447,9 @@ window.addEventListener('resize',()=>evBgData.forEach(d=>drawEvBg(d)));
   petalLoop();
 })();
 
-// ═══ COUNTDOWN ═══════════════════════════════════
+// COUNTDOWN
 function tick(){
-  const target=new Date('2026-04-19T10:00:00+05:30');
+  const target=new Date('2026-04-20T19:00:00+05:30');
   let diff=Math.max(0,target-Date.now());
   const d=Math.floor(diff/86400000);diff%=86400000;
   const h=Math.floor(diff/3600000);diff%=3600000;
@@ -1144,43 +457,34 @@ function tick(){
   const s=Math.floor(diff/1000);
   const f=n=>String(n).padStart(2,'0');
   const upd=(id,val)=>{const el=document.getElementById(id);if(el&&el.textContent!==val){el.textContent=val;el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}};
-  upd('cdD',f(d));upd('rcdD',f(d));upd('cdH',f(h));upd('rcdH',f(h));upd('cdM',f(m));upd('rcdM',f(m));upd('cdS',f(s));
+  upd('cdD',f(d));upd('cdH',f(h));upd('cdM',f(m));upd('cdS',f(s));
 }
 tick();setInterval(tick,1000);
 
-// ═══ ROTATING MANDALA ════════════════════════════
-(function(){
-  const c=document.getElementById('heroMandala');if(!c)return;
-  let a=0;function spin(){a+=.0012;c.style.transform=`rotate(${a}rad)`;requestAnimationFrame(spin)}spin();
-})();
+// ROTATING MANDALA
+(function(){const c=document.getElementById('heroMandala');if(!c)return;let a=0;function spin(){a+=.0012;c.style.transform=`rotate(${a}rad)`;requestAnimationFrame(spin)}spin()})();
 
-// ═══ PARALLAX ════════════════════════════════════
+// PARALLAX
 (function(){
   const inner=document.querySelector('.hero-inner');const aura=document.querySelector('.hero-aura');if(!inner||!aura)return;
   window.addEventListener('scroll',()=>{const y=window.scrollY;inner.style.transform=`translateY(${y*.28}px)`;inner.style.opacity=1-y/window.innerHeight*1.2;aura.style.transform=`translateY(${y*.12}px)`},{passive:true});
 })();
 
-// ═══ NAME HOVER ══════════════════════════════════
+// NAME HOVER
 document.querySelectorAll('.h-name').forEach(el=>{
   el.style.transition='filter .3s ease,transform .3s ease';
   el.addEventListener('mouseenter',()=>{el.style.filter='drop-shadow(0 0 32px rgba(232,130,10,.8))';el.style.transform='scale(1.04)'});
   el.addEventListener('mouseleave',()=>{el.style.filter='';el.style.transform=''});
 });
 
-// ═══ FAMILY CARD TILT ════════════════════════════
+// FAMILY CARD TILT
 (function(){
   const card=document.querySelector('.family-card');if(!card)return;
   card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const cx=r.width/2,cy=r.height/2;const rx=(y-cy)/cy*8,ry=(cx-x)/cx*8;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`});
-  card.addEventListener('mouseleave',()=>{card.style.transform='perspective(900px) rotateX(0) rotateY(0) scale(1)'});
+  card.addEventListener('mouseleave',()=>{card.style.transform=''});
 })();
 
-// ═══ RSVP RIPPLE ═════════════════════════════════
-(function(){
-  const btn=document.querySelector('.rsvp-btn');if(!btn)return;
-  btn.addEventListener('click',function(e){const r=this.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const ripple=document.createElement('span');ripple.style.cssText=`position:absolute;border-radius:50%;background:rgba(201,168,76,.35);transform:scale(0);animation:ripple-anim .7s ease-out;left:${x}px;top:${y}px;width:10px;height:10px;margin-left:-5px;margin-top:-5px;pointer-events:none`;this.appendChild(ripple);setTimeout(()=>ripple.remove(),700)});
-})();
-
-// ═══ REVEAL + EV-CARD FADE ═══════════════════════
+// REVEAL
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.06,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const eo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='none'}})},{threshold:.04});
