@@ -2,493 +2,1665 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Vikrant &amp; Gitika — You Are Invited</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikrant & Gitika — Honeymoon 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700;900&family=Italiana&family=Alex+Brush&family=Cinzel:wght@400;500;600;700;900&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Alex+Brush&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{background:#0C0501;color:#F5E6C8;font-family:'Libre Baskerville',serif;overflow-x:hidden}
-:root{
-  --saffron:#E8820A;--saffron-lt:#F5A832;--gold:#C9A84C;--gold-bright:#F0D060;
-  --ivory:#FBF0D5;--cream:#F5E6C8;--maroon:#3A0A12;--deep-maroon:#200508;
-  --crimson:#6B0F1A;--ink:#0C0501;
-}
-/* VEIL */
-#veil{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at center,#2A0808 0%,#0C0501 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 1.2s ease,visibility 1.2s ease}
-#veil.gone{opacity:0;visibility:hidden;pointer-events:none}
-.veil-om{font-family:'Noto Serif Devanagari',serif;font-size:72px;font-weight:900;background:linear-gradient(160deg,#F0D060,#C9A84C,#E8820A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:om-pulse 1.5s ease-in-out infinite}
-.veil-sub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.55em;color:rgba(201,168,76,.5);text-transform:uppercase}
-@keyframes om-pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(232,130,10,.3))}50%{filter:drop-shadow(0 0 50px rgba(232,130,10,.85))}}
-.veil-lotus{display:flex;gap:0;margin-bottom:4px}
-.veil-lotus span{width:8px;height:8px;background:rgba(201,168,76,.8);border-radius:50%;animation:lotus-pop .6s ease both}
-.veil-lotus span:nth-child(1){animation-delay:.1s}.veil-lotus span:nth-child(2){animation-delay:.2s}.veil-lotus span:nth-child(3){animation-delay:.3s}.veil-lotus span:nth-child(4){animation-delay:.4s}.veil-lotus span:nth-child(5){animation-delay:.5s}
-@keyframes lotus-pop{from{transform:scale(0);opacity:0}60%{transform:scale(1.3)}to{transform:scale(1);opacity:1}}
-.veil-bar{width:180px;height:2px;background:rgba(201,168,76,.15);margin-top:20px;overflow:hidden;border-radius:1px}
-.veil-bar-fill{height:100%;background:linear-gradient(90deg,#E8820A,#F5D060,#E8820A);background-size:200% 100%;animation:bar-load 1.6s ease-out forwards,bar-shimmer 1s linear .3s infinite}
-@keyframes bar-load{from{width:0}to{width:100%}}
-@keyframes bar-shimmer{to{background-position:200% center}}
-/* BOKEH */
-#bokehCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;mix-blend-mode:screen}
-/* HERO */
-.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px 80px;overflow:hidden;z-index:2}
-.hero-silk{position:absolute;inset:0;background:radial-gradient(ellipse 110% 55% at 50% -5%,rgba(106,15,26,.85),transparent 65%),radial-gradient(ellipse 80% 70% at 15% 85%,rgba(58,10,18,.7),transparent 55%),radial-gradient(ellipse 70% 60% at 85% 80%,rgba(40,8,14,.6),transparent 55%),linear-gradient(175deg,#1C0406 0%,#0E0201 40%,#150305 70%,#0C0501 100%)}
-.hero-aura{position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(232,130,10,.08),transparent 60%),radial-gradient(ellipse 30% 30% at 50% 30%,rgba(240,208,96,.06),transparent 50%);animation:hero-breathe 8s ease-in-out infinite alternate}
-@keyframes hero-breathe{0%{opacity:.7}100%{opacity:1.3}}
-#heroMandala{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.17}
-.hero-frame{position:absolute;inset:0;pointer-events:none;z-index:3}
-.hero-frame svg{width:100%;height:100%}
-.cband{position:absolute;left:0;right:0;height:7px;z-index:5;pointer-events:none}
-.cband-t{top:0;background:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508)}
-.cband-b{bottom:0;background:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508)}
-.hero-inner{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center}
-.h-om{font-family:'Noto Serif Devanagari',serif;font-size:clamp(44px,10vw,68px);font-weight:900;background:linear-gradient(160deg,#F5D060 0%,#E8820A 45%,#F0D060 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:om-glow 3s ease-in-out infinite,rise 1s ease .05s both}
-@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@keyframes om-glow{0%,100%{filter:drop-shadow(0 0 18px rgba(232,130,10,.38))}50%{filter:drop-shadow(0 0 38px rgba(232,130,10,.9))}}
-.h-bless{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.6em;color:rgba(240,208,96,.5);text-transform:uppercase;margin-top:6px;margin-bottom:28px;animation:rise 1s ease .15s both}
-.h-rule{display:flex;align-items:center;gap:14px;width:100%;max-width:440px;margin-bottom:22px;animation:rise 1s ease .25s both}
-.h-rule-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.7),transparent)}
-.h-weds{font-family:'Alex Brush',cursive;font-size:clamp(24px,5.5vw,38px);color:rgba(240,208,96,.65);letter-spacing:.05em;margin-bottom:4px;animation:rise 1s ease .3s both}
-.h-names{display:flex;flex-direction:column;align-items:center;line-height:1;margin:0 0 6px;animation:rise 1.2s cubic-bezier(.2,0,.1,1) .35s both}
-.h-name{font-family:'Alex Brush',cursive;font-weight:400;font-size:clamp(70px,17vw,124px);letter-spacing:.03em;line-height:1.05;background:linear-gradient(165deg,#FBE99A 0%,#D4A82A 18%,#F5D060 32%,#B8860B 48%,#F0C844 62%,#C9902A 76%,#FBE99A 90%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% auto;animation:gold-sh 6s linear infinite;filter:drop-shadow(0 3px 22px rgba(201,168,76,.38))}
-@keyframes gold-sh{to{background-position:200% center}}
-.h-amp{font-family:'Alex Brush',cursive;font-size:clamp(54px,13vw,100px);line-height:1.1;background:linear-gradient(135deg,#F5A832,#E8820A,#F5A832);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 18px rgba(232,130,10,.4))}
-.h-tagline{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,3.2vw,21px);color:rgba(245,230,200,.4);margin-top:18px;letter-spacing:.06em;line-height:1.7;animation:rise 1s ease .55s both}
-.h-badge{margin-top:36px;position:relative;padding:22px 48px;background:rgba(201,168,76,.06);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,.22);animation:rise 1s ease .65s both}
-.h-badge::before,.h-badge::after{content:'';position:absolute;width:18px;height:18px}
-.h-badge::before{top:-1px;left:-1px;border-top:2px solid rgba(232,130,10,.7);border-left:2px solid rgba(232,130,10,.7)}
-.h-badge::after{bottom:-1px;right:-1px;border-bottom:2px solid rgba(232,130,10,.7);border-right:2px solid rgba(232,130,10,.7)}
-.badge-tr{position:absolute;top:-1px;right:-1px;width:18px;height:18px;border-top:2px solid rgba(232,130,10,.7);border-right:2px solid rgba(232,130,10,.7)}
-.badge-bl{position:absolute;bottom:-1px;left:-1px;width:18px;height:18px;border-bottom:2px solid rgba(232,130,10,.7);border-left:2px solid rgba(232,130,10,.7)}
-.badge-venue{display:block;font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.42em;color:rgba(201,168,76,.72);text-transform:uppercase;margin-bottom:6px;text-align:center}
-.badge-date{font-family:'Italiana',serif;font-size:clamp(22px,4.5vw,30px);color:rgba(251,240,213,.88);letter-spacing:.1em;display:block;text-align:center}
-.h-countdown{margin-top:40px;display:flex;align-items:flex-end;gap:clamp(12px,3.5vw,44px);animation:rise 1s ease .8s both}
-.cd-unit{text-align:center}
-.cd-n{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(30px,7vw,56px);color:rgba(251,240,213,.92);line-height:1;letter-spacing:.04em}
-.cd-l{font-size:7.5px;letter-spacing:.3em;text-transform:uppercase;color:rgba(201,168,76,.38);font-family:'Cinzel',serif;margin-top:6px}
-.cd-dot{font-family:'Italiana',serif;font-size:clamp(24px,5vw,40px);color:rgba(201,168,76,.28);padding-bottom:14px}
-/* INVITE SECTION */
-.invite-sec{background:linear-gradient(165deg,#FBF5E6,#F5E8C8,#FBEFD8);padding:96px 28px;text-align:center;position:relative;overflow:hidden;border-top:7px solid transparent;border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1;z-index:2}
-.invite-sec::before{content:'ॐ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Noto Serif Devanagari',serif;font-size:380px;font-weight:900;color:rgba(201,168,76,.04);pointer-events:none;line-height:1}
-.sec-eyebrow{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.55em;text-transform:uppercase;color:var(--saffron);opacity:.75;margin-bottom:14px}
-.sec-title{font-family:'Italiana',serif;font-size:clamp(38px,9vw,70px);line-height:1.06;letter-spacing:.04em;color:#3A0A12;margin-bottom:18px}
-.ornament{display:flex;align-items:center;gap:16px;max-width:320px;margin:0 auto 36px}
-.orn-line{flex:1;height:1px}
-.orn-l{background:linear-gradient(90deg,transparent,rgba(201,168,76,.6))}
-.orn-r{background:linear-gradient(90deg,rgba(201,168,76,.6),transparent)}
-.orn-dot{font-size:16px;color:rgba(201,168,76,.6)}
-.invite-body{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(17px,3.2vw,21px);color:#6A3A18;line-height:2;max-width:520px;margin:0 auto 44px;opacity:.85}
-.family-card{max-width:480px;margin:0 auto;background:rgba(255,255,255,.65);backdrop-filter:blur(12px);padding:44px 36px;border:1px solid rgba(201,168,76,.35);text-align:center;position:relative}
-.family-card::before,.family-card::after{content:'';position:absolute;width:22px;height:22px}
-.family-card::before{top:-1px;left:-1px;border-top:2px solid rgba(232,130,10,.6);border-left:2px solid rgba(232,130,10,.6)}
-.family-card::after{bottom:-1px;right:-1px;border-bottom:2px solid rgba(232,130,10,.6);border-right:2px solid rgba(232,130,10,.6)}
-.fc-tr{position:absolute;top:-1px;right:-1px;width:22px;height:22px;border-top:2px solid rgba(232,130,10,.6);border-right:2px solid rgba(232,130,10,.6)}
-.fc-bl{position:absolute;bottom:-1px;left:-1px;width:22px;height:22px;border-bottom:2px solid rgba(232,130,10,.6);border-left:2px solid rgba(232,130,10,.6)}
-.fc-bless{font-family:'IM Fell English',serif;font-style:italic;font-size:13px;color:rgba(106,58,24,.55);margin-bottom:18px;letter-spacing:.04em}
-.fc-family{font-family:'Libre Baskerville',serif;font-size:clamp(14px,2.8vw,17px);color:#3A1A0A;line-height:1.7}
-.fc-name-big{font-family:'Alex Brush',cursive;font-size:clamp(52px,12vw,80px);background:linear-gradient(135deg,#C9A84C,#E8820A,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin:8px 0}
-.fc-sep{display:flex;align-items:center;gap:12px;margin:16px 0}
-.fc-sep-line{flex:1;height:1px;background:rgba(201,168,76,.3)}
-.fc-sep-icon{font-size:14px;color:rgba(201,168,76,.5)}
-/* EVENT CARDS */
-.ev-card{min-height:100svh;position:relative;display:flex;flex-direction:column;overflow:hidden;z-index:2}
-.ev-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.ev-anim-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
-.ev-overlay{position:absolute;inset:0;z-index:3;pointer-events:none}
-.ev-daybar{position:absolute;top:0;left:0;right:0;z-index:4;padding:22px 28px;display:flex;justify-content:space-between;align-items:center}
-.ev-daytag{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,208,96,.5);border:1px solid rgba(240,208,96,.15);padding:7px 16px;background:rgba(0,0,0,.28);backdrop-filter:blur(10px)}
-.ev-numeral{position:absolute;top:16px;right:20px;z-index:3;font-family:'Italiana',serif;font-size:clamp(80px,18vw,140px);color:rgba(240,208,96,.035);line-height:1;pointer-events:none;user-select:none}
-.ev-icon-center{position:absolute;top:clamp(90px,18vh,160px);left:50%;transform:translateX(-50%);z-index:4;pointer-events:none}
-.ev-lotus-ring{width:clamp(90px,18vw,140px);height:clamp(90px,18vw,140px);border-radius:50%;border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;position:relative}
-.ev-lotus-ring::before{content:'';position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(201,168,76,.09)}
-.ev-lotus-ring::after{content:'';position:absolute;inset:-20px;border-radius:50%;border:1px dashed rgba(201,168,76,.05)}
-.ev-lotus-ring svg{width:clamp(40px,9vw,65px);height:clamp(40px,9vw,65px)}
-.ev-content{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 52px}
-.ev-info{padding:0 clamp(22px,6vw,64px)}
-.ev-ceremony-name{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(44px,11vw,82px);line-height:.88;letter-spacing:.03em;margin-bottom:5px}
-.ev-ceremony-sub{font-family:'Alex Brush',cursive;font-size:clamp(20px,4.5vw,28px);letter-spacing:.05em;margin-bottom:20px;opacity:.72}
-.ev-rule{width:42px;height:2px;margin-bottom:22px;border-radius:2px}
-.ev-desc{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,3vw,18px);line-height:1.9;max-width:560px;margin-bottom:26px;opacity:.58}
-.ev-meta-row{display:flex;gap:clamp(16px,4vw,44px);flex-wrap:wrap;margin-bottom:22px}
-.ev-meta-item{display:flex;align-items:flex-start;gap:10px}
-.ev-meta-ico{width:24px;height:24px;flex-shrink:0;opacity:.5}
-.ev-meta-ico svg{width:24px;height:24px}
-.ev-meta-txt{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;line-height:1.9}
-.ev-meta-txt span{display:block;font-family:'IM Fell English',serif;font-style:italic;font-size:15px;letter-spacing:.02em;text-transform:none;font-weight:400;margin-top:1px;opacity:.55}
-/* VENUE */
-.venue-sec{background:#0C0501;padding:100px 28px;text-align:center;position:relative;overflow:hidden;z-index:2}
-.venue-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(106,15,26,.5),transparent 60%),radial-gradient(ellipse 60% 50% at 50% 100%,rgba(58,10,18,.5),transparent 60%)}
-.venue-inner{max-width:560px;margin:0 auto;position:relative;z-index:1}
-.venue-name{font-family:'Italiana',serif;font-size:clamp(26px,6.5vw,42px);background:linear-gradient(135deg,#F5D060,#C9A84C,#F5D060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.07em;margin-bottom:6px}
-.venue-sub{font-family:'IM Fell English',serif;font-style:italic;font-size:18px;color:rgba(201,168,76,.45);margin-bottom:44px}
-.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.1);margin-bottom:2px}
-.vg-cell{background:#120609;padding:28px 16px;text-align:center}
-.vg-icon{width:30px;height:30px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center}
-.vg-icon svg{width:22px;height:22px;stroke:var(--saffron);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.vg-val{font-family:'Cinzel',serif;font-size:11px;color:rgba(251,240,213,.8);letter-spacing:.08em}
-.vg-key{font-size:8.5px;color:rgba(201,168,76,.4);margin-top:4px;letter-spacing:.15em;text-transform:uppercase;font-family:'Cinzel',serif}
-.venue-map{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px;border:1px solid rgba(201,168,76,.18);font-family:'Cinzel',serif;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(201,168,76,.75);text-decoration:none;background:rgba(201,168,76,.04);transition:all .35s}
-.venue-map:hover{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.38)}
-.venue-map svg{width:14px;height:14px;stroke:var(--saffron);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.venue-note{margin-top:20px;padding:22px 26px;border-left:2px solid var(--saffron);background:rgba(232,130,10,.04);text-align:left}
-.venue-note p{font-family:'IM Fell English',serif;font-style:italic;font-size:16px;color:rgba(201,168,76,.5);line-height:1.85}
-/* FOOTER */
-footer{background:linear-gradient(165deg,#0C0501,#150302,#0A0401);border-top:7px solid transparent;border-image:linear-gradient(90deg,#200508,#6B0F1A 15%,#E8820A 30%,#F0D060 50%,#E8820A 70%,#6B0F1A 85%,#200508) 1;padding:90px 28px 80px;text-align:center;position:relative;overflow:hidden;z-index:2}
-footer::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(201,168,76,.06),transparent 65%);animation:ft-glow 6s ease-in-out infinite alternate}
-@keyframes ft-glow{0%{opacity:.6}100%{opacity:1.2}}
-#footerCanvas{position:absolute;inset:0;width:100%;height:100%;opacity:.14;pointer-events:none}
-.ft-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
-.ft-om{font-family:'Noto Serif Devanagari',serif;font-size:clamp(52px,12vw,80px);font-weight:900;background:linear-gradient(160deg,#F5D060,#C9A84C,#E8820A,#F0D060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:om-glow 4s ease-in-out infinite;margin-bottom:8px}
-.ft-sub{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.55em;color:rgba(201,168,76,.38);text-transform:uppercase;margin-bottom:40px}
-.ft-script{font-family:'Alex Brush',cursive;font-size:clamp(52px,14vw,100px);line-height:1;background:linear-gradient(160deg,#FBE99A 0%,#D4A82A 20%,#F5D060 38%,#B8860B 54%,#E8C050 68%,#C9902A 82%,#FBE99A 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% auto;animation:gold-sh 7s linear infinite;filter:drop-shadow(0 2px 22px rgba(201,168,76,.28));letter-spacing:.03em;margin-bottom:16px}
-.ft-divider{width:80px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.5),transparent);margin:20px auto}
-.ft-date{font-family:'Italiana',serif;font-size:clamp(18px,3.5vw,24px);color:rgba(201,168,76,.55);letter-spacing:.12em;margin-bottom:10px}
-.ft-venue{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(14px,2.5vw,17px);color:rgba(251,240,213,.25);margin-bottom:28px}
-.ft-wish{font-family:'IM Fell English',serif;font-style:italic;font-size:clamp(15px,2.8vw,19px);color:rgba(251,240,213,.28);line-height:2;max-width:380px}
-/* HASHTAG STRIP */
-.hashtag-strip{background:rgba(201,168,76,.06);border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12);padding:18px 28px;text-align:center;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.38em;color:rgba(201,168,76,.5);text-transform:uppercase}
-.hashtag-strip strong{color:rgba(232,130,10,.75);font-weight:400}
-/* SCROLL HINT */
-.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:rise 1s ease 1.2s both;z-index:5}
-.sh-txt{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,168,76,.35)}
-.sh-bar{width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,168,76,.5),transparent);animation:sh-drop 2s ease-in-out infinite}
-@keyframes sh-drop{0%,100%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
-/* UTILS */
-@keyframes ripple-anim{to{transform:scale(30);opacity:0}}
-@keyframes cd-tick{0%{color:rgba(251,240,213,.92)}50%{color:rgba(240,208,96,1)}100%{color:rgba(251,240,213,.92)}}
-.cd-n.tick{animation:cd-tick .15s ease}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
-.reveal.on{opacity:1;transform:none}
-.rd1{transition-delay:.12s}.rd2{transition-delay:.24s}.rd3{transition-delay:.36s}.rd4{transition-delay:.48s}
-@media(max-width:480px){
-  .ev-icon-center{top:72px}
-  .ev-lotus-ring{width:80px;height:80px}
-  .ev-lotus-ring svg{width:38px;height:38px}
-  .ev-info{padding:0 18px}
-  .ev-ceremony-name{font-size:clamp(36px,12vw,58px)}
-  .h-badge{padding:18px 26px}
-}
+  :root {
+    --ink: #1a1208;
+    --cream: #faf7f0;
+    --sand: #e8dcc8;
+    --terracotta: #b85c38;
+    --gold: #c9984a;
+    --forest: #2d4a2f;
+    --mist: #8fa89c;
+    --blush: #e8c4b8;
+    --dark-bg: #141010;
+    --card-bg: #fdf9f2;
+    --border: rgba(200,160,80,0.25);
+    --shadow: 0 8px 48px rgba(26,18,8,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark-bg);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 60%, rgba(184,92,56,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 75% 30%, rgba(45,74,47,0.22) 0%, transparent 70%),
+      radial-gradient(ellipse 100% 50% at 50% 100%, rgba(201,152,74,0.15) 0%, transparent 60%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,152,74,0.03) 40px, rgba(201,152,74,0.03) 41px),
+      repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(201,152,74,0.03) 40px, rgba(201,152,74,0.03) 41px);
+  }
+
+  .hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-names {
+    font-family: 'Alex Brush', cursive;
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 0.9;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.5s forwards;
+  }
+
+  .hero-ampersand {
+    color: var(--gold);
+    display: block;
+    font-size: 0.6em;
+    margin: 0.15em 0;
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 2.5rem auto;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--sand);
+    opacity: 0;
+    animation: fadeUp 1s ease 1s forwards;
+    line-height: 1.6;
+  }
+
+  .hero-dates {
+    margin-top: 1.8rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--mist);
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.8s forwards;
+  }
+
+  .hero-scroll span {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mist);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out 2s infinite;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,247,240,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-brand {
+    font-family: 'Alex Brush', cursive;
+    font-size: 1.5rem;
+    color: var(--terracotta);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; color: var(--terracotta); }
+
+  /* ── SECTION STRUCTURE ── */
+  section { position: relative; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .section-rule {
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--terracotta));
+    margin: 1.5rem auto;
+    border-radius: 2px;
+  }
+
+  .section-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgba(26,18,8,0.6);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── WEATHER BANNER ── */
+  .weather-banner {
+    padding: 2.5rem 0;
+    background: var(--forest);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .weather-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.02) 60px, rgba(255,255,255,0.02) 61px);
+  }
+
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .weather-item {
+    text-align: center;
+    padding: 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+
+  .weather-item:last-child { border-right: none; }
+
+  .weather-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .weather-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gold);
+    display: block;
+  }
+
+  .weather-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  /* ── ROUTE ── */
+  .route-section {
+    padding: 6rem 0;
+    background: var(--cream);
+  }
+
+  .route-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 3rem 0;
+  }
+
+  .route-stop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .route-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    border: 3px solid var(--cream);
+    box-shadow: 0 0 0 2px var(--terracotta);
+    position: relative;
+    z-index: 2;
+  }
+
+  .route-dot.home { background: var(--forest); box-shadow: 0 0 0 2px var(--forest); }
+
+  .route-name {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+    text-align: center;
+    max-width: 80px;
+    line-height: 1.3;
+  }
+
+  .route-nights {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .route-arrow {
+    flex: 1;
+    min-width: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .route-arrow::after {
+    content: '›';
+    position: absolute;
+    right: -6px;
+    top: -9px;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+
+  /* ── ITINERARY ── */
+  .itinerary-section {
+    padding: 6rem 0;
+    background: #f4efe4;
+    position: relative;
+  }
+
+  .itinerary-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold), var(--forest), var(--terracotta));
+  }
+
+  .day-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .day-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .day-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 64px rgba(26,18,8,0.16);
+  }
+
+  .day-header {
+    display: flex;
+    align-items: stretch;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .day-number {
+    width: 80px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: var(--ink);
+  }
+
+  .day-number.terracotta { background: var(--terracotta); }
+  .day-number.forest { background: var(--forest); }
+  .day-number.gold-bg { background: var(--gold); }
+  .day-number.mist-bg { background: #4a7a6a; }
+  .day-number.travel-bg { background: #8b5e3c; }
+
+  .day-num-big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .day-num-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250,247,240,0.6);
+    margin-top: 0.2rem;
+  }
+
+  .day-info {
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .day-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .day-sub {
+    font-size: 0.75rem;
+    color: rgba(26,18,8,0.5);
+    margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .day-toggle {
+    font-size: 1.3rem;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .day-card.open .day-toggle { transform: rotate(90deg); }
+
+  .day-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .day-card.open .day-body { display: block; }
+
+  .activity-list { list-style: none; }
+
+  .activity {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(200,160,80,0.12);
+    align-items: start;
+  }
+
+  .activity:last-child { border-bottom: none; }
+
+  .act-time {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--terracotta);
+    letter-spacing: 0.05em;
+    padding-top: 2px;
+  }
+
+  .act-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .act-detail {
+    font-size: 0.8rem;
+    color: rgba(26,18,8,0.55);
+    line-height: 1.6;
+  }
+
+  .act-travel {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--forest);
+    background: rgba(45,74,47,0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid rgba(45,74,47,0.15);
+  }
+
+  .romantic-tag {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.65rem;
+    background: rgba(184,92,56,0.1);
+    color: var(--terracotta);
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(184,92,56,0.2);
+    vertical-align: middle;
+  }
+
+  /* ── COSTS ── */
+  .costs-section {
+    padding: 6rem 0;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .costs-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,152,74,0.08), transparent 70%);
+    pointer-events: none;
+  }
+
+  .costs-section .section-title { color: var(--cream); }
+  .costs-section .section-intro { color: rgba(250,247,240,0.5); }
+
+  .totals-banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .total-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,152,74,0.2);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .total-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(250,247,240,0.4);
+    margin-bottom: 0.75rem;
+  }
+
+  .total-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--gold);
+    display: block;
+  }
+
+  .total-sub {
+    font-size: 0.72rem;
+    color: rgba(250,247,240,0.35);
+    margin-top: 0.3rem;
+  }
+
+  .cost-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .cost-cat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,152,74,0.12);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .cost-cat-header {
+    padding: 1rem 1.25rem;
+    background: rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .cat-icon { font-size: 1rem; }
+
+  .cat-name {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .cost-rows { padding: 0.75rem 0; }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .cost-row:last-child { border-bottom: none; }
+
+  .cost-item {
+    font-size: 0.8rem;
+    color: rgba(250,247,240,0.6);
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  .cost-range {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: rgba(201,152,74,0.8);
+    white-space: nowrap;
+  }
+
+  /* ── TRANSPORT ── */
+  .transport-section {
+    padding: 6rem 0;
+    background: var(--cream);
+  }
+
+  .transport-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .transport-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .transport-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .transport-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--terracotta), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .transport-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .transport-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(200,160,80,0.1);
+    font-size: 0.82rem;
+  }
+
+  .transport-row:last-child { border-bottom: none; }
+
+  .tr-label { color: rgba(26,18,8,0.55); }
+  .tr-value { font-weight: 500; color: var(--ink); text-align: right; }
+  .tr-tip {
+    font-size: 0.72rem;
+    color: var(--terracotta);
+    font-style: italic;
+    grid-column: 1/-1;
+  }
+
+  /* ── PACKING ── */
+  .packing-section {
+    padding: 6rem 0;
+    background: #eee8da;
+    position: relative;
+  }
+
+  .packing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pack-cat {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+
+  .pack-cat-head {
+    padding: 1.1rem 1.25rem;
+    background: var(--forest);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .pack-cat-head .cat-icon { font-size: 1rem; }
+
+  .pack-cat-name {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(250,247,240,0.9);
+  }
+
+  .pack-items { padding: 0.75rem 0; }
+
+  .pack-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.55rem 1.25rem;
+    border-bottom: 1px solid rgba(200,160,80,0.08);
+    font-size: 0.8rem;
+  }
+
+  .pack-item:last-child { border-bottom: none; }
+
+  .pack-check {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid var(--gold);
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .pack-name { color: var(--ink); flex: 1; line-height: 1.4; }
+  .pack-note { font-size: 0.7rem; color: rgba(26,18,8,0.45); margin-top: 0.1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark-bg);
+    padding: 4rem 0 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(184,92,56,0.12), transparent);
+  }
+
+  .footer-names {
+    font-family: 'Alex Brush', cursive;
+    font-size: 3.5rem;
+    color: var(--cream);
+    position: relative;
+  }
+
+  .footer-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto;
+  }
+
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(250,247,240,0.35);
+    position: relative;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.4; transform: scaleY(0.6); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .weather-grid { grid-template-columns: repeat(2, 1fr); }
+    .cost-categories { grid-template-columns: 1fr; }
+    .transport-grid { grid-template-columns: 1fr; }
+    .packing-grid { grid-template-columns: 1fr; }
+    .totals-banner { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .route-line { gap: 0; }
+    .route-arrow { min-width: 15px; }
+  }
+
+  /* ── TAB COLORS ── */
+  .tab-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1.25rem;
+    border: 1.5px solid var(--border);
+    border-radius: 30px;
+    background: transparent;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(26,18,8,0.55);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    color: var(--cream);
+  }
 </style>
 </head>
 <body>
 
-<!-- VEIL -->
-<div id="veil">
-  <div class="veil-om">ॐ</div>
-  <p class="veil-sub">Shri Ganeshaya Namah</p>
-  <div class="veil-lotus"><span></span><span></span><span></span><span></span><span></span></div>
-  <div class="veil-bar"><div class="veil-bar-fill"></div></div>
-</div>
-
-<canvas id="bokehCanvas"></canvas>
-
-<!-- ═══ HERO ═══ -->
+<!-- ── HERO ── -->
 <section class="hero">
-  <div class="hero-silk"></div><div class="hero-aura"></div>
-  <canvas id="heroMandala"></canvas>
-  <div class="cband cband-t"></div><div class="cband cband-b"></div>
-  <div class="hero-frame">
-    <svg viewBox="0 0 100 180" preserveAspectRatio="none" fill="none">
-      <rect x=".5" y=".5" width="99" height="179" stroke="rgba(201,168,76,.18)" stroke-width=".35"/>
-      <rect x="2.5" y="2.5" width="95" height="175" stroke="rgba(201,168,76,.07)" stroke-width=".22"/>
-      <path d="M0 0L22 0L22 2.5L2.5 2.5L2.5 22L0 22Z" fill="rgba(201,168,76,.22)"/><path d="M100 0L78 0L78 2.5L97.5 2.5L97.5 22L100 22Z" fill="rgba(201,168,76,.22)"/>
-      <path d="M0 180L22 180L22 177.5L2.5 177.5L2.5 158L0 158Z" fill="rgba(201,168,76,.22)"/><path d="M100 180L78 180L78 177.5L97.5 177.5L97.5 158L100 158Z" fill="rgba(201,168,76,.22)"/>
-      <line x1="0" y1="22" x2="22" y2="0" stroke="rgba(232,130,10,.45)" stroke-width=".45"/><line x1="100" y1="22" x2="78" y2="0" stroke="rgba(232,130,10,.45)" stroke-width=".45"/>
-      <line x1="0" y1="158" x2="22" y2="180" stroke="rgba(232,130,10,.45)" stroke-width=".45"/><line x1="100" y1="158" x2="78" y2="180" stroke="rgba(232,130,10,.45)" stroke-width=".45"/>
-    </svg>
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">A Honeymoon Story · April 2026</p>
+    <h1 class="hero-names">
+      Vikrant
+      <span class="hero-ampersand">&</span>
+      Gitika
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="hero-subtitle">South Goa · Gokarna · Ten Days of<br>Sunsets, Seafood & Slow Mornings</p>
+    <p class="hero-dates">April 23 — May 2, 2026 &nbsp;·&nbsp; Just Married</p>
   </div>
-  <div class="hero-inner">
-    <div class="h-om">ॐ</div>
-    <p class="h-bless">Shri Ganeshaya Namah</p>
-    <div class="h-rule"><div class="h-rule-line"></div><span style="color:var(--gold);font-size:18px">✦</span><div class="h-rule-line"></div></div>
-    <div class="h-names"><span class="h-name">Vikrant</span><span class="h-amp">&amp;</span><span class="h-name">Gitika</span></div>
-    <p class="h-weds">together forever</p>
-    <p class="h-tagline">Two souls, one sacred fire — forever begins here</p>
-    <div class="h-badge">
-      <div class="badge-tr"></div><div class="badge-bl"></div>
-      <span class="badge-venue">Golden Chariot Hotel · Vasai, Maharashtra</span>
-      <span class="badge-date">20<sup style="font-size:.55em">th</sup> April 2026</span>
-    </div>
-    <div class="h-countdown">
-      <div class="cd-unit"><div class="cd-n" id="cdD">--</div><div class="cd-l">Days</div></div>
-      <div class="cd-dot">·</div>
-      <div class="cd-unit"><div class="cd-n" id="cdH">--</div><div class="cd-l">Hrs</div></div>
-      <div class="cd-dot">·</div>
-      <div class="cd-unit"><div class="cd-n" id="cdM">--</div><div class="cd-l">Min</div></div>
-      <div class="cd-dot">·</div>
-      <div class="cd-unit"><div class="cd-n" id="cdS">--</div><div class="cd-l">Sec</div></div>
-    </div>
-  </div>
-  <div class="scroll-hint"><span class="sh-txt">Scroll</span><div class="sh-bar"></div></div>
-</section>
-
-<!-- ═══ FAMILY INVITE ═══ -->
-<section class="invite-sec">
-  <p class="sec-eyebrow reveal">With the blessings of the divine</p>
-  <h2 class="sec-title reveal rd1">You are cordially invited</h2>
-  <div class="ornament reveal rd2"><div class="orn-line orn-l"></div><span class="orn-dot">✦</span><div class="orn-line orn-r"></div></div>
-  <p class="invite-body reveal rd2">We are humbled and overjoyed by your love. It would be our greatest honour to have you witness and bless this sacred union of our families.</p>
-  <div class="family-card reveal rd3">
-    <div class="fc-tr"></div><div class="fc-bl"></div>
-    <p class="fc-bless">With the blessings of the Almighty</p>
-    <p class="fc-family"><strong>Shri Vijayprakash Chaubey</strong><br>&amp; <strong>Smt. Manti Chaubey</strong></p>
-    <p class="fc-family" style="margin-top:6px;color:#8A5030;font-size:.92em;font-style:italic">proudly invite you to the wedding of their son</p>
-    <p class="fc-name-big">Vikrant</p>
-    <div class="fc-sep"><div class="fc-sep-line"></div><span class="fc-sep-icon">✦</span><div class="fc-sep-line"></div></div>
-    <p class="fc-family"><strong>Shri Rameshkumar Ray</strong><br>&amp; <strong>Smt. Nitu Ray</strong></p>
-    <p class="fc-family" style="margin-top:6px;color:#8A5030;font-size:.92em;font-style:italic">joyfully announce the wedding of their daughter</p>
-    <p class="fc-name-big">Gitika</p>
-    <div style="margin-top:28px;padding-top:18px;border-top:1px solid rgba(201,168,76,.2);text-align:center">
-      <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:.38em;text-transform:uppercase;color:rgba(201,168,76,.75)">20th April · 2026 · Golden Chariot, Vasai</span>
-    </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
   </div>
 </section>
 
-<!-- ═══ RECEPTION ═══ -->
-<div class="ev-card" data-anim="reception">
-  <canvas class="ev-canvas" id="c6bg"></canvas>
-  <canvas class="ev-anim-canvas" id="c6anim"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(8,2,5,.97) 0%,rgba(20,4,10,.7) 40%,rgba(20,4,10,.15) 70%,transparent 100%)"></div>
-  <div class="ev-daybar"><span class="ev-daytag">The Wedding Day · 20th April</span></div>
-  <div class="ev-numeral">01</div>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">V & G</a>
+    <ul class="nav-links">
+      <li><a href="#route">Route</a></li>
+      <li><a href="#itinerary">Itinerary</a></li>
+      <li><a href="#costs">Costs</a></li>
+      <li><a href="#travel">Getting There</a></li>
+      <li><a href="#packing">Packing</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <div class="ev-content"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Reception</div>
-    <div class="ev-ceremony-sub" style="color:rgba(255,175,195,.62)">Jaymala — Exchange of Garlands</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#8B1635,#C8304A)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">The couple exchanges garlands as they begin their forever. Greet them, bless them, and share in the joy.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item">
-        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg>
-        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">7:00 PM onwards</span></div>
+<!-- ── WEATHER BANNER ── -->
+<div class="weather-banner">
+  <div class="container">
+    <div class="weather-grid">
+      <div class="weather-item">
+        <span class="weather-icon">🌡️</span>
+        <span class="weather-value">30–35°C</span>
+        <span class="weather-label">Day Temp</span>
       </div>
-      <div class="ev-meta-item">
-        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg>
-        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Main Stage, Banquet Hall</span></div>
+      <div class="weather-item">
+        <span class="weather-icon">🌊</span>
+        <span class="weather-value">Calm</span>
+        <span class="weather-label">South Goa Seas</span>
+      </div>
+      <div class="weather-item">
+        <span class="weather-icon">☀️</span>
+        <span class="weather-value">Low Crowds</span>
+        <span class="weather-label">April Advantage</span>
+      </div>
+      <div class="weather-item">
+        <span class="weather-icon">🐢</span>
+        <span class="weather-value">Active</span>
+        <span class="weather-label">Turtle Season</span>
       </div>
     </div>
-  </div></div>
+  </div>
 </div>
 
-<!-- ═══ VIDHI / WEDDING ═══ -->
-<canvas id="petalCanvas" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.55"></canvas>
-<div class="ev-card" id="vidhiCard">
-  <canvas class="ev-canvas" id="c7bg"></canvas>
-  <canvas id="fireCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:.8"></canvas>
-  <div class="ev-overlay" style="background:linear-gradient(to top,rgba(8,4,0,.97) 0%,rgba(18,10,0,.78) 40%,rgba(18,10,0,.2) 70%,transparent 100%);z-index:3"></div>
-  <div class="ev-daybar" style="z-index:5"><span class="ev-daytag">The Wedding · 20th – 21st April</span></div>
-  <div class="ev-numeral" style="z-index:4">02</div>
+<!-- ── ROUTE ── -->
+<section class="route-section" id="route">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">The Journey</span>
+      <h2 class="section-title">A <em>Forward Route</em><br>No Doubling Back</h2>
+      <div class="section-rule"></div>
+      <p class="section-intro">Every move is purposeful — we travel south, then deeper south, then circle back through the coast.</p>
+    </div>
 
-  <div class="ev-content" style="z-index:5"><div class="ev-info">
-    <div class="ev-ceremony-name" style="color:rgba(251,240,213,.9)">Vidhi</div>
-    <div class="ev-ceremony-sub" style="color:rgba(240,192,64,.72)">The Sacred Wedding Ceremony</div>
-    <div class="ev-rule" style="background:linear-gradient(90deg,#E8820A,#F5D060,#E8820A)"></div>
-    <p class="ev-desc" style="color:rgba(251,240,213,.58)">The sacred Pheras around the holy fire. In the presence of family and the divine — two souls become one.</p>
-    <div class="ev-meta-row">
-      <div class="ev-meta-item">
-        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg>
-        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Time<span style="color:rgba(251,240,213,.48)">11:00 PM onwards</span></div>
+    <div class="route-line reveal reveal-delay-1">
+      <div class="route-stop">
+        <div class="route-dot home"></div>
+        <div class="route-name">Mumbai</div>
+        <div class="route-nights">Home</div>
       </div>
-      <div class="ev-meta-item">
-        <svg class="ev-meta-ico" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,.55)" stroke-width="1.4" stroke-linecap="round"><path d="M12 2C8.7 2 6 4.7 6 8C6 12.5 12 22 12 22S18 12.5 18 8C18 4.7 15.3 2 12 2Z"/><circle cx="12" cy="8" r="2.5"/></svg>
-        <div class="ev-meta-txt" style="color:rgba(201,168,76,.7)">Venue<span style="color:rgba(251,240,213,.48)">Mandap, Main Hall</span></div>
+      <div class="route-arrow"></div>
+      <div class="route-stop">
+        <div class="route-dot"></div>
+        <div class="route-name">Goa Airport</div>
+        <div class="route-nights">Arrive</div>
+      </div>
+      <div class="route-arrow"></div>
+      <div class="route-stop">
+        <div class="route-dot terracotta"></div>
+        <div class="route-name">Agonda Beach</div>
+        <div class="route-nights">4 nights</div>
+      </div>
+      <div class="route-arrow"></div>
+      <div class="route-stop">
+        <div class="route-dot"></div>
+        <div class="route-name">NH66 Drive</div>
+        <div class="route-nights">3.5 hrs</div>
+      </div>
+      <div class="route-arrow"></div>
+      <div class="route-stop">
+        <div class="route-dot forest"></div>
+        <div class="route-name">Gokarna</div>
+        <div class="route-nights">3 nights</div>
+      </div>
+      <div class="route-arrow"></div>
+      <div class="route-stop">
+        <div class="route-dot"></div>
+        <div class="route-name">Palolem</div>
+        <div class="route-nights">1 night</div>
+      </div>
+      <div class="route-arrow"></div>
+      <div class="route-stop">
+        <div class="route-dot home"></div>
+        <div class="route-name">Mumbai</div>
+        <div class="route-nights">Home</div>
       </div>
     </div>
-  </div></div>
-</div>
 
-<!-- ═══ VENUE ═══ -->
-<section class="venue-sec">
-  <p class="sec-eyebrow reveal" style="color:var(--saffron)">The Venue</p>
-  <h2 class="reveal rd1" style="font-family:'Italiana',serif;font-size:clamp(34px,8vw,58px);background:linear-gradient(135deg,#F5D060,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.08">Where memories are made</h2>
-  <div class="ornament reveal rd2"><div class="orn-line" style="background:linear-gradient(90deg,transparent,rgba(201,168,76,.5))"></div><span class="orn-dot" style="color:rgba(201,168,76,.5)">✦</span><div class="orn-line" style="background:linear-gradient(90deg,rgba(201,168,76,.5),transparent)"></div></div>
-  <div class="venue-inner">
-    <div class="venue-name reveal rd2">Golden Chariot Hotel</div>
-    <div class="venue-sub reveal rd3">Vasai, Maharashtra</div>
-    <div class="venue-grid reveal rd3">
-      <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><path d="M10 2C7 2 5 4.5 5 7C5 10.5 10 18 10 18S15 10.5 15 7C15 4.5 13 2 10 2Z"/><circle cx="10" cy="7" r="2.5"/></svg></div><div class="vg-val">Vasai, Maharashtra</div><div class="vg-key">Location</div></div>
-      <div class="vg-cell"><div class="vg-icon"><svg viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="14" rx="1"/><line x1="2" y1="8" x2="18" y2="8"/><line x1="6" y1="2" x2="6" y2="6"/><line x1="14" y1="2" x2="14" y2="6"/></svg></div><div class="vg-val">20th April, 2026</div><div class="vg-key">Date</div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem">
+      <div class="transport-card reveal reveal-delay-1" style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:0.75rem">🌴</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;margin-bottom:0.4rem">Agonda — Your Base</div>
+        <div style="font-size:0.8rem;color:rgba(26,18,8,0.55);line-height:1.6">Quieter, more romantic than Palolem. 3 km crescent beach, turtle nesting, almost zero crowds in April.</div>
+      </div>
+      <div class="transport-card reveal reveal-delay-2" style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:0.75rem">🕉️</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;margin-bottom:0.4rem">Gokarna — The Secret</div>
+        <div style="font-size:0.8rem;color:rgba(26,18,8,0.55);line-height:1.6">What Goa was 15 years ago. Om Beach, Half Moon, Paradise — all connected by cliffside treks with zero tourists.</div>
+      </div>
+      <div class="transport-card reveal reveal-delay-3" style="text-align:center">
+        <div style="font-size:2rem;margin-bottom:0.75rem">🛵</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;margin-bottom:0.4rem">Scooter Freedom</div>
+        <div style="font-size:0.8rem;color:rgba(26,18,8,0.55);line-height:1.6">₹400/day. Cabo de Rama, Cola Beach, Butterfly Beach, Mirjan Fort — all on your own time, no taxis needed.</div>
+      </div>
     </div>
-    <a href="https://www.google.com/maps/place/golden+chariot+vasai+hotel/data=!4m2!3m1!1s0x3be7a8b8011e6e31:0x9f65ce5e050b64d?sa=X&ved=1t:242&ictx=111" target="_blank" class="venue-map reveal rd4">
-      <svg viewBox="0 0 14 14"><line x1="7" y1="1" x2="13" y2="7"/><line x1="1" y1="13" x2="13" y2="1"/><polyline points="7,1 13,1 13,7"/></svg>
-      Open in Maps
-    </a>
-    <div class="venue-note reveal rd4"><p>Our team will be on hand throughout the celebrations to assist you with anything you need.</p></div>
   </div>
 </section>
 
-<!-- HASHTAG -->
-<div class="hashtag-strip reveal">Share your memories with <strong>#VikrantWeddsGitika</strong></div>
+<!-- ── ITINERARY ── -->
+<section class="itinerary-section" id="itinerary">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">10 Days · 9 Nights</span>
+      <h2 class="section-title">The <em>Day-by-Day</em><br>Itinerary</h2>
+      <div class="section-rule"></div>
+      <p class="section-intro">Click any day to expand the full schedule.</p>
+    </div>
 
+    <div class="tab-bar reveal">
+      <button class="tab-btn active" onclick="filterDays('all')">All Days</button>
+      <button class="tab-btn" onclick="filterDays('goa')">South Goa</button>
+      <button class="tab-btn" onclick="filterDays('gokarna')">Gokarna</button>
+    </div>
+
+    <div class="day-grid" id="dayGrid">
+
+      <!-- DAY 1 -->
+      <div class="day-card reveal" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number forest">
+            <div class="day-num-big">1</div>
+            <div class="day-num-label">Apr 23</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Fly to Goa → Agonda — Settle In</div>
+              <div class="day-sub">Arrival · first beach sunset · seafood dinner</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">1:00 PM</span><div><div class="act-title">Depart Mumbai & Fly to Goa</div><div class="act-detail">Take afternoon flight — arrive Goa by 2:30 PM. Dabolim (GOI) is closer to Agonda (60 km, 1.5 hrs).</div><span class="act-travel">✈ IndiGo/Air India BOM→GOI</span></div></li>
+            <li class="activity"><span class="act-time">3:30 PM</span><div><div class="act-title">Taxi to Agonda Beach</div><div class="act-detail">Straight to Agonda. Check into your beach cottage — request sea-facing room. Options: White Sand Resort, Secret Garden Agonda.</div><span class="act-travel">🚕 Pre-booked taxi ₹1,200–1,600</span></div></li>
+            <li class="activity"><span class="act-time">5:30 PM</span><div><div class="act-title">First Walk on Agonda Beach</div><div class="act-detail">Agonda is a 3 km crescent beach with almost no one. April = zero crowds. Walk its full length barefoot. This is your home.</div></div></li>
+            <li class="activity"><span class="act-time">7:30 PM</span><div><div class="act-title">Sunset Seafood Dinner <span class="romantic-tag">💑</span></div><div class="act-detail">Dersy Bar or Fatima's Corner on the beach. Fresh surmai, pomfret, Kingfisher. Watch the sun drop into the Arabian Sea. ₹600–1,000 for two.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card reveal reveal-delay-1" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number terracotta">
+            <div class="day-num-big">2</div>
+            <div class="day-num-label">Apr 24</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Agonda Morning + Cabo de Rama Fort</div>
+              <div class="day-sub">Cliff fort · hidden Cola Beach · golden hour walk</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">7:00 AM</span><div><div class="act-title">Agonda Beach Morning Swim</div><div class="act-detail">Calm sea, warm water. Swim freely — Agonda has gentle waves. Coconut from beach vendor after.</div></div></li>
+            <li class="activity"><span class="act-time">9:30 AM</span><div><div class="act-title">Rent a Scooter</div><div class="act-detail">₹400–500/day. Freedom for all day trips. Carries both of you easily.</div><span class="act-travel">🛵 Resort or village rental</span></div></li>
+            <li class="activity"><span class="act-time">10:30 AM</span><div><div class="act-title">Cabo de Rama Fort <span class="romantic-tag">Hidden gem</span></div><div class="act-detail">16th-century Portuguese fort on a sheer cliff over the Arabian Sea. Completely deserted in April. Walk through ruins, stand on the cliff edge. One of South Goa's most dramatic views.</div><span class="act-travel">🛵 12 km, 25 min from Agonda</span></div></li>
+            <li class="activity"><span class="act-time">1:00 PM</span><div><div class="act-title">Cola Beach — Secret Lagoon</div><div class="act-detail">On the way back. A freshwater lagoon meeting the sea — swim in both. Requires a short walk down from the road. Very few visitors in April.</div><span class="act-travel">🛵 4 km from Cabo de Rama</span></div></li>
+            <li class="activity"><span class="act-time">5:00 PM</span><div><div class="act-title">Agonda Sunset + Turtle Watch</div><div class="act-detail">April is Olive Ridley turtle nesting season. Walk the empty northern stretch — turtles nest here at night. Golden light, total silence.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card reveal" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number terracotta">
+            <div class="day-num-big">3</div>
+            <div class="day-num-label">Apr 25</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Dolphin Boat Trip + Butterfly Beach</div>
+              <div class="day-sub">Private boat · Honeymoon Cove · dolphins · couples spa</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">8:30 AM</span><div><div class="act-title">Private Boat — Coastal Discovery <span class="romantic-tag">💑 Most romantic morning</span></div><div class="act-detail">Hire a private boat for 2 hrs from Agonda beach. Route: Agonda → Honeymoon Beach (tiny boat-only cove) → Butterfly Beach (inaccessible by road, shaped like a butterfly) → dolphin spotting. April morning = calm sea, dolphins almost guaranteed.</div><span class="act-travel">⛵ ₹1,200–1,800 for private boat</span></div></li>
+            <li class="activity"><span class="act-time">12:30 PM</span><div><div class="act-title">Lunch at Agonda Shack</div><div class="act-detail">Back on the beach. Lunch at a shack with sandy feet. ₹500–800 for two.</div></div></li>
+            <li class="activity"><span class="act-time">4:00 PM</span><div><div class="act-title">Tandem Kayaking at Agonda</div><div class="act-detail">Rent a tandem kayak (₹400–600/hr). Paddle along the shoreline at golden hour together.</div></div></li>
+            <li class="activity"><span class="act-time">7:30 PM</span><div><div class="act-title">Couples Ayurvedic Massage <span class="romantic-tag">💑</span></div><div class="act-detail">90-min couples session at an Agonda ayurvedic centre. After a day on the water, this is perfect. ₹1,500–2,500.</div><span class="act-travel">🚶 5 min walk in Agonda village</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card reveal reveal-delay-1" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number gold-bg">
+            <div class="day-num-big">4</div>
+            <div class="day-num-label">Apr 26</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Palolem Day Trip</div>
+              <div class="day-sub">Famous crescent bay · kayak to island · sunset from the bay</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">9:00 AM</span><div><div class="act-title">Scooter to Palolem</div><div class="act-detail">9 km from Agonda. Arrive early before the heat. Palolem's crescent bay is one of the most photogenic in South Goa.</div><span class="act-travel">🛵 20 min scenic coastal ride</span></div></li>
+            <li class="activity"><span class="act-time">10:00 AM</span><div><div class="act-title">Kayak to Canacona Island</div><div class="act-detail">Paddle to the small island at the northern end of Palolem bay. Land on it and explore. ₹400–600/hr.</div></div></li>
+            <li class="activity"><span class="act-time">1:00 PM</span><div><div class="act-title">Lunch at Palolem</div><div class="act-detail">Magic Italy for wood-fired pizza, or Oceanic Restaurant for Goan fish curry. ₹700–1,200 for two.</div></div></li>
+            <li class="activity"><span class="act-time">3:00 PM</span><div><div class="act-title">Patnem Beach</div><div class="act-detail">2 km south of Palolem. Smaller, quieter, empty in April afternoons. Last swim before sunset.</div><span class="act-travel">🛵 2 km from Palolem</span></div></li>
+            <li class="activity"><span class="act-time">5:30 PM</span><div><div class="act-title">Palolem Sunset from the Bay</div><div class="act-detail">Palolem faces west — sunset over the bay with the headlands silhouetted. Beer at a beach shack.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card reveal" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number terracotta">
+            <div class="day-num-big">5</div>
+            <div class="day-num-label">Apr 27</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Lazy Agonda Day + Sunset Cruise</div>
+              <div class="day-sub">No agenda · Galgibaga turtles · candlelit beach dinner</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">9:00 AM</span><div><div class="act-title">Absolutely Nothing</div><div class="act-detail">Day 5. Wake up late. Long breakfast. Sit on Agonda beach. Read. Swim. Collect shells. Do nothing. This is the honeymoon version of a perfect day.</div></div></li>
+            <li class="activity"><span class="act-time">4:30 PM</span><div><div class="act-title">Galgibaga Beach — Turtle Sanctuary</div><div class="act-detail">15 km south. One of India's protected Olive Ridley nesting beaches. Completely deserted. Wild, long, empty. April = hatchlings sometimes emerging.</div><span class="act-travel">🛵 30 min south of Agonda</span></div></li>
+            <li class="activity"><span class="act-time">6:30 PM</span><div><div class="act-title">Sunset Boat Cruise <span class="romantic-tag">💑</span></div><div class="act-detail">1-hr sunset cruise from Agonda. Watch the sun set from the water with a cold drink in hand. ₹500–800/person.</div><span class="act-travel">⛵ Operators on Agonda beach</span></div></li>
+            <li class="activity"><span class="act-time">8:30 PM</span><div><div class="act-title">Private Candlelit Beach Dinner <span class="romantic-tag">💑 Most romantic night</span></div><div class="act-detail">Many Agonda resorts arrange a private table set on the sand — fairy lights, candles, personal waiter. Book 1 day ahead. Last night at Agonda — make it count. ₹1,500–3,000.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day-card reveal reveal-delay-1" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number travel-bg">
+            <div class="day-num-big">6</div>
+            <div class="day-num-label">Apr 28</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Drive Agonda → Gokarna via NH66</div>
+              <div class="day-sub">Coastal highway · Karnataka border · Om Beach arrival</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">9:00 AM</span><div><div class="act-title">Checkout Agonda</div><div class="act-detail">Last swim. Pack up. Say goodbye to the turtles.</div></div></li>
+            <li class="activity"><span class="act-time">10:00 AM</span><div><div class="act-title">Drive Agonda → Gokarna via NH66</div><div class="act-detail">130 km on the coastal highway. Beautiful drive through Western Ghats foothills meeting the sea. Cashew orchards, rice paddies, sea glimpses. Stop at Karwar for lunch.</div><span class="act-travel">🚗 Taxi ₹3,500–4,500 · 3–3.5 hrs</span></div></li>
+            <li class="activity"><span class="act-time">1:30 PM</span><div><div class="act-title">Karnataka State Border (Majali)</div><div class="act-detail">Carry Aadhaar. Brief check, no issues. Good chai stop here.</div></div></li>
+            <li class="activity"><span class="act-time">3:30 PM</span><div><div class="act-title">Arrive Gokarna + Check In to Om Beach</div><div class="act-detail">Stay on Om Beach — no cars can reach here, absolute silence. Options: SwaSwara (luxury), Om Beach Resort, Nirvana Café huts. Request an ocean-facing room.</div><span class="act-travel">🚶 Short walk from taxi drop</span></div></li>
+            <li class="activity"><span class="act-time">5:30 PM</span><div><div class="act-title">First Walk on Om Beach</div><div class="act-detail">Walk to the headland — look back at the full Om-shaped bay. The view from above is the iconic Gokarna image. Water is cleaner than most Goa beaches.</div></div></li>
+            <li class="activity"><span class="act-time">7:30 PM</span><div><div class="act-title">Dinner at Namaste Café</div><div class="act-detail">The legendary Om Beach café. Prawn pizza and Goan fish thali. Stars overhead — zero light pollution. ₹500–800.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 7 -->
+      <div class="day-card reveal" data-region="gokarna">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number forest">
+            <div class="day-num-big">7</div>
+            <div class="day-num-label">Apr 29</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Gokarna Beach Trek</div>
+              <div class="day-sub">Om → Half Moon → Paradise · cliffside jungle trail</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">8:00 AM</span><div><div class="act-title">Coastal Trek Begins <span class="romantic-tag">Most scenic morning</span></div><div class="act-detail">Start early before the heat builds. The coastal trek connects Om → Half Moon → Paradise Beach through dense forest with sea views from clifftops. 4 km total. April = zero other trekkers. Absolute silence except the waves below.</div><span class="act-travel">🥾 Start from south end of Om Beach</span></div></li>
+            <li class="activity"><span class="act-time">9:00 AM</span><div><div class="act-title">Half Moon Beach</div><div class="act-detail">Crescent-shaped beach between two forested cliffs. A few huts, one café. One of the most beautiful isolated beaches in Karnataka. Swim — water is clear and calm in April.</div><span class="act-travel">45 min trek from Om Beach</span></div></li>
+            <li class="activity"><span class="act-time">10:30 AM</span><div><div class="act-title">Paradise Beach <span class="romantic-tag">💑 Most secluded</span></div><div class="act-detail">The final, most secluded beach — accessible only by trek or boat. Bioluminescent plankton visible on new-moon nights. Swim at Dolphin Shanti Café. Completely private.</div><span class="act-travel">30 min trek from Half Moon</span></div></li>
+            <li class="activity"><span class="act-time">12:30 PM</span><div><div class="act-title">Boat Back to Om Beach</div><div class="act-detail">Don't trek back in afternoon heat. Hire a boat from Paradise. ₹200–300/person. 15-min sail back along the coast.</div><span class="act-travel">⛵ ₹400–600 for two</span></div></li>
+            <li class="activity"><span class="act-time">5:00 PM</span><div><div class="act-title">Kudle Beach Scooter Ride</div><div class="act-detail">2 km north of Om Beach. Wide golden sand, cafes, very few people in April. Perfect sunset spot.</div><span class="act-travel">🛵 10 min / walk 25 min over the hill</span></div></li>
+            <li class="activity"><span class="act-time">7:00 PM</span><div><div class="act-title">Dinner at Mantra Café, Kudle</div><div class="act-detail">Choco chip pancakes and seafood pasta with the sea view. ₹500–800 for two.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 8 -->
+      <div class="day-card reveal reveal-delay-1" data-region="gokarna">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number forest">
+            <div class="day-num-big">8</div>
+            <div class="day-num-label">Apr 30</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Gokarna Temple + Mirjan Fort</div>
+              <div class="day-sub">Ancient Shiva temple · jungle-covered fort · town walk</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">8:30 AM</span><div><div class="act-title">Mahabaleshwar Temple</div><div class="act-detail">One of South India's most sacred Shiva temples. Ancient, atmospheric, not touristy. A real temple experience. Dress modestly.</div><span class="act-travel">🛺 Auto ₹100–150 from Om Beach</span></div></li>
+            <li class="activity"><span class="act-time">10:00 AM</span><div><div class="act-title">Gokarna Town Walk</div><div class="act-detail">Old temple town with ancient lanes, Brahmin houses, vibrant markets. Buy local honey, jaggery, coconut products.</div></div></li>
+            <li class="activity"><span class="act-time">11:30 AM</span><div><div class="act-title">Mirjan Fort <span class="romantic-tag">Hidden gem</span></div><div class="act-detail">14th-century fort on the banks of the Aghanashini River — completely covered in jungle. Explore ruins inside a forest. Multiple gateways, bastions, moat. No entry fee. Almost never crowded. Incredibly romantic.</div><span class="act-travel">🛵 21 km north · 35 min</span></div></li>
+            <li class="activity"><span class="act-time">5:00 PM</span><div><div class="act-title">Last Gokarna Sunset at Om Beach <span class="romantic-tag">💑</span></div><div class="act-detail">Sit on Om Beach as the sun sets one final time. No buildings, just the natural Om-shaped bay glowing gold.</div></div></li>
+            <li class="activity"><span class="act-time">7:30 PM</span><div><div class="act-title">Final Gokarna Dinner at Moksha Café</div><div class="act-detail">Seafood thali on Om Beach. Star-gazing after dinner. ₹500–900 for two.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 9 -->
+      <div class="day-card reveal" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number mist-bg">
+            <div class="day-num-big">9</div>
+            <div class="day-num-label">May 1</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Return to Goa — Palolem Night</div>
+              <div class="day-sub">Drive back · one night in the famous bay · Silent Noise</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">9:00 AM</span><div><div class="act-title">Checkout Gokarna</div><div class="act-detail">Last look at Om Beach. Pack up.</div></div></li>
+            <li class="activity"><span class="act-time">9:30 AM</span><div><div class="act-title">Drive Gokarna → Palolem via NH66</div><div class="act-detail">110 km, 3 hrs. Reverse of the journey down. Stop at Karwar for breakfast if needed.</div><span class="act-travel">🚗 Taxi ₹3,000–4,000</span></div></li>
+            <li class="activity"><span class="act-time">12:30 PM</span><div><div class="act-title">Check In to Palolem Beach Hut</div><div class="act-detail">One night at Palolem. Ciaran's Camp (beach huts right on the sand) is the most atmospheric. You know Palolem from Day 4 — tonight you stay.</div></div></li>
+            <li class="activity"><span class="act-time">5:00 PM</span><div><div class="act-title">Kayak to Canacona Island at Sunset</div><div class="act-detail">Paddle to the island at the north end of the bay as the sun sets. The most beautiful angle of Palolem.</div></div></li>
+            <li class="activity"><span class="act-time">9:00 PM</span><div><div class="act-title">Last Dinner at Palolem</div><div class="act-detail">Magic Italy for the last wood-fired pizza of the trip. Or any favourite shack. Walk the beach strip at night one final time. ₹800–1,400.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DAY 10 -->
+      <div class="day-card reveal reveal-delay-1" data-region="goa">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-number" style="background:#1a1208">
+            <div class="day-num-big">10</div>
+            <div class="day-num-label">May 2</div>
+          </div>
+          <div class="day-info">
+            <div>
+              <div class="day-title">Travel Home</div>
+              <div class="day-sub">Last beach sunrise · taxi to airport · fly to Mumbai</div>
+            </div>
+            <div class="day-toggle">›</div>
+          </div>
+        </div>
+        <div class="day-body">
+          <ul class="activity-list">
+            <li class="activity"><span class="act-time">7:00 AM</span><div><div class="act-title">Last Sunrise on Palolem Beach</div><div class="act-detail">Walk to the beach before checkout. Watch the bay wake up. Cold coconut water. Take it in without rushing.</div></div></li>
+            <li class="activity"><span class="act-time">8:30 AM</span><div><div class="act-title">Breakfast + Checkout</div><div class="act-detail">Final Goan breakfast — poha, chai, or café omelette. Pack up.</div></div></li>
+            <li class="activity"><span class="act-time">10:00 AM</span><div><div class="act-title">Taxi to Goa Airport</div><div class="act-detail">Palolem to Dabolim: 75 km, 1.5 hrs.</div><span class="act-travel">🚕 ₹1,800–2,200</span></div></li>
+            <li class="activity"><span class="act-time">1:00 PM</span><div><div class="act-title">Fly Home to Mumbai 🌴</div><div class="act-detail">Carry the smell of the sea, the taste of prawn curry, and the memory of Om Beach back with you.</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /dayGrid -->
+  </div>
+</section>
+
+<!-- ── COSTS ── -->
+<section class="costs-section" id="costs">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag" style="color:var(--gold)">Budget Breakdown</span>
+      <h2 class="section-title">Every Rupee <em>Accounted For</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-intro">The most affordable honeymoon option of all four destinations we considered.</p>
+    </div>
+
+    <div class="totals-banner reveal">
+      <div class="total-card">
+        <div class="total-label">Minimum Total (2 people)</div>
+        <span class="total-amount">₹35,000</span>
+        <div class="total-sub">Budget-conscious choices</div>
+      </div>
+      <div class="total-card" style="border-color:rgba(201,152,74,0.5)">
+        <div class="total-label">Expected Total (2 people)</div>
+        <span class="total-amount">₹45,000</span>
+        <div class="total-sub">Mid-range with special experiences</div>
+      </div>
+      <div class="total-card">
+        <div class="total-label">Maximum Total (2 people)</div>
+        <span class="total-amount">₹55,000</span>
+        <div class="total-sub">Comfortable + all extras</div>
+      </div>
+    </div>
+
+    <div class="cost-categories reveal">
+      <div class="cost-cat">
+        <div class="cost-cat-header">
+          <span class="cat-icon">✈️</span>
+          <span class="cat-name">Flights</span>
+        </div>
+        <div class="cost-rows">
+          <div class="cost-row"><span class="cost-item">Mumbai → Goa (per person × 2)</span><span class="cost-range">₹8,000–16,000</span></div>
+          <div class="cost-row"><span class="cost-item">Goa → Mumbai return (per person × 2)</span><span class="cost-range">₹8,000–16,000</span></div>
+          <div class="cost-row"><span class="cost-item" style="font-style:italic;color:rgba(250,247,240,0.4)">Book 30+ days ahead for best rates</span><span class="cost-range" style="color:rgba(201,152,74,0.4)">Total</span></div>
+        </div>
+      </div>
+      <div class="cost-cat">
+        <div class="cost-cat-header">
+          <span class="cat-icon">🛵</span>
+          <span class="cat-name">Transport</span>
+        </div>
+        <div class="cost-rows">
+          <div class="cost-row"><span class="cost-item">Airport–Agonda taxi</span><span class="cost-range">₹1,200–1,600</span></div>
+          <div class="cost-row"><span class="cost-item">Scooter rental Agonda (5 days)</span><span class="cost-range">₹2,000–2,500</span></div>
+          <div class="cost-row"><span class="cost-item">Agonda → Gokarna taxi</span><span class="cost-range">₹3,500–4,500</span></div>
+          <div class="cost-row"><span class="cost-item">Scooter rental Gokarna (3 days)</span><span class="cost-range">₹900–1,200</span></div>
+          <div class="cost-row"><span class="cost-item">Gokarna → Palolem taxi</span><span class="cost-range">₹3,000–4,000</span></div>
+          <div class="cost-row"><span class="cost-item">Palolem → Airport taxi</span><span class="cost-range">₹1,800–2,500</span></div>
+        </div>
+      </div>
+      <div class="cost-cat">
+        <div class="cost-cat-header">
+          <span class="cat-icon">🏡</span>
+          <span class="cat-name">Accommodation</span>
+        </div>
+        <div class="cost-rows">
+          <div class="cost-row"><span class="cost-item">Agonda beach cottage (4 nights)</span><span class="cost-range">₹10,000–20,000</span></div>
+          <div class="cost-row"><span class="cost-item">Gokarna Om Beach stay (3 nights)</span><span class="cost-range">₹4,500–10,500</span></div>
+          <div class="cost-row"><span class="cost-item">Palolem beach hut (1 night)</span><span class="cost-range">₹2,000–4,000</span></div>
+        </div>
+      </div>
+      <div class="cost-cat">
+        <div class="cost-cat-header">
+          <span class="cat-icon">🐟</span>
+          <span class="cat-name">Food (10 days, 2 people)</span>
+        </div>
+        <div class="cost-rows">
+          <div class="cost-row"><span class="cost-item">Regular meals (8 days × ₹700–1,200)</span><span class="cost-range">₹5,600–9,600</span></div>
+          <div class="cost-row"><span class="cost-item">Travel day meals (2 days)</span><span class="cost-range">₹1,400–2,400</span></div>
+          <div class="cost-row"><span class="cost-item">Private candlelit beach dinner</span><span class="cost-range">₹1,500–3,000</span></div>
+        </div>
+      </div>
+      <div class="cost-cat">
+        <div class="cost-cat-header">
+          <span class="cat-icon">⛵</span>
+          <span class="cat-name">Activities</span>
+        </div>
+        <div class="cost-rows">
+          <div class="cost-row"><span class="cost-item">Private boat — Butterfly Beach + dolphins</span><span class="cost-range">₹1,200–1,800</span></div>
+          <div class="cost-row"><span class="cost-item">Sunset cruise from Agonda</span><span class="cost-range">₹1,000–1,600</span></div>
+          <div class="cost-row"><span class="cost-item">Kayak rentals (2 sessions)</span><span class="cost-range">₹800–1,200</span></div>
+          <div class="cost-row"><span class="cost-item">Gokarna beach trek (free)</span><span class="cost-range">₹0</span></div>
+          <div class="cost-row"><span class="cost-item">Boat return Paradise → Om</span><span class="cost-range">₹400–600</span></div>
+          <div class="cost-row"><span class="cost-item">Couples ayurvedic massage</span><span class="cost-range">₹1,500–2,500</span></div>
+        </div>
+      </div>
+      <div class="cost-cat">
+        <div class="cost-cat-header">
+          <span class="cat-icon">🥥</span>
+          <span class="cat-name">Misc & Buffer</span>
+        </div>
+        <div class="cost-rows">
+          <div class="cost-row"><span class="cost-item">Shopping — cashews, spices, souvenirs</span><span class="cost-range">₹1,500–3,000</span></div>
+          <div class="cost-row"><span class="cost-item">Sunscreen, medicines, toiletries</span><span class="cost-range">₹500–1,000</span></div>
+          <div class="cost-row"><span class="cost-item">Tips — boat, hotel, spa staff</span><span class="cost-range">₹500–1,000</span></div>
+          <div class="cost-row"><span class="cost-item">Emergency buffer (always keep)</span><span class="cost-range">₹1,500–3,000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem;padding:1.5rem;background:rgba(201,152,74,0.07);border:1px solid rgba(201,152,74,0.18);border-radius:10px" class="reveal">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(250,247,240,0.55);line-height:1.7">
+        💡 &nbsp;This is the most budget-friendly of all four honeymoon options considered. Andaman costs ₹1.1–1.6L, Maldives ₹2.8–12L+, Rishikesh ₹55–80K. South Goa + Gokarna at ₹35–55K gives you raw beaches, great seafood, zero crowds in April, and the NH66 coastal drive — all without breaking the bank.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRANSPORT ── -->
+<section class="transport-section" id="travel">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Getting Everywhere</span>
+      <h2 class="section-title">The <em>Travel Guide</em></h2>
+      <div class="section-rule"></div>
+      <p class="section-intro">Every leg, every option, every tip — so there are no surprises on the road.</p>
+    </div>
+
+    <div class="transport-grid">
+      <div class="transport-card reveal">
+        <div class="transport-head">
+          <div class="transport-icon">✈️</div>
+          <div class="transport-title">Mumbai → Goa Flights</div>
+        </div>
+        <div class="transport-row"><span class="tr-label">Route</span><span class="tr-value">BOM → GOI (Dabolim)</span></div>
+        <div class="transport-row"><span class="tr-label">Duration</span><span class="tr-value">~1.5 hrs direct</span></div>
+        <div class="transport-row"><span class="tr-label">Cost</span><span class="tr-value">₹4,000–8,000/person</span></div>
+        <div class="transport-row"><span class="tr-label">Airlines</span><span class="tr-value">IndiGo, Air India, Akasa</span></div>
+        <div class="transport-row"><span class="tr-label">⚠️ Tip</span><span class="tr-value tr-tip">Use Dabolim GOI — 60 km from Agonda. Mopa (GOX) is 100 km farther. Book 30+ days ahead.</span></div>
+      </div>
+
+      <div class="transport-card reveal reveal-delay-1">
+        <div class="transport-head">
+          <div class="transport-icon">🛵</div>
+          <div class="transport-title">Scooter Rental (Main Transport)</div>
+        </div>
+        <div class="transport-row"><span class="tr-label">Cost Agonda</span><span class="tr-value">₹400–500/day</span></div>
+        <div class="transport-row"><span class="tr-label">Cost Gokarna</span><span class="tr-value">₹300–400/day</span></div>
+        <div class="transport-row"><span class="tr-label">Carries</span><span class="tr-value">Both of you easily</span></div>
+        <div class="transport-row"><span class="tr-label">Licence required</span><span class="tr-value">Yes — carry driving licence</span></div>
+        <div class="transport-row"><span class="tr-label">⚠️ Tip</span><span class="tr-value tr-tip">Fill up at petrol pump in Chaudi (5 km from Agonda). Don't let it go below half — pumps close at 7 PM.</span></div>
+      </div>
+
+      <div class="transport-card reveal">
+        <div class="transport-head">
+          <div class="transport-icon">🚗</div>
+          <div class="transport-title">Agonda → Gokarna Drive</div>
+        </div>
+        <div class="transport-row"><span class="tr-label">Distance</span><span class="tr-value">130 km via NH66</span></div>
+        <div class="transport-row"><span class="tr-label">Duration</span><span class="tr-value">3–3.5 hrs</span></div>
+        <div class="transport-row"><span class="tr-label">Taxi cost</span><span class="tr-value">₹3,500–4,500</span></div>
+        <div class="transport-row"><span class="tr-label">Border</span><span class="tr-value">Carry Aadhaar at Majali</span></div>
+        <div class="transport-row"><span class="tr-label">⚠️ Tip</span><span class="tr-value tr-tip">NH66 is scenic — cashew orchards, Western Ghats coast, river crossings. Stop at Karwar for breakfast. Book taxi night before.</span></div>
+      </div>
+
+      <div class="transport-card reveal reveal-delay-1">
+        <div class="transport-head">
+          <div class="transport-icon">⛵</div>
+          <div class="transport-title">Gokarna Beach Connections</div>
+        </div>
+        <div class="transport-row"><span class="tr-label">Om → Half Moon trek</span><span class="tr-value">45 min, free</span></div>
+        <div class="transport-row"><span class="tr-label">Half Moon → Paradise</span><span class="tr-value">30 min, free</span></div>
+        <div class="transport-row"><span class="tr-label">Boat Om ↔ Paradise</span><span class="tr-value">₹200–300/person</span></div>
+        <div class="transport-row"><span class="tr-label">Om → Kudle Beach</span><span class="tr-value">25 min walk or 🛵 5 min</span></div>
+        <div class="transport-row"><span class="tr-label">⚠️ Tip</span><span class="tr-value tr-tip">Trek in morning (8 AM). Return by boat — never trek back in afternoon heat. Go in proper shoes, not flip flops.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PACKING ── -->
+<section class="packing-section" id="packing">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">What to Bring</span>
+      <h2 class="section-title"><em>Packing List</em><br>for April Heat</h2>
+      <div class="section-rule"></div>
+      <p class="section-intro">Hot season specific — sunscreen is non-negotiable, and you'll be changing swimwear three times a day.</p>
+    </div>
+
+    <div class="packing-grid">
+      <div class="pack-cat reveal">
+        <div class="pack-cat-head">
+          <span class="cat-icon">👕</span>
+          <span class="pack-cat-name">Clothing</span>
+        </div>
+        <div class="pack-items">
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Light cotton t-shirts (6–7)</div><div class="pack-note">30–35°C — breathable only</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Swimwear (2–3 sets each)</div><div class="pack-note">You'll change multiple times daily</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Shorts (3–4 pairs)</div><div class="pack-note">Beach + scooter riding</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">1 smart casual outfit each</div><div class="pack-note">For special dinner night</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Sarong / beach wrap</div><div class="pack-note">Temple entry + restaurants</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Walking shoes (proper)</div><div class="pack-note">Gokarna beach trek — not flip flops!</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Dupatta / stole</div><div class="pack-note">Mahabaleshwar Temple visit</div></div></div>
+        </div>
+      </div>
+
+      <div class="pack-cat reveal reveal-delay-1">
+        <div class="pack-cat-head">
+          <span class="cat-icon">☀️</span>
+          <span class="pack-cat-name">Sun & Heat Protection</span>
+        </div>
+        <div class="pack-items">
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Reef-safe SPF 50+ (3 tubes)</div><div class="pack-note">April sun is brutal — reapply every 2 hrs</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">After-sun / aloe vera gel</div><div class="pack-note">Non-negotiable. You WILL get burned.</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Wide-brim hat / cap each</div><div class="pack-note">For scooter rides and midday beach</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">UV-protection sunglasses</div><div class="pack-note">Coastal glare is strong</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Reusable water bottles (2)</div><div class="pack-note">Carry 2L each — dehydration risk</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Electrolyte sachets / ORS (10+)</div><div class="pack-note">Critical on hot scooter days</div></div></div>
+        </div>
+      </div>
+
+      <div class="pack-cat reveal reveal-delay-2">
+        <div class="pack-cat-head">
+          <span class="cat-icon">💊</span>
+          <span class="pack-cat-name">Health & Safety</span>
+        </div>
+        <div class="pack-items">
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Personal medicines</div><div class="pack-note">All regular medication</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Motion sickness tablets</div><div class="pack-note">NH66 has winding sections</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Insect repellent (strong)</div><div class="pack-note">Goa + Gokarna evenings</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Basic first aid kit</div><div class="pack-note">Plasters + antiseptic for scooter scrapes</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Stomach tablets / antacid</div><div class="pack-note">New seafood occasionally disagrees</div></div></div>
+        </div>
+      </div>
+
+      <div class="pack-cat reveal">
+        <div class="pack-cat-head">
+          <span class="cat-icon">📄</span>
+          <span class="pack-cat-name">Documents & Money</span>
+        </div>
+        <div class="pack-items">
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Aadhaar / ID cards (2 copies each)</div><div class="pack-note">Hotel, border check, scooter rental</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Driving licence (both)</div><div class="pack-note">Required for scooter rental</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Cash ₹10,000–15,000</div><div class="pack-note">Gokarna is very cash-heavy</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Cards (2 different banks)</div><div class="pack-note">Backup for ATM failures</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Flight + hotel bookings offline</div><div class="pack-note">Screenshot everything</div></div></div>
+        </div>
+      </div>
+
+      <div class="pack-cat reveal reveal-delay-1">
+        <div class="pack-cat-head">
+          <span class="cat-icon">📷</span>
+          <span class="pack-cat-name">Electronics & Extras</span>
+        </div>
+        <div class="pack-items">
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Phone + charger + power bank</div><div class="pack-note">Long scooter days away from sockets</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Camera / GoPro</div><div class="pack-note">Butterfly Beach + Om Beach are stunning</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Offline maps (Google Maps)</div><div class="pack-note">Gokarna trails poorly signposted</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Torch / flashlight</div><div class="pack-note">Om Beach area has no street lights</div></div></div>
+          <div class="pack-item"><div class="pack-check"></div><div><div class="pack-name">Zip-lock bags</div><div class="pack-note">Protect phone on boat trips</div></div></div>
+        </div>
+      </div>
+
+      <div class="pack-cat reveal reveal-delay-2" style="background:linear-gradient(135deg,#2d4a2f,#1a2e1b);color:var(--cream)">
+        <div class="pack-cat-head" style="background:rgba(0,0,0,0.2)">
+          <span class="cat-icon">💡</span>
+          <span class="pack-cat-name" style="color:var(--gold)">April Heat Tips</span>
+        </div>
+        <div class="pack-items" style="padding:1rem 1.25rem">
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(250,247,240,0.8);line-height:1.7;margin-bottom:1rem">
+            "The heat is real. The crowds are not. That trade-off is what makes this the perfect honeymoon timing."
+          </div>
+          <div style="font-size:0.8rem;color:rgba(250,247,240,0.55);line-height:1.8">
+            ✦ Beach activities only 7–11 AM and 4–7 PM<br>
+            ✦ Siesta from 1–4 PM — embrace it like a local<br>
+            ✦ Sea breeze at Agonda makes evenings lovely<br>
+            ✦ Carry water everywhere, every day<br>
+            ✦ The empty beaches are worth the heat
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <canvas id="footerCanvas"></canvas>
-  <div class="ft-inner">
-    <div class="ft-om">ॐ</div>
-    <p class="ft-sub">Shri Ganeshaya Namah</p>
-    <div class="ft-script">Vikrant &amp; Gitika</div>
-    <div class="ft-divider"></div>
-    <p class="ft-date">20th April, 2026</p>
-    <p class="ft-venue">Golden Chariot Hotel · Vasai, Maharashtra</p>
-    <p class="ft-wish">With love, gratitude and immense joy,<br>we await the honour of your presence.</p>
+  <div class="container" style="position:relative">
+    <div class="footer-names reveal">Vikrant & Gitika</div>
+    <div class="footer-line"></div>
+    <p class="footer-tagline reveal reveal-delay-1">April 19–21, 2026 · Golden Chariot Hotel, Vasai · Hindu Brahmin Wedding</p>
+    <p style="margin-top:1.5rem;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(250,247,240,0.2);position:relative" class="reveal reveal-delay-2">South Goa · Agonda · Gokarna · Honeymoon 2026</p>
   </div>
 </footer>
 
 <script>
-// VEIL
-window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('veil').classList.add('gone'),1800)});
-
-// BOKEH
-(function(){
-  const c=document.getElementById('bokehCanvas'),ctx=c.getContext('2d');
-  let W,H;const r=()=>{W=c.width=window.innerWidth;H=c.height=window.innerHeight};r();window.addEventListener('resize',r);
-  const COLS=[[201,168,76],[232,130,10],[240,208,96],[180,120,30]];
-  const pts=Array.from({length:70},()=>({x:Math.random()*2e3,y:Math.random()*4e3,vx:(Math.random()-.5)*.25,vy:-(Math.random()*.35+.1),rad:Math.random()*2+.4,col:COLS[Math.floor(Math.random()*4)],op:0,maxOp:Math.random()*.38+.07,life:0,maxLife:Math.random()*400+200}));
-  function fr(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.life++;p.x+=p.vx;p.y+=p.vy;const pct=p.life/p.maxLife;p.op=pct<.15?pct/.15*p.maxOp:pct>.75?(1-pct)/.25*p.maxOp:p.maxOp;if(p.life>p.maxLife||p.y<-20){Object.assign(p,{x:Math.random()*W,y:H+10,life:0,op:0})}ctx.save();ctx.globalAlpha=p.op;ctx.fillStyle=`rgb(${p.col})`;ctx.beginPath();ctx.arc(p.x,p.y,p.rad,0,Math.PI*2);ctx.fill();ctx.restore()});requestAnimationFrame(fr)}fr();
-})();
-
-// MANDALA
-function drawM(id){
-  const c=document.getElementById(id);if(!c)return;
-  const p=c.parentElement;c.width=window.innerWidth;c.height=p.offsetHeight||window.innerHeight;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height,cx=W/2,cy=H/2;
-  const arc=(r,col,lw=.7)=>{ctx.strokeStyle=col;ctx.lineWidth=lw;ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke()};
-  const poly=(r,n,col,lw=.9)=>{ctx.strokeStyle=col;ctx.lineWidth=lw;const pts=Array.from({length:n},(_,i)=>{const a=i/n*Math.PI*2-Math.PI/2;return[cx+Math.cos(a)*r,cy+Math.sin(a)*r]});ctx.beginPath();pts.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.stroke()};
-  const petal=(r,n,col)=>{for(let i=0;i<n;i++){const a=i/n*Math.PI*2;const[x1,y1]=[cx+Math.cos(a)*r*.38,cy+Math.sin(a)*r*.38],[x2,y2]=[cx+Math.cos(a)*r,cy+Math.sin(a)*r],[c1x,c1y]=[cx+Math.cos(a-.44)*r*.82,cy+Math.sin(a-.44)*r*.82],[c2x,c2y]=[cx+Math.cos(a+.44)*r*.82,cy+Math.sin(a+.44)*r*.82];ctx.strokeStyle=col;ctx.lineWidth=.78;ctx.beginPath();ctx.moveTo(x1,y1);ctx.bezierCurveTo(c1x,c1y,c2x,c2y,x2,y2);ctx.stroke()}};
-  const g='rgba(201,168,76,',s='rgba(232,130,10,';
-  [65,105,150,200,256,318,386,460].forEach((r,i)=>arc(r,g+['.30','.24','.19','.15','.12','.09','.07','.05'][i]+')'));
-  poly(115,8,g+'.2)',1);poly(172,12,g+'.14)',.85);poly(238,16,g+'.10)',.72);poly(318,24,g+'.07)',.62);
-  petal(108,8,g+'.22)');petal(168,12,g+'.15)');petal(234,16,g+'.10)');petal(310,24,g+'.07)');
-  arc(55,s+'.28)',1.1);arc(38,s+'.18)',.85);poly(52,6,s+'.2)',1);
-  for(let i=0;i<36;i++){const a=i/36*Math.PI*2;ctx.strokeStyle=g+'.038)';ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*48,cy+Math.sin(a)*48);ctx.lineTo(cx+Math.cos(a)*480,cy+Math.sin(a)*480);ctx.stroke()}
-}
-drawM('heroMandala');drawM('footerCanvas');
-window.addEventListener('resize',()=>{drawM('heroMandala');drawM('footerCanvas')});
-
-// EVENT BACKGROUNDS
-const evBgData=[
-  {id:'c6bg',bgs:['#0E0208','#1A0410','#080104'],pal:'ro',style:'arch'},
-  {id:'c7bg',bgs:['#0C0700','#160D00','#080500'],pal:'fl',style:'flame'},
-];
-const PAL={ro:['rgba(210,55,95,','rgba(160,25,65,'],fl:['rgba(228,98,10,','rgba(175,58,5,']};
-function drawEvBg(d){
-  const c=document.getElementById(d.id);if(!c)return;
-  const el=c.parentElement;c.width=el.offsetWidth||window.innerWidth;c.height=el.offsetHeight||window.innerHeight;
-  const ctx=c.getContext('2d'),W=c.width,H=c.height,cx=W/2,cy=H/2;
-  const gr=ctx.createLinearGradient(0,0,W*.7,H);gr.addColorStop(0,d.bgs[0]);gr.addColorStop(.5,d.bgs[1]);gr.addColorStop(1,d.bgs[2]);
-  ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);
-  const[c1,c2]=PAL[d.pal]||PAL.fl,g='rgba(201,168,76,';
-  if(d.style==='arch'){for(let r=75;r<950;r+=65){ctx.strokeStyle=c1+'.05)';ctx.lineWidth=.8;ctx.beginPath();ctx.arc(cx,H*.92,r,0,Math.PI,true);ctx.stroke()}}
-  if(d.style==='flame'){for(let r=48;r<680;r+=56){ctx.strokeStyle=g+'.038)';ctx.lineWidth=.7;ctx.beginPath();ctx.arc(cx,H*.68,r,0,Math.PI*2);ctx.stroke()}for(let i=0;i<4500;i++){const s=Math.random();ctx.fillStyle=s>.62?c1+(s*.085)+')':c2+(s*.065)+')';ctx.fillRect(Math.random()*W,Math.random()*H,1,1)}}
-}
-evBgData.forEach(d=>drawEvBg(d));
-window.addEventListener('resize',()=>evBgData.forEach(d=>drawEvBg(d)));
-
-// RECEPTION ANIMATION
-(function(){
-  const c=document.getElementById('c6anim');if(!c)return;
-  const ctx=c.getContext('2d');let W,H,vis=false,t=0;
-  function resize(){const p=c.parentElement;W=c.width=p.offsetWidth;H=c.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  new IntersectionObserver(e=>{vis=e[0].isIntersecting},{threshold:.05}).observe(c.parentElement);
-  function drawGarland(y0,amp,phase,col,alpha){
-    ctx.strokeStyle=col.replace(')',`,${alpha})`).replace('rgb','rgba');
-    ctx.lineWidth=1.4;ctx.beginPath();
-    for(let x=0;x<=W;x+=2){const t2=x/W*Math.PI*3;const sway=Math.sin(t*0.4+phase)*8;const y=y0+Math.sin(t2)*amp+sway;x===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}
-    ctx.stroke();
-    for(let x=0;x<W;x+=W/14){const t2=x/W*Math.PI*3;const sway=Math.sin(t*0.4+phase)*8;const y=y0+Math.sin(t2)*amp+sway;const pulse=0.7+0.3*Math.sin(t*2+x);const r=5*pulse;const g=ctx.createRadialGradient(x,y,0,x,y,r*2);g.addColorStop(0,'rgba(255,140,100,0.5)');g.addColorStop(1,'rgba(255,80,80,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*2,0,Math.PI*2);ctx.fill()}
+  // ── DAY TOGGLE ──
+  function toggleDay(header) {
+    const card = header.closest('.day-card');
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.day-card.open').forEach(d => d.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
   }
-  class Petal{
-    constructor(init=false){this.reset(init)}
-    reset(init=false){this.x=Math.random()*W;this.y=init?Math.random()*H:-15;this.vx=(Math.random()-.5)*.7;this.vy=0.6+Math.random()*0.9;this.rot=Math.random()*Math.PI*2;this.rotV=(Math.random()-.5)*0.03;this.w=6+Math.random()*9;this.h=4+Math.random()*6;this.life=0;this.maxLife=Math.floor(Math.random()*500+300);this.hue=340+Math.floor(Math.random()*30);this.alpha=0;this.maxAlpha=0.25+Math.random()*0.2}
-    update(){this.life++;this.rot+=this.rotV;this.x+=this.vx+Math.sin(this.life*0.022)*0.5;this.y+=this.vy;const t=this.life/this.maxLife;this.alpha=t<0.1?t/0.1*this.maxAlpha:t>0.8?(1-t)/0.2*this.maxAlpha:this.maxAlpha;if(this.y>H+20||this.life>this.maxLife)this.reset()}
-    draw(){ctx.save();ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=`hsla(${this.hue},90%,65%,${this.alpha})`;ctx.beginPath();ctx.ellipse(0,0,this.w,this.h,0,0,Math.PI*2);ctx.fill();ctx.restore()}
+
+  // ── FILTER ──
+  function filterDays(region) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    document.querySelectorAll('.day-card').forEach(card => {
+      if (region === 'all' || card.dataset.region === region) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   }
-  const petals=Array.from({length:38},()=>new Petal(true));
-  const garlands=[{y0:H*.25,amp:30,phase:0,col:'rgb(200,80,80)'},{y0:H*.38,amp:22,phase:1.1,col:'rgb(230,120,40)'},{y0:H*.52,amp:28,phase:2.2,col:'rgb(200,80,80)'}];
-  function loop(){
-    if(!vis){requestAnimationFrame(loop);return}
-    ctx.clearRect(0,0,W,H);t+=0.012;
-    garlands.forEach(g=>drawGarland(g.y0,g.amp,g.phase,g.col,0.16+Math.sin(t*0.8+g.phase)*0.04));
-    petals.forEach(p=>{p.update();p.draw()});
-    requestAnimationFrame(loop);
-  }
-  loop();
-})();
 
-// FIRE — VIDHI
-(function(){
-  const fc=document.getElementById('fireCanvas');if(!fc)return;
-  const ctx=fc.getContext('2d');let W,H;
-  function resize(){const p=fc.parentElement;W=fc.width=p.offsetWidth;H=fc.height=p.offsetHeight}
-  resize();window.addEventListener('resize',resize);
-  class Flame{constructor(){this.reset()}reset(){this.x=W/2+(Math.random()-.5)*80;this.y=H*.75+Math.random()*40;this.vx=(Math.random()-.5)*.8;this.vy=-(Math.random()*2.5+1.2);this.life=0;this.maxLife=Math.floor(Math.random()*60+40);this.size=Math.random()*5+2;this.hot=Math.random()}update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy*=.985;this.vx*=.99;this.size*=.97;if(this.life>this.maxLife||this.size<.3)this.reset()}draw(){const t=this.life/this.maxLife,r=255,g=Math.floor(this.hot>.6?180-t*180:80-t*80),a=(1-t)*(this.hot>.6?.85:.55);ctx.save();const grad=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.size*2);grad.addColorStop(0,`rgba(${r},${g+60},0,${a})`);grad.addColorStop(.5,`rgba(${r},${g},0,${a*.6})`);grad.addColorStop(1,'rgba(180,40,0,0)');ctx.fillStyle=grad;ctx.beginPath();ctx.arc(this.x,this.y,this.size*2,0,Math.PI*2);ctx.fill();ctx.restore()}}
-  class Ember{constructor(){this.reset()}reset(){this.x=W/2+(Math.random()-.5)*100;this.y=H*.72;this.vx=(Math.random()-.5)*1.5;this.vy=-(Math.random()*3+1);this.life=0;this.maxLife=Math.floor(Math.random()*120+80);this.size=Math.random()*.8+.2}update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.vy+=.02;this.vx+=(Math.random()-.5)*.05;if(this.life>this.maxLife)this.reset()}draw(){const t=this.life/this.maxLife,a=(1-t)*.9;ctx.save();ctx.globalAlpha=a;ctx.fillStyle=t<.3?'#FFF9C4':t<.6?'#FFB830':'#FF6000';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill();ctx.restore()}}
-  const flames=Array.from({length:55},()=>new Flame());
-  const embers=Array.from({length:30},()=>new Ember());
-  flames.forEach(f=>{f.life=Math.floor(Math.random()*f.maxLife)});
-  embers.forEach(e=>{e.life=Math.floor(Math.random()*e.maxLife)});
-  let vidhiVisible=false;
-  new IntersectionObserver(e=>{vidhiVisible=e[0].isIntersecting},{threshold:.05}).observe(document.getElementById('vidhiCard'));
-  function fireLoop(){ctx.clearRect(0,0,W,H);if(vidhiVisible){flames.forEach(f=>{f.update();f.draw()});embers.forEach(e=>{e.update();e.draw()})}requestAnimationFrame(fireLoop)}
-  fireLoop();
-})();
-
-// PETAL RAIN (global)
-(function(){
-  const c=document.getElementById('petalCanvas');if(!c)return;
-  const ctx=c.getContext('2d');let W,H;
-  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
-  resize();window.addEventListener('resize',resize);
-  const PETALS=[{r:255,g:160,b:20},{r:255,g:120,b:10},{r:240,g:180,b:0},{r:200,g:80,b:20},{r:255,g:200,b:40}];
-  class Petal{constructor(init=false){this.reset(init)}reset(init=false){this.x=Math.random()*W;this.y=init?Math.random()*H:-20;this.rot=Math.random()*Math.PI*2;this.rotV=(Math.random()-.5)*.04;this.vx=(Math.random()-.5)*.6;this.vy=Math.random()*.8+.3;this.w=Math.random()*8+4;this.h=Math.random()*5+2.5;this.op=0;this.maxOp=Math.random()*.35+.1;this.life=0;this.maxLife=Math.random()*400+300;const col=PETALS[Math.floor(Math.random()*PETALS.length)];this.col=`${col.r},${col.g},${col.b}`}update(){this.life++;this.x+=this.vx;this.y+=this.vy;this.rot+=this.rotV;this.vx+=Math.sin(this.life*.02)*.02;const t=this.life/this.maxLife;this.op=t<.1?t/.1*this.maxOp:t>.8?(1-t)/.2*this.maxOp:this.maxOp;if(this.y>H+20||this.life>this.maxLife)this.reset()}draw(){ctx.save();ctx.globalAlpha=this.op;ctx.translate(this.x,this.y);ctx.rotate(this.rot);ctx.fillStyle=`rgba(${this.col},1)`;ctx.beginPath();ctx.ellipse(0,0,this.w,this.h,0,0,Math.PI*2);ctx.fill();ctx.restore()}}
-  const petals=Array.from({length:45},()=>new Petal(true));
-  function petalLoop(){ctx.clearRect(0,0,W,H);petals.forEach(p=>{p.update();p.draw()});requestAnimationFrame(petalLoop)}
-  petalLoop();
-})();
-
-// COUNTDOWN
-function tick(){
-  const target=new Date('2026-04-20T19:00:00+05:30');
-  let diff=Math.max(0,target-Date.now());
-  const d=Math.floor(diff/86400000);diff%=86400000;
-  const h=Math.floor(diff/3600000);diff%=3600000;
-  const m=Math.floor(diff/60000);diff%=60000;
-  const s=Math.floor(diff/1000);
-  const f=n=>String(n).padStart(2,'0');
-  const upd=(id,val)=>{const el=document.getElementById(id);if(el&&el.textContent!==val){el.textContent=val;el.classList.remove('tick');void el.offsetWidth;el.classList.add('tick')}};
-  upd('cdD',f(d));upd('cdH',f(h));upd('cdM',f(m));upd('cdS',f(s));
-}
-tick();setInterval(tick,1000);
-
-// ROTATING MANDALA
-(function(){const c=document.getElementById('heroMandala');if(!c)return;let a=0;function spin(){a+=.0012;c.style.transform=`rotate(${a}rad)`;requestAnimationFrame(spin)}spin()})();
-
-// PARALLAX
-(function(){
-  const inner=document.querySelector('.hero-inner');const aura=document.querySelector('.hero-aura');if(!inner||!aura)return;
-  window.addEventListener('scroll',()=>{const y=window.scrollY;inner.style.transform=`translateY(${y*.28}px)`;inner.style.opacity=1-y/window.innerHeight*1.2;aura.style.transform=`translateY(${y*.12}px)`},{passive:true});
-})();
-
-// NAME HOVER
-document.querySelectorAll('.h-name').forEach(el=>{
-  el.style.transition='filter .3s ease,transform .3s ease';
-  el.addEventListener('mouseenter',()=>{el.style.filter='drop-shadow(0 0 32px rgba(232,130,10,.8))';el.style.transform='scale(1.04)'});
-  el.addEventListener('mouseleave',()=>{el.style.filter='';el.style.transform=''});
-});
-
-// FAMILY CARD TILT
-(function(){
-  const card=document.querySelector('.family-card');if(!card)return;
-  card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const cx=r.width/2,cy=r.height/2;const rx=(y-cy)/cy*8,ry=(cx-x)/cx*8;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`});
-  card.addEventListener('mouseleave',()=>{card.style.transform=''});
-})();
-
-// REVEAL
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.06,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-const eo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='none'}})},{threshold:.04});
-document.querySelectorAll('.ev-card').forEach((el,i)=>{el.style.cssText+=`;opacity:0;transform:translateY(28px);transition:opacity 1.3s cubic-bezier(.4,0,.2,1) ${i*.04}s,transform 1.3s cubic-bezier(.4,0,.2,1) ${i*.04}s`;eo.observe(el)});
+  // ── SCROLL REVEAL ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
